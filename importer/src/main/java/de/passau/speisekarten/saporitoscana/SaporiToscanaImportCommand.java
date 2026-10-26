@@ -25,7 +25,7 @@ import java.util.Map;
 /** Imports the current weekday-through-Friday lunch menu from i Sapori della Toscana. */
 public final class SaporiToscanaImportCommand
 {
-    private static final String ID = "i-sapori-toscana";
+    private static final String ID = "isapori";
     private static final String NAME = "i Sapori della Toscana";
     private static final String PAGE = "https://sapori-toscana.com/";
     private static final String ADDRESS = "Theresienstraße 23, 94032 Passau";
