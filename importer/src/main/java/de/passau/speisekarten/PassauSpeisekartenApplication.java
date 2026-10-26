@@ -20,10 +20,8 @@ public final class PassauSpeisekartenApplication
             System.out.println("Starte alle implementierten Speisekartenimporte.");
             System.out.println("1/2: Uni-Mensa Passau");
             MensaHtmlImportCommand.main(new String[0]);
-            System.out.println("2/3: Pomeranz");
+            System.out.println("2/2: Pomeranz");
             PomeranzImportCommand.main(new String[0]);
-            System.out.println("3/3: Goldenes Schiff");
-            GoldenesSchiffImportCommand.main(new String[0]);
             System.out.println("Alle Speisekartenimporte abgeschlossen.");
             return;
         }
