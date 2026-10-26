@@ -1,5 +1,5 @@
 const state = { menus: [], restaurants: new Map(), generatedAt: null };
-const el = Object.fromEntries(["search", "day", "diet", "max-price", "status", "menu-results"].map(id => [id, document.getElementById(id)]));
+const el = Object.fromEntries(["search", "day", "diet", "max-price", "show-sides", "status", "menu-results"].map(id => [id, document.getElementById(id)]));
 
 const markerLabels = {
   VEGETARIAN: "🥕 Vegetarisch",
@@ -121,6 +121,7 @@ function render() {
     const restaurant = state.restaurants.get(menu.restaurantId);
     const items = (menu.items ?? [])
       .map((item, index) => ({menu, item, restaurant, index}))
+      .filter(({item}) => el["show-sides"].checked || String(item.category ?? "").trim().toLocaleLowerCase("de") !== "beilagen")
       .filter(({item}) => matches(item, restaurant));
 
     if (items.length) dayGroups.push({menu, restaurant, items});
