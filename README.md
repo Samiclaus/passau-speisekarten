@@ -65,7 +65,7 @@ mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
   '-Dexec.args=check-pomeranz'
 ```
 
-Der eigentliche Import wird mit `import-pomeranz` gestartet. Er ergänzt die bestehenden JSON-Dateien und erhält Menü- und Restaurantdaten anderer Quellen. Bei fehlendem Preis, fehlenden Servicezeiten oder unzureichend erkannten Gerichten bricht er vor dem Schreiben ab. Pomeranz bleibt in `config/sources.csv` deaktiviert, bis der Import lokal geprüft wurde:
+Der eigentliche Import wird mit `import-pomeranz` gestartet. Er ergänzt die bestehenden JSON-Dateien und erhält Menü- und Restaurantdaten anderer Quellen. Bei fehlendem Preis, fehlenden Servicezeiten, einem abgelaufenen PDF oder unzureichend erkannten Gerichten bricht er vor dem Schreiben ab. Pomeranz bleibt in `config/sources.csv` deaktiviert, bis der Import lokal geprüft wurde:
 
 ```powershell
 mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
