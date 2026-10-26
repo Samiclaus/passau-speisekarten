@@ -14,7 +14,8 @@ Die erste Version benötigt keine Datenbank. Git hält Änderungen an Konfigurat
 ## Erste Quellenkandidaten
 - **Uni-Mensa Passau (CSV):** Wochenplan unter `https://www.stwno.de/infomax/daten-extern/csv/UNI-P/{isoWeek}.csv`; `{isoWeek}` steht für die aktuelle ISO-Kalenderwoche. Die Spalte `kennz` liefert strukturierte Kennzeichen.
 - **Restaurant Pomeranz (PDF):** die offizielle Seite `https://www.restaurant-pomeranz.de/Speisekarte/` enthält den aktuellen PDF-Link. Nicht die wechselnde PDF-URL fest konfigurieren, sondern auf der Seite den Link zur Mittagskarte ermitteln.
-- **Wirtshaus & Pension Goldenes Schiff (HTML):** `https://goldenesschiff.de/` zeigt einen aktuellen Mittagstisch und eine Wochenkarte im HTML. Das ist ein guter Kandidat für den ersten HTML-Adapter; beim Implementieren prüfen wir, ob Gerichte und Preise stabil aus dem HTML extrahiert werden können.
+- **I Sapori della Toscana (HTML, bevorzugter Kandidat):** `https://sapori-toscana.com/` zeigt Mittagsgerichte nach Wochentag samt Preisen. Das eignet sich gut, um einen HTML-Adapter für wiederkehrende Tagesabschnitte zu testen.
+- **Wirtshaus & Pension Goldenes Schiff (HTML, Alternative):** `https://goldenesschiff.de/` zeigt einen aktuellen Mittagstisch und eine Wochenkarte. Das ist eine zweite Option, falls sich die Daten bei I Sapori nicht stabil extrahieren lassen.
 
 Die Einträge in `config/sources.csv` sind zunächst deaktiviert. Erst nach Implementierung und Tests des jeweiligen Adapters wird `enabled` auf `true` gesetzt.
 
