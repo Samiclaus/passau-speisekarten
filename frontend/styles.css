@@ -37,6 +37,7 @@ input:focus, select:focus, a:focus-visible { outline: 3px solid #8ebd91; outline
 .category-label { margin: 0; color: var(--green-700); font-size: .74rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .dish-description { margin: .6rem 0 0; color: #485349; }
 .prices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin: 1rem 0 .75rem; padding: .75rem 0; border-top: 1px solid #e7ebe5; border-bottom: 1px solid #e7ebe5; }
+.prices-single { grid-template-columns: minmax(0, 1fr); }
 .price-tier { min-width: 0; }
 .price-tier dt { color: var(--muted); font-size: .76rem; }
 .price-tier dd { margin: .15rem 0 0; font-size: 1.03rem; font-weight: 800; font-variant-numeric: tabular-nums; }
