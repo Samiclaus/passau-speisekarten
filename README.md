@@ -28,7 +28,11 @@ Die statische Statusseite liegt unter `frontend/status.html` und ist von der Spe
 
 Aktuell ist das Statusdokument ein initialer Stand: Importversuche und Ergebnisse werden noch nicht automatisch protokolliert. Deshalb werden unbekannte Zeitpunkte und Zählwerte ausdrücklich als „noch nicht erfasst“ angezeigt und nicht als erfolgreicher Import ausgegeben.
 
-Nächster Ausbauschritt: Die Importer schreiben bei Erfolg, leeren Ergebnissen und Fehlern strukturierte Statusdaten. Für einen manuellen Start ist ein geschützter GitHub-Actions-Workflow mit `workflow_dispatch` vorgesehen. Ein direktes Starten aus der öffentlichen statischen Website wäre nicht sicher, weil dafür keine vertraulichen Zugangsdaten im Browser liegen dürfen.
+Der manuelle Workflow liegt unter `.github/workflows/manual-menu-import.yml` und kann über die Importstatusseite oder direkt in GitHub Actions gestartet werden. Er bietet die Uni-Mensa-HTML-Quelle und Pomeranz zur Auswahl. Der Aufruf benötigt ein GitHub-Konto mit Schreibzugriff auf das Repository; es werden keine Zugangsdaten in der öffentlichen Website hinterlegt.
+
+Nach jedem Lauf protokolliert `.github/scripts/update_import_status.py` den Versuch, den Ausgang und die in den veröffentlichten JSON-Daten vorhandenen Menü-/Gerichtszahlen. Auch fehlgeschlagene Läufe aktualisieren den Status; dabei werden `menus.json` und `restaurants.json` durch den Statusschritt nicht verändert. Erfolgreiche Importläufe veröffentlichen Menü- und Statusdaten gemeinsam per Git-Commit. Ein Ergebnis `NO_DISHES` wird angezeigt, wenn ein Lauf erfolgreich war, aber danach keine Gerichte dieser Quelle in den veröffentlichten Daten vorhanden sind.
+
+Hinweis: Der Statuszähler zählt veröffentlichte Daten für die ausgewählte Quelle, nicht ausschließlich neu hinzugefügte Datensätze. Die Importer müssen weiterhin vor dem Schreiben prüfen, ob eine Quelle aktuell und ausreichend vollständig ist. Der Workflow ist manuell; ein Zeitplan ist bewusst noch nicht aktiviert.
 
 ## Merkmale und Herkunft
 Gerichte erhalten eine erweiterbare Liste typisierter Merkmale. Für die Uni-Mensa werden die Kennzeichen aus der CSV-Spalte `kennz` zunächst wie folgt interpretiert:
