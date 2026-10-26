@@ -22,19 +22,15 @@ class DishMarkerClassifierTest
     }
 
     @Test
-    void doesNotInferVegetarianFromNameAloneOrFromNoKnownAnimalTerm()
+    void infersVegetarianWhenNoAnimalMarkerIsRecognized()
     {
-        assertEquals(List.of(), classifier.classify("Pasta al pomodoro", ""));
-        assertEquals(List.of(), classifier.classify("Pasta al pomodoro", "Tomaten, Basilikum"));
-    }
-
-    @Test
-    void vegetarianInferenceIsAnExplicitOptInForSourcesWithDescriptions()
-    {
-        assertTrue(classifier.classify("Pasta al pomodoro", "Tomaten, Basilikum", true)
-            .contains(MensaMarker.VEGETARIAN));
-        assertFalse(classifier.classify("Pasta al Ragù", "Tomaten", true)
-            .contains(MensaMarker.VEGETARIAN));
+        assertTrue(classifier.classify("Pasta al pomodoro", "").contains(MensaMarker.VEGETARIAN));
+        assertTrue(classifier.classify("Pasta al pomodoro", "Tomaten, Basilikum").contains(MensaMarker.VEGETARIAN));
+        assertFalse(classifier.classify("Pasta al Ragù", "Tomaten").contains(MensaMarker.VEGETARIAN));
+        assertTrue(classifier.classify("Pasta mit Hackfleisch", "").contains(MensaMarker.MEAT));
+        assertFalse(classifier.classify("Pasta mit Hackfleisch", "").contains(MensaMarker.VEGETARIAN));
+        assertTrue(classifier.classify("Brot mit Schinken", "").contains(MensaMarker.PORK));
+        assertFalse(classifier.classify("Brot mit Schinken", "").contains(MensaMarker.VEGETARIAN));
     }
 
     @Test
