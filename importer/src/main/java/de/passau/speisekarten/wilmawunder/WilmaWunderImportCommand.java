@@ -23,7 +23,6 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 /** Imports the current weekly lunch offer from Wilma Wunder Passau's AmadeusGo menu. */
@@ -188,21 +187,6 @@ public final class WilmaWunderImportCommand
     private static Map<String, Object> toItem(WilmaWunderMenuParser.Dish dish)
     {
         List<MensaMarker> markers = new ArrayList<>(new DishMarkerClassifier().classify(dish.name(), ""));
-        String normalized = dish.name().toLowerCase(Locale.ROOT);
-        if (normalized.contains("hackfleisch") && !markers.contains(MensaMarker.MEAT))
-        {
-            markers.add(MensaMarker.MEAT);
-        }
-        if (normalized.contains("schinken") && !markers.contains(MensaMarker.PORK))
-        {
-            markers.add(MensaMarker.PORK);
-        }
-
-        boolean containsMeat = markers.stream().anyMatch(WilmaWunderImportCommand::isAnimalMarker);
-        if (!containsMeat)
-        {
-            markers.add(MensaMarker.VEGETARIAN);
-        }
 
         Map<String, Object> item = new LinkedHashMap<>();
         item.put("name", dish.name());
