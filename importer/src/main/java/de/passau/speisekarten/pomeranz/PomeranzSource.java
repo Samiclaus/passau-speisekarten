@@ -18,6 +18,9 @@ public final class PomeranzSource {
         Document doc = Jsoup.parse(html, pageUri.toString());
         return doc.select("a[href]")
             .stream()
+            // Filter raw hrefs before URI resolution: the page also contains tel: links
+            // with spaces, which are not valid URI references.
+            .filter(a -> a.attr("href").matches("(?is).*Mittagskarte\\.pdf(?:[?#].*)?$"))
             // The date prefix changes; the stable filename token is Mittagskarte.pdf.
             .map(a -> pageUri.resolve(a.attr("href")))
             .filter(uri -> uri.getPath() != null
