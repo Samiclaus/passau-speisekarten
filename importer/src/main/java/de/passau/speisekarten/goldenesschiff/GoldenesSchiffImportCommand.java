@@ -41,7 +41,7 @@ public final class GoldenesSchiffImportCommand {
     }
 
     void run(Path menusPath, Path restaurantsPath) throws IOException, InterruptedException {
-        HttpClient client = HttpClient.newHttpClient();
+        HttpClient client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).build();
         HttpRequest pageRequest = HttpRequest.newBuilder(URI.create(PAGE))
             .header("User-Agent", "PassauSpeisekarten/1.0").GET().build();
         HttpResponse<String> pageResponse = client.send(pageRequest, HttpResponse.BodyHandlers.ofString());
