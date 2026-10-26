@@ -145,6 +145,8 @@ function render() {
         <div>
           <p class="day-kicker">${escapeHtml(restaurant?.name ?? "Mittagskarte")}</p>
           <h2>${escapeHtml(date)}</h2>
+          ${menu.serviceStart && menu.serviceEnd ? `<p class="menu-meta">Essensausgabe: ${escapeHtml(menu.serviceStart)}–${escapeHtml(menu.serviceEnd)} Uhr</p>` : ""}
+          ${menu.offerNote ? `<p class="menu-meta">${escapeHtml(menu.offerNote)}</p>` : ""}
         </div>
         <span class="dish-count">${items.length} ${items.length === 1 ? "Gericht" : "Gerichte"}</span>
       </header>
