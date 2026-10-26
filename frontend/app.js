@@ -196,7 +196,7 @@ for (const button of document.querySelectorAll("[data-view]")) {
   });
 }
 
-for (const id of ["search", "day", "diet", "max-price"]) {
+for (const id of ["search", "day", "diet", "max-price", "show-sides"]) {
   el[id].addEventListener("input", render);
   el[id].addEventListener("change", render);
 }
