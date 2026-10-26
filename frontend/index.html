@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tages- und Wochenkarten in Passau auf einen Blick.">
+  <title>Mittagessen in Passau</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="hero"><div class="container">
+    <p class="eyebrow">Tages- und Wochenkarten</p>
+    <h1>Mittagessen in Passau</h1>
+    <p>Aktuelle Mittagsgerichte verschiedener Lokale an einem Ort.</p>
+  </div></header>
+  <main class="container">
+    <section class="filters" aria-label="Gerichte filtern">
+      <label>Suche<input id="search" type="search" placeholder="Gericht oder Lokal"></label>
+      <label>Tag<select id="day"><option value="today">Heute</option><option value="all">Alle verfügbaren Tage</option></select></label>
+      <label>Ernährung<select id="diet"><option value="all">Alle</option><option value="vegetarian">Vegetarisch</option><option value="vegan">Vegan</option></select></label>
+      <label>Höchstpreis (€)<input id="max-price" type="number" min="0" step="0.50" placeholder="Beliebig"></label>
+    </section>
+    <p id="status" role="status">Speisekarten werden geladen …</p>
+    <section id="menu-results" class="menu-grid" aria-live="polite"></section>
+    <p class="note">Angaben können sich kurzfristig ändern. Bitte prüfe im Zweifel die verlinkte Originalkarte.</p>
+  </main>
+  <footer><div class="container">Ein unabhängiges Projekt für Mittagskarten in Passau.</div></footer>
+</body>
+</html>
