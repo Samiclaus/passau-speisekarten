@@ -1,5 +1,6 @@
 id,restaurant_name,source_url,importer_type,enabled,notes
-uni-passau-mensa,Uni-Mensa Passau,https://www.stwno.de/infomax/daten-extern/csv/UNI-P/{isoWeek}.csv,csv,false,"CSV mit Kennzeichen-Spalte kennz; {isoWeek} dynamisch durch ISO-Kalenderwoche ersetzen; zunächst Adapter implementieren und testen"
+uni-passau-mensa-csv,Uni-Mensa Passau (CSV),https://www.stwno.de/infomax/daten-extern/csv/UNI-P/{isoWeek}.csv,csv,false,"Separate Alternative A: CSV-Kandidaten testen; Dateiname kann der Datenwoche vorauslaufen (z. B. 44.csv mit KW-45-Daten); tatsächliche Gültigkeit aus Inhalt ermitteln, nie allein aus Dateiname ableiten"
+uni-passau-mensa-html,Uni-Mensa Passau (HTML-POST),https://stwno.de/de/gastronomie/speiseplan/uni-passau/uni-passau-mensa,html-post,false,"Separate Alternative B: POST auf speiseplan-render.php mit Datum yyyy-MM-dd; HTML und Icon-Mouseover-Texte parsen; notwendige übrige POST-Parameter noch ermitteln"
 pomeranz,Restaurant Pomeranz,https://www.restaurant-pomeranz.de/Speisekarte/,pdf,false,"HTML-Seite nach aktuellem Download-Link mit Mittagskarte im Namen durchsuchen; PDF-Adresse wechselt wöchentlich"
 isapori,I Sapori della Toscana,https://sapori-toscana.com/,html,false,"HTML-Kandidat mit Mittagsgerichten nach Wochentag und Preisen; bevorzugter erster HTML-Adapter"
 goldenes-schiff,Wirtshaus & Pension Goldenes Schiff,https://goldenesschiff.de/,html,false,"Alternative HTML-Quelle: Startseite enthält aktuellen Mittagstisch und Wochenkarte; prüfen, wie zuverlässig Gerichte und Preise maschinenlesbar sind"
