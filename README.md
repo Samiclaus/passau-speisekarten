@@ -22,6 +22,14 @@ Die beiden Mensa-Varianten sind bewusst als getrennte, deaktivierte Quellen konf
 
 Die Einträge in `config/sources.csv` sind zunächst deaktiviert. Erst nach Implementierung und Tests des jeweiligen Adapters wird `enabled` auf `true` gesetzt.
 
+## Importstatus und Diagnose
+
+Die statische Statusseite liegt unter `frontend/status.html` und ist von der Speisekartenübersicht verlinkt. Ihre Daten kommen aus `frontend/import-status.json`. Dort sind Schemafelder für letzten Versuch, letzten erfolgreichen Import, Menü-/Gerichtszahlen, aktivierte Quellen und Hinweise pro Quelle vorgesehen.
+
+Aktuell ist das Statusdokument ein initialer Stand: Importversuche und Ergebnisse werden noch nicht automatisch protokolliert. Deshalb werden unbekannte Zeitpunkte und Zählwerte ausdrücklich als „noch nicht erfasst“ angezeigt und nicht als erfolgreicher Import ausgegeben.
+
+Nächster Ausbauschritt: Die Importer schreiben bei Erfolg, leeren Ergebnissen und Fehlern strukturierte Statusdaten. Für einen manuellen Start ist ein geschützter GitHub-Actions-Workflow mit `workflow_dispatch` vorgesehen. Ein direktes Starten aus der öffentlichen statischen Website wäre nicht sicher, weil dafür keine vertraulichen Zugangsdaten im Browser liegen dürfen.
+
 ## Merkmale und Herkunft
 Gerichte erhalten eine erweiterbare Liste typisierter Merkmale. Für die Uni-Mensa werden die Kennzeichen aus der CSV-Spalte `kennz` zunächst wie folgt interpretiert:
 
