@@ -10,21 +10,21 @@ import java.util.regex.Pattern;
 /**
  * Shared heuristic classifier for dish names and descriptions across restaurant importers.
  *
- * <p>Only recognized words produce animal markers. Vegetarian is inferred from a non-empty
- * description only when a caller explicitly opts into that source-specific heuristic; absence
- * of a recognized animal word is not proof that a dish is vegetarian.</p>
+ * <p>Recognized animal terms produce animal markers. If the dish text contains no recognized
+ * animal marker, it is heuristically marked vegetarian. This is a deliberate best-effort default
+ * and can be refined as source-specific knowledge improves.</p>
  */
 public final class DishMarkerClassifier
 {
     private static final List<AnimalTerm> ANIMAL_TERMS = List.of(
-        new AnimalTerm(MensaMarker.PORK, "\\b(?:nduja|salsiccia|salsicia|speck|maiale|porco|schwein\\w*|pancetta|prosciutto|salami|guanciale|pork)\\b"),
+        new AnimalTerm(MensaMarker.PORK, "\\b(?:nduja|salsiccia|salsicia|speck|maiale|porco|schinken\\w*|schwein\\w*|pancetta|prosciutto|salami|guanciale|pork)\\b"),
         new AnimalTerm(MensaMarker.FISH, "\\b(?:salmone|salmon|lachs\\w*|tonno|thunfisch\\w*|fisch\\w*|pesce|sardellen|anchovis|anchovy|fish)\\b"),
         new AnimalTerm(MensaMarker.BEEF, "\\b(?:rind\\w*|beef|manzo)\\b"),
         new AnimalTerm(MensaMarker.VEAL, "\\b(?:kalb\\w*|vitello|veal)\\b"),
         new AnimalTerm(MensaMarker.LAMB, "\\b(?:lamm\\w*|schaf\\w*|agnello|lamb|mutton)\\b"),
         new AnimalTerm(MensaMarker.POULTRY, "\\b(?:huhn\\w*|hahnchen\\w*|haehnchen\\w*|pute\\w*|truthahn\\w*|geflugel\\w*|pollo|tacchino|chicken|turkey|poultry)\\b"),
         new AnimalTerm(MensaMarker.GAME_MEAT, "\\b(?:wildfleisch\\w*|wildschwein\\w*|hirsch\\w*|reh\\w*|venison|game meat)\\b"),
-        new AnimalTerm(MensaMarker.MEAT, "\\b(?:carne|ragu|fleisch\\w*|meat)\\b")
+        new AnimalTerm(MensaMarker.MEAT, "\\b(?:carne|ragu|hackfleisch\\w*|fleisch\\w*|meat)\\b")
     );
 
     private static final Pattern EXPLICIT_VEGAN = Pattern.compile("\\b(?:vegan|vegano|vegana)\\b");
@@ -32,7 +32,7 @@ public final class DishMarkerClassifier
 
     public List<MensaMarker> classify(String name, String description)
     {
-        return classify(name, description, false);
+        return classify(name, description, true);
     }
 
     public List<MensaMarker> classify(String name, String description, boolean inferVegetarianFromDescription)
@@ -59,7 +59,7 @@ public final class DishMarkerClassifier
         }
 
         boolean hasAnimalMarker = markers.stream().anyMatch(DishMarkerClassifier::isAnimalMarker);
-        if (!hasAnimalMarker && inferVegetarianFromDescription && description != null && !description.isBlank()
+        if (!hasAnimalMarker && inferVegetarianFromDescription && !source.isBlank()
             && !markers.contains(MensaMarker.VEGAN) && !markers.contains(MensaMarker.VEGETARIAN))
         {
             markers.add(MensaMarker.VEGETARIAN);
