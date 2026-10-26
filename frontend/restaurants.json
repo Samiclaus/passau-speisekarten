@@ -79,5 +79,11 @@
       "seasonalRuleNote" : "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen."
     },
     "menuPdfUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-10-20-Mittagskarte.pdf?cdp=a&_=1a156cfcf30"
+  }, {
+    "id" : "goldenes-schiff",
+    "name" : "Wirtshaus & Pension Goldenes Schiff",
+    "address" : "Unterer Sand 8, 94032 Passau",
+    "sourceUrl" : "https://goldenesschiff.de/",
+    "menuPdfUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote"
   } ]
 }

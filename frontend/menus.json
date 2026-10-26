@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-10-26T15:00:45.940850400+01:00",
+  "generatedAt" : "2026-10-26T15:21:07.718677200+01:00",
   "menus" : [ {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-10-20",
@@ -13,13 +13,13 @@
     "items" : [ {
       "name" : "Pilz-Risotto",
       "category" : "Vegetarisch",
-      "price" : 12.80,
+      "price" : 12.8,
       "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano",
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Penne con Filetto",
       "category" : "Hauptgericht",
-      "price" : 12.80,
+      "price" : 12.8,
       "description" : "Schweinefiletspitzen / Brokkoli / Tomaten",
       "dietary" : [ ]
     } ]
@@ -35,13 +35,13 @@
     "items" : [ {
       "name" : "Pilz-Risotto",
       "category" : "Vegetarisch",
-      "price" : 12.80,
+      "price" : 12.8,
       "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano",
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Gebratenem Hähnchenbrustfilet",
       "category" : "Hauptgericht",
-      "price" : 12.80,
+      "price" : 12.8,
       "description" : "Zucchini / Graupen / Kräuterschaum",
       "dietary" : [ ]
     } ]
@@ -57,13 +57,13 @@
     "items" : [ {
       "name" : "Pilz-Risotto",
       "category" : "Vegetarisch",
-      "price" : 12.80,
+      "price" : 12.8,
       "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano",
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Spaghetti Pesce",
       "category" : "Hauptgericht",
-      "price" : 12.80,
+      "price" : 12.8,
       "description" : "Fischfilet / Calamari / Wurzelgemüse",
       "dietary" : [ ]
     } ]
@@ -79,13 +79,13 @@
     "items" : [ {
       "name" : "Pilz-Risotto",
       "category" : "Vegetarisch",
-      "price" : 12.80,
+      "price" : 12.8,
       "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano",
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Buttermakrelenfilet",
       "category" : "Hauptgericht",
-      "price" : 12.80,
+      "price" : 12.8,
       "description" : "Pilze / Risotto / Pesto",
       "dietary" : [ ]
     } ]
@@ -328,6 +328,23 @@
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     } ]
   }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-10-27",
+    "validUntil" : "2026-10-27",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Rahmbraten mit Spätzle",
+      "category" : "Hauptgericht",
+      "price" : 11.80,
+      "dietary" : [ ]
+    }, {
+      "name" : "Aubergine in Weinteig gebacken mit Joghurtsauce und Salatgarnitur",
+      "category" : "Vegetarisch",
+      "price" : null,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
     "restaurantId" : "uni-passau-mensa",
     "validFrom" : "2026-10-28",
     "validUntil" : "2026-10-28",
@@ -428,6 +445,23 @@
       "studentPrice" : 1.2,
       "employeePrice" : 1.5,
       "guestPrice" : 1.7,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-10-28",
+    "validUntil" : "2026-10-28",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Hackbraten mit Kartoffelpüree",
+      "category" : "Hauptgericht",
+      "price" : 11.80,
+      "dietary" : [ ]
+    }, {
+      "name" : "Aubergine in Weinteig gebacken mit Joghurtsauce und Salatgarnitur",
+      "category" : "Vegetarisch",
+      "price" : null,
       "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
@@ -534,6 +568,23 @@
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     } ]
   }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-10-29",
+    "validUntil" : "2026-10-29",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Hackbraten mit Kartoffelpüree",
+      "category" : "Hauptgericht",
+      "price" : 11.80,
+      "dietary" : [ ]
+    }, {
+      "name" : "Linsencurry mit Reis",
+      "category" : "Vegetarisch",
+      "price" : null,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
     "restaurantId" : "uni-passau-mensa",
     "validFrom" : "2026-10-30",
     "validUntil" : "2026-10-30",
@@ -626,6 +677,23 @@
       "studentPrice" : 1.0,
       "employeePrice" : 1.2,
       "guestPrice" : 1.6,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-10-30",
+    "validUntil" : "2026-10-30",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Gebackenes Seelachsfilet mit Kartoffelsalat",
+      "category" : "Hauptgericht",
+      "price" : 11.80,
+      "dietary" : [ ]
+    }, {
+      "name" : "Linsencurry mit Reis",
+      "category" : "Vegetarisch",
+      "price" : null,
       "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
