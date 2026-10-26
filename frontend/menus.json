@@ -1,5 +1,558 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": null,
-  "menus": []
+  "schemaVersion" : 1,
+  "generatedAt" : "2026-10-26T11:27:46.402854600+01:00",
+  "menus" : [ {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-10-26",
+    "validUntil" : "2026-10-26",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ {
+      "name" : "Steinpilzcremesuppe",
+      "category" : "Suppen",
+      "price" : 0.80,
+      "studentPrice" : 0.80,
+      "employeePrice" : 1.00,
+      "guestPrice" : 1.50,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Blumenkohlröschen auf Gerstoni",
+      "category" : "Hauptgerichte",
+      "price" : 2.30,
+      "studentPrice" : 2.30,
+      "employeePrice" : 3.30,
+      "guestPrice" : 6.10,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Maultaschen m. Pilzfüllung u. buntem Gemüse",
+      "category" : "Hauptgerichte",
+      "price" : 3.80,
+      "studentPrice" : 3.80,
+      "employeePrice" : 4.70,
+      "guestPrice" : 7.10,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Schweineschnitzel mit mediterraner Kräuterpanade",
+      "category" : "Hauptgerichte",
+      "price" : 4.40,
+      "studentPrice" : 4.40,
+      "employeePrice" : 5.70,
+      "guestPrice" : 7.40,
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Vollkorn Pasta, Jura-Distl Lammfleisch, Auberginen",
+      "category" : "Hauptgerichte",
+      "price" : 5.50,
+      "studentPrice" : 5.50,
+      "employeePrice" : 6.70,
+      "guestPrice" : 8.20,
+      "dietary" : [ "CONTAINS_ALCOHOL", "JURADISTL", "LAMB" ]
+    }, {
+      "name" : "Pizza Margarita",
+      "category" : "Hauptgerichte",
+      "price" : 6.70,
+      "studentPrice" : 6.70,
+      "employeePrice" : 7.10,
+      "guestPrice" : 7.10,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Pizza Vegan",
+      "category" : "Hauptgerichte",
+      "price" : 8.10,
+      "studentPrice" : 8.10,
+      "employeePrice" : 8.60,
+      "guestPrice" : 8.60,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Pizza Salami",
+      "category" : "Hauptgerichte",
+      "price" : 8.90,
+      "studentPrice" : 8.90,
+      "employeePrice" : 9.40,
+      "guestPrice" : 9.40,
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Vollkorn Penne Rigati",
+      "category" : "Beilagen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.40,
+      "guestPrice" : 1.90,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Gemischter Salat",
+      "category" : "Beilagen",
+      "price" : 1.30,
+      "studentPrice" : 1.30,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Gemüsecocktail Mondial",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Mini-Röstitaler",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Salat Buffet",
+      "category" : "Beilagen",
+      "price" : 3.40,
+      "studentPrice" : 3.40,
+      "employeePrice" : 3.90,
+      "guestPrice" : 4.60,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Bio-Erdbeerjoghurt",
+      "category" : "Nachspeisen",
+      "price" : 1.00,
+      "studentPrice" : 1.00,
+      "employeePrice" : 1.20,
+      "guestPrice" : 1.60,
+      "dietary" : [ "ORGANIC", "VEGETARIAN" ]
+    }, {
+      "name" : "Bayerische Creme mit Fruchtspiegel",
+      "category" : "Nachspeisen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.50,
+      "guestPrice" : 1.70,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Obstsalat",
+      "category" : "Nachspeisen",
+      "price" : 1.60,
+      "studentPrice" : 1.60,
+      "employeePrice" : 1.80,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-10-27",
+    "validUntil" : "2026-10-27",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ {
+      "name" : "Schwarzwurzelsuppe mit Croutons",
+      "category" : "Suppen",
+      "price" : 0.80,
+      "studentPrice" : 0.80,
+      "employeePrice" : 1.00,
+      "guestPrice" : 1.50,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Scharfes Linsenragout auf Bio-Penne",
+      "category" : "Hauptgerichte",
+      "price" : 2.30,
+      "studentPrice" : 2.30,
+      "employeePrice" : 3.30,
+      "guestPrice" : 6.10,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Vegane Gemüse-Tortellini mit Tomatensahnesoße",
+      "category" : "Hauptgerichte",
+      "price" : 3.30,
+      "studentPrice" : 3.30,
+      "employeePrice" : 4.10,
+      "guestPrice" : 6.70,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Salatteller mit gebackenen Hirtenkäse",
+      "category" : "Hauptgerichte",
+      "price" : 4.40,
+      "studentPrice" : 4.40,
+      "employeePrice" : 5.70,
+      "guestPrice" : 7.40,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Hackbraten \"Sauguad\" mit Kartoffelpüree",
+      "category" : "Hauptgerichte",
+      "price" : 4.40,
+      "studentPrice" : 4.40,
+      "employeePrice" : 5.70,
+      "guestPrice" : 7.40,
+      "dietary" : [ "BEEF", "PORK" ]
+    }, {
+      "name" : "Kartoffel-Selleriepüree",
+      "category" : "Beilagen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.40,
+      "guestPrice" : 1.90,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Gemischter Salat",
+      "category" : "Beilagen",
+      "price" : 1.30,
+      "studentPrice" : 1.30,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Country Kartoffeln",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Wirsinggemüse",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Moccapudding",
+      "category" : "Nachspeisen",
+      "price" : 0.90,
+      "studentPrice" : 0.90,
+      "employeePrice" : 1.10,
+      "guestPrice" : 1.60,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Bio-Vanillejoghurt",
+      "category" : "Nachspeisen",
+      "price" : 1.00,
+      "studentPrice" : 1.00,
+      "employeePrice" : 1.20,
+      "guestPrice" : 1.60,
+      "dietary" : [ "ORGANIC", "VEGETARIAN" ]
+    }, {
+      "name" : "Obstsalat",
+      "category" : "Nachspeisen",
+      "price" : 1.60,
+      "studentPrice" : 1.60,
+      "employeePrice" : 1.80,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-10-28",
+    "validUntil" : "2026-10-28",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ {
+      "name" : "Pfannkuchensuppe",
+      "category" : "Suppen",
+      "price" : 0.80,
+      "studentPrice" : 0.80,
+      "employeePrice" : 1.00,
+      "guestPrice" : 1.50,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Milchreisauflauf mit Fruchtgrütze",
+      "category" : "Hauptgerichte",
+      "price" : 2.30,
+      "studentPrice" : 2.30,
+      "employeePrice" : 3.30,
+      "guestPrice" : 6.10,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Vegane Spätzle-Pilzpfanne",
+      "category" : "Hauptgerichte",
+      "price" : 3.30,
+      "studentPrice" : 3.30,
+      "employeePrice" : 4.10,
+      "guestPrice" : 6.70,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Farfalle mit Lachs-Zitronensauce",
+      "category" : "Hauptgerichte",
+      "price" : 4.40,
+      "studentPrice" : 4.40,
+      "employeePrice" : 5.70,
+      "guestPrice" : 7.40,
+      "dietary" : [ "FISH" ]
+    }, {
+      "name" : "Burger Juradistl-Rind-Linsen mit Potatoes Dippers*J",
+      "category" : "Hauptgerichte",
+      "price" : 5.50,
+      "studentPrice" : 5.50,
+      "employeePrice" : 6.70,
+      "guestPrice" : 8.20,
+      "dietary" : [ "BEEF" ]
+    }, {
+      "name" : "Gerstoni",
+      "category" : "Beilagen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.40,
+      "guestPrice" : 1.90,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Gemischter Salat",
+      "category" : "Beilagen",
+      "price" : 1.30,
+      "studentPrice" : 1.30,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Potato dipp strips",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Karotten-Broccoligemüse",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Birnenpudding",
+      "category" : "Nachspeisen",
+      "price" : 0.90,
+      "studentPrice" : 0.90,
+      "employeePrice" : 1.10,
+      "guestPrice" : 1.60,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Sauerkirschjoghurt - vegan",
+      "category" : "Nachspeisen",
+      "price" : 1.00,
+      "studentPrice" : 1.00,
+      "employeePrice" : 1.20,
+      "guestPrice" : 1.60,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Creme Caramel",
+      "category" : "Nachspeisen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.50,
+      "guestPrice" : 1.70,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-10-29",
+    "validUntil" : "2026-10-29",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ {
+      "name" : "Karotten-Ingwer-Suppe",
+      "category" : "Suppen",
+      "price" : 0.80,
+      "studentPrice" : 0.80,
+      "employeePrice" : 1.00,
+      "guestPrice" : 1.50,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Rindergulasch v. Juradistl Rind mit Böhmischen Knödeln",
+      "category" : "Hauptgerichte",
+      "price" : null,
+      "studentPrice" : null,
+      "employeePrice" : null,
+      "guestPrice" : null,
+      "dietary" : [ "BEEF" ]
+    }, {
+      "name" : "Perlgraupen Kürbis-Curry",
+      "category" : "Hauptgerichte",
+      "price" : 2.30,
+      "studentPrice" : 2.30,
+      "employeePrice" : 3.30,
+      "guestPrice" : 6.10,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Quiche Provence mit Kräutersoße",
+      "category" : "Hauptgerichte",
+      "price" : 4.40,
+      "studentPrice" : 4.40,
+      "employeePrice" : 5.70,
+      "guestPrice" : 7.40,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Krustenbraten \"Sauguad\", Pilzrahm u. Semmelknödel",
+      "category" : "Hauptgerichte",
+      "price" : 5.50,
+      "studentPrice" : 5.50,
+      "employeePrice" : 6.70,
+      "guestPrice" : 8.20,
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Bio-Paprikareis",
+      "category" : "Beilagen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.40,
+      "guestPrice" : 1.90,
+      "dietary" : [ "ORGANIC", "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Gemischter Salat",
+      "category" : "Beilagen",
+      "price" : 1.30,
+      "studentPrice" : 1.30,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Buttererbsen",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Semmelknödel",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Zitronenquark",
+      "category" : "Nachspeisen",
+      "price" : 0.90,
+      "studentPrice" : 0.90,
+      "employeePrice" : 1.10,
+      "guestPrice" : 1.60,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Milchreis mit Erdbeeren",
+      "category" : "Nachspeisen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.50,
+      "guestPrice" : 1.70,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Veganer Kokos-Sahnepudding",
+      "category" : "Nachspeisen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.50,
+      "guestPrice" : 1.70,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-10-30",
+    "validUntil" : "2026-10-30",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ {
+      "name" : "Backerbsensuppe",
+      "category" : "Suppen",
+      "price" : 0.80,
+      "studentPrice" : 0.80,
+      "employeePrice" : 1.00,
+      "guestPrice" : 1.50,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Bayerische Gemüsenudeln mit Lauchsoße",
+      "category" : "Hauptgerichte",
+      "price" : 2.30,
+      "studentPrice" : 2.30,
+      "employeePrice" : 3.30,
+      "guestPrice" : 6.10,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Ofenkartoffel mit Soja-Gurkendip",
+      "category" : "Hauptgerichte",
+      "price" : 3.30,
+      "studentPrice" : 3.30,
+      "employeePrice" : 4.10,
+      "guestPrice" : 6.70,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Quarkmillirahmstrudel mit Vanille-Kirschsoße",
+      "category" : "Hauptgerichte",
+      "price" : 3.80,
+      "studentPrice" : 3.80,
+      "employeePrice" : 4.70,
+      "guestPrice" : 7.10,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Fischpflanzerl gebacken mit Kartoffelsalat",
+      "category" : "Hauptgerichte",
+      "price" : 4.40,
+      "studentPrice" : 4.40,
+      "employeePrice" : 5.70,
+      "guestPrice" : 7.40,
+      "dietary" : [ "FISH" ]
+    }, {
+      "name" : "Kräuterkartoffeln",
+      "category" : "Beilagen",
+      "price" : 1.20,
+      "studentPrice" : 1.20,
+      "employeePrice" : 1.40,
+      "guestPrice" : 1.90,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Gemischter Salat",
+      "category" : "Beilagen",
+      "price" : 1.30,
+      "studentPrice" : 1.30,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Blumenkohl polnisch",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Schupfnudeln",
+      "category" : "Beilagen",
+      "price" : 1.40,
+      "studentPrice" : 1.40,
+      "employeePrice" : 1.50,
+      "guestPrice" : 2.00,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Obstmüsli",
+      "category" : "Nachspeisen",
+      "price" : 1.00,
+      "studentPrice" : 1.00,
+      "employeePrice" : 1.20,
+      "guestPrice" : 1.60,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Schokoäpfel",
+      "category" : "Nachspeisen",
+      "price" : 1.00,
+      "studentPrice" : 1.00,
+      "employeePrice" : 1.20,
+      "guestPrice" : 1.60,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-10-31",
+    "validUntil" : "2026-10-31",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-11-01",
+    "validUntil" : "2026-11-01",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ ]
+  } ]
 }

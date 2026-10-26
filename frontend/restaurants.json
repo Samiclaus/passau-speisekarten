@@ -1,4 +1,9 @@
 {
-  "schemaVersion": 1,
-  "restaurants": []
+  "schemaVersion" : 1,
+  "restaurants" : [ {
+    "id" : "uni-passau-mensa",
+    "name" : "Uni-Mensa Passau",
+    "address" : "Innstraße 27, 94032 Passau",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P"
+  } ]
 }
