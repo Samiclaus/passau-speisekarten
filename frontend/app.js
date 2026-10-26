@@ -10,6 +10,7 @@ const markerLabels = {
   POULTRY: "🍗 Geflügel",
   LAMB: "🐑 Lamm",
   FISH: "🐟 Fisch",
+  MEAT: "🥩 Fleisch (nicht näher bestimmt)",
   GAME_MEAT: "🦌 Wild",
   GLUTEN_FREE: "🌾 Glutenfrei",
   CONTAINS_ALCOHOL: "🍷 Enthält Alkohol",
