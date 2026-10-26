@@ -46,4 +46,22 @@ Die Merkmale sollen nicht auf Ernährungsformen beschränkt sein: beispielsweise
 Ein Merkmal sollte neben seinem Wert auch seine Herkunft abbilden (z. B. explizite Quellenkennzeichnung, strukturierter Quellcode oder manuelle Korrektur). Nicht vorhandene Angaben gelten als **unbekannt**, nicht als Gegenbeweis.
 
 ## Lokal testen
-Voraussetzung: Java 21 und Maven. Im Verzeichnis `importer/` `mvn test` bzw. `mvn verify` ausführen.
+Voraussetzung: Java 21 und Maven. Im Verzeichnis `importer/` die automatisierten Tests und den Build ausführen:
+
+```powershell
+mvn clean test
+mvn clean verify
+```
+
+### Uni-Mensa live prüfen
+Der manuelle Diagnose-Runner ruft den echten STWNO-HTML-POST-Endpunkt ab, parst die Antwort und gibt Kategorie, Gericht, Kennzeichen sowie Studierenden-, Beschäftigten- und Gästepreis aus. Er schreibt keine Dateien und aktiviert keine Quelle.
+
+Im Verzeichnis `importer/` ausführen (das Datum und der Standort sind optional; Standard ist heute und `UNI-P`):
+
+```powershell
+mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  -Dexec.mainClass=de.passau.speisekarten.mensa.MensaHtmlLiveCheck `
+  '-Dexec.args=2026-10-26 UNI-P'
+```
+
+Für das aktuelle Datum kann `'-Dexec.args=2026-10-26 UNI-P'` weggelassen werden. Ein leeres Ergebnis zeigt eine Diagnose der Antwort an, statt stillschweigend eine leere Speisekarte auszugeben. Der Livecheck benötigt eine funktionierende Internetverbindung; die normalen Unit-Tests benötigen keinen Zugriff auf STWNO.
