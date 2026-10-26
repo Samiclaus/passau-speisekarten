@@ -98,9 +98,17 @@ public final class PomeranzMenuParser {
                 DayOfWeek dayOfWeek = parseWeekday(weekday.group(1));
                 LocalDate date = dateFor(start, end, dayOfWeek);
                 if (date == null) continue;
-                String dish = i + 1 < lines.size() ? cleanDish(lines.get(++i)) : null;
+                String dish = null;
                 String description = null;
-                if (i + 1 < lines.size() && isDescription(lines.get(i + 1))) description = cleanDish(lines.get(++i));
+                if (i + 1 < lines.size() && isDishLine(lines.get(i + 1))) {
+                    dish = cleanDish(lines.get(++i));
+                    if (i + 1 < lines.size() && isDescription(lines.get(i + 1))) {
+                        description = cleanDish(lines.get(++i));
+                    }
+                }
+                // Do not consume the next section heading as a dish when the PDF layout
+                // changes or a weekday entry is incomplete. The import's completeness
+                // checks can then reject the incomplete card instead of publishing junk.
                 days.add(new PomeranzDay(date, dish, description, vegetarian, vegetarianDescription));
             }
         }
@@ -134,12 +142,22 @@ public final class PomeranzMenuParser {
         };
     }
 
+    private static boolean isDishLine(String value) {
+        String s = value.toLowerCase(DE);
+        return !s.isBlank() && !s.startsWith("am ") &&
+            !s.contains("vegetarisches hauptgericht") &&
+            !s.contains("vegetarisches wochenangebot") &&
+            !s.contains("vegetarisches wochengericht") &&
+            !s.contains("mittagskarte") && !s.startsWith("suppe:") &&
+            !s.startsWith("vorspeise:") && !s.startsWith("dessert:") &&
+            !s.contains("angebot gilt") && !s.contains("kombination mit") &&
+            !s.matches(".*\\d{1,2}:\\d{2}.*") &&
+            !s.matches(".*\\b(?:montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)\\b.*");
+    }
+
     private static boolean isDescription(String value) {
         String s = value.toLowerCase(DE);
-        return !s.startsWith("am ") && !s.contains("vegetarisches hauptgericht") &&
-            !s.contains("mittagskarte") && !s.contains("suppe:") && !s.contains("vorspeise:") &&
-            !s.contains("dessert:") && !s.contains("angebot gilt") && !s.contains("uhr") &&
-            !s.contains("kombination mit") && !s.matches(".*\\d{1,2}:\\d{2}.*");
+        return isDishLine(value) && !s.startsWith("oder");
     }
 
     private static String cleanDish(String value) {
