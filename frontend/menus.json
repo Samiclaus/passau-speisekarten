@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-10-26T16:17:18.817634200+01:00",
+  "generatedAt" : "2026-10-26T16:46:45.879332400+01:00",
   "menus" : [ {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-10-20",
@@ -21,7 +21,7 @@
       "category" : "Hauptgerichte",
       "price" : 12.8,
       "description" : "Schweinefiletspitzen / Brokkoli / Tomaten",
-      "dietary" : [ ]
+      "dietary" : [ "PORK" ]
     } ]
   }, {
     "restaurantId" : "pomeranz",
@@ -43,7 +43,7 @@
       "category" : "Hauptgerichte",
       "price" : 12.8,
       "description" : "Zucchini / Graupen / Kräuterschaum",
-      "dietary" : [ ]
+      "dietary" : [ "POULTRY" ]
     } ]
   }, {
     "restaurantId" : "pomeranz",
@@ -65,7 +65,7 @@
       "category" : "Hauptgerichte",
       "price" : 12.8,
       "description" : "Fischfilet / Calamari / Wurzelgemüse",
-      "dietary" : [ ]
+      "dietary" : [ "FISH" ]
     } ]
   }, {
     "restaurantId" : "pomeranz",
@@ -100,7 +100,7 @@
       "category" : "Suppen",
       "price" : 0.8,
       "studentPrice" : 0.8,
-      "employeePrice" : 1,
+      "employeePrice" : 1.0,
       "guestPrice" : 1.5,
       "dietary" : [ "VEGETARIAN" ]
     }, {
@@ -173,23 +173,23 @@
       "price" : 1.3,
       "studentPrice" : 1.3,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Gemüsecocktail Mondial",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2,
-      "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
       "name" : "Mini-Röstitaler",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Gemüsecocktail Mondial",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
       "name" : "Salat Buffet",
@@ -202,8 +202,8 @@
     }, {
       "name" : "Bio-Erdbeerjoghurt",
       "category" : "Nachspeisen",
-      "price" : 1,
-      "studentPrice" : 1,
+      "price" : 1.0,
+      "studentPrice" : 1.0,
       "employeePrice" : 1.2,
       "guestPrice" : 1.6,
       "dietary" : [ "ORGANIC", "VEGETARIAN" ]
@@ -221,7 +221,7 @@
       "price" : 1.6,
       "studentPrice" : 1.6,
       "employeePrice" : 1.8,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     } ]
   }, {
@@ -254,7 +254,7 @@
       "category" : "Suppen",
       "price" : 0.8,
       "studentPrice" : 0.8,
-      "employeePrice" : 1,
+      "employeePrice" : 1.0,
       "guestPrice" : 1.5,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
@@ -274,14 +274,6 @@
       "guestPrice" : 6.7,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
-      "name" : "Salatteller mit gebackenen Hirtenkäse",
-      "category" : "Hauptgerichte",
-      "price" : 4.4,
-      "studentPrice" : 4.4,
-      "employeePrice" : 5.7,
-      "guestPrice" : 7.4,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
       "name" : "Hackbraten \"Sauguad\" mit Kartoffelpüree",
       "category" : "Hauptgerichte",
       "price" : 4.4,
@@ -289,6 +281,14 @@
       "employeePrice" : 5.7,
       "guestPrice" : 7.4,
       "dietary" : [ "BEEF", "PORK" ]
+    }, {
+      "name" : "Salatteller mit gebackenen Hirtenkäse",
+      "category" : "Hauptgerichte",
+      "price" : 4.4,
+      "studentPrice" : 4.4,
+      "employeePrice" : 5.7,
+      "guestPrice" : 7.4,
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Kartoffel-Selleriepüree",
       "category" : "Beilagen",
@@ -303,7 +303,7 @@
       "price" : 1.3,
       "studentPrice" : 1.3,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Country Kartoffeln",
@@ -311,7 +311,7 @@
       "price" : 1.4,
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
       "name" : "Wirsinggemüse",
@@ -319,7 +319,7 @@
       "price" : 1.4,
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Moccapudding",
@@ -332,8 +332,8 @@
     }, {
       "name" : "Bio-Vanillejoghurt",
       "category" : "Nachspeisen",
-      "price" : 1,
-      "studentPrice" : 1,
+      "price" : 1.0,
+      "studentPrice" : 1.0,
       "employeePrice" : 1.2,
       "guestPrice" : 1.6,
       "dietary" : [ "ORGANIC", "VEGETARIAN" ]
@@ -343,7 +343,7 @@
       "price" : 1.6,
       "studentPrice" : 1.6,
       "employeePrice" : 1.8,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     } ]
   }, {
@@ -393,7 +393,7 @@
       "category" : "Suppen",
       "price" : 0.8,
       "studentPrice" : 0.8,
-      "employeePrice" : 1,
+      "employeePrice" : 1.0,
       "guestPrice" : 1.5,
       "dietary" : [ "VEGETARIAN" ]
     }, {
@@ -442,23 +442,23 @@
       "price" : 1.3,
       "studentPrice" : 1.3,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Potato dipp strips",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2,
-      "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
       "name" : "Karotten-Broccoligemüse",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Potato dipp strips",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
       "name" : "Birnenpudding",
@@ -471,8 +471,8 @@
     }, {
       "name" : "Sauerkirschjoghurt - vegan",
       "category" : "Nachspeisen",
-      "price" : 1,
-      "studentPrice" : 1,
+      "price" : 1.0,
+      "studentPrice" : 1.0,
       "employeePrice" : 1.2,
       "guestPrice" : 1.6,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
@@ -538,7 +538,7 @@
       "category" : "Suppen",
       "price" : 0.8,
       "studentPrice" : 0.8,
-      "employeePrice" : 1,
+      "employeePrice" : 1.0,
       "guestPrice" : 1.5,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
@@ -587,15 +587,7 @@
       "price" : 1.3,
       "studentPrice" : 1.3,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Buttererbsen",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Semmelknödel",
@@ -603,7 +595,15 @@
       "price" : 1.4,
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Buttererbsen",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Zitronenquark",
@@ -614,14 +614,6 @@
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Milchreis mit Erdbeeren",
-      "category" : "Nachspeisen",
-      "price" : 1.2,
-      "studentPrice" : 1.2,
-      "employeePrice" : 1.5,
-      "guestPrice" : 1.7,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
       "name" : "Veganer Kokos-Sahnepudding",
       "category" : "Nachspeisen",
       "price" : 1.2,
@@ -629,6 +621,14 @@
       "employeePrice" : 1.5,
       "guestPrice" : 1.7,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
+    }, {
+      "name" : "Milchreis mit Erdbeeren",
+      "category" : "Nachspeisen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.5,
+      "guestPrice" : 1.7,
+      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "goldenes-schiff",
@@ -677,7 +677,7 @@
       "category" : "Suppen",
       "price" : 0.8,
       "studentPrice" : 0.8,
-      "employeePrice" : 1,
+      "employeePrice" : 1.0,
       "guestPrice" : 1.5,
       "dietary" : [ "VEGETARIAN" ]
     }, {
@@ -726,7 +726,15 @@
       "price" : 1.3,
       "studentPrice" : 1.3,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Schupfnudeln",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Blumenkohl polnisch",
@@ -734,29 +742,21 @@
       "price" : 1.4,
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
-      "guestPrice" : 2,
+      "guestPrice" : 2.0,
       "dietary" : [ "VEGAN", "VEGETARIAN" ]
     }, {
-      "name" : "Schupfnudeln",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Obstmüsli",
+      "name" : "Schokoäpfel",
       "category" : "Nachspeisen",
-      "price" : 1,
-      "studentPrice" : 1,
+      "price" : 1.0,
+      "studentPrice" : 1.0,
       "employeePrice" : 1.2,
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Schokoäpfel",
+      "name" : "Obstmüsli",
       "category" : "Nachspeisen",
-      "price" : 1,
-      "studentPrice" : 1,
+      "price" : 1.0,
+      "studentPrice" : 1.0,
       "employeePrice" : 1.2,
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
