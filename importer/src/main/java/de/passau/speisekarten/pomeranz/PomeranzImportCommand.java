@@ -121,8 +121,8 @@ public final class PomeranzImportCommand {
         restaurant.put("address", ADDRESS);
         restaurant.put("sourceUrl", SOURCE_URL);
         restaurant.put("openingHours", Map.of(
-            "regularOpeningHours", regularHours(),
-            "regularServiceHours", regularHours(),
+            "regularOpeningHours", regularOpeningHours(),
+            "regularServiceHours", regularServiceHours(),
             "exceptions", List.of(),
             "sourceUrl", SOURCE_URL,
             "seasonalRuleNote", "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen."
@@ -131,7 +131,7 @@ public final class PomeranzImportCommand {
         return restaurant;
     }
 
-    private static Map<String, Object> regularHours() {
+    private static Map<String, Object> regularOpeningHours() {
         Map<String, Object> hours = new LinkedHashMap<>();
         for (DayOfWeek day : DayOfWeek.values()) {
             if (day.getValue() >= DayOfWeek.TUESDAY.getValue() && day.getValue() <= DayOfWeek.SATURDAY.getValue()) {
@@ -141,6 +141,17 @@ public final class PomeranzImportCommand {
             } else {
                 hours.put(day.name(), List.of());
             }
+        }
+        return hours;
+    }
+
+    private static Map<String, Object> regularServiceHours() {
+        Map<String, Object> hours = new LinkedHashMap<>();
+        for (DayOfWeek day : DayOfWeek.values()) {
+            hours.put(day.name(),
+                day.getValue() >= DayOfWeek.TUESDAY.getValue() && day.getValue() <= DayOfWeek.SATURDAY.getValue()
+                    ? List.of(Map.of("from", "11:30", "to", "14:00"))
+                    : List.of());
         }
         return hours;
     }
