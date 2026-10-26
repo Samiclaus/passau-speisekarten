@@ -1,0 +1,81 @@
+name: Manueller Speisekartenimport
+
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: Welche Quelle soll importiert werden?
+        required: true
+        type: choice
+        options:
+          - uni-passau-mensa-html
+          - pomeranz
+
+permissions:
+  contents: write
+
+concurrency:
+  group: manual-menu-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Java 21 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: importer/pom.xml
+
+      - name: Importquelle ausführen
+        id: menu_import
+        continue-on-error: true
+        env:
+          SELECTED_SOURCE: ${{ inputs.source }}
+        run: |
+          if [ "$SELECTED_SOURCE" = "uni-passau-mensa-html" ]; then
+            mvn -f importer/pom.xml -B -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java \
+              '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' \
+              '-Dexec.args=import-mensa-html'
+          elif [ "$SELECTED_SOURCE" = "pomeranz" ]; then
+            mvn -f importer/pom.xml -B -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java \
+              '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' \
+              '-Dexec.args=import-pomeranz'
+          else
+            echo "Unbekannte Quelle: $SELECTED_SOURCE" >&2
+            exit 2
+          fi
+
+      - name: Importstatus aktualisieren
+        if: always()
+        env:
+          SELECTED_SOURCE: ${{ inputs.source }}
+          IMPORT_OUTCOME: ${{ steps.menu_import.outcome }}
+        run: python3 .github/scripts/update_import_status.py
+
+      - name: Menüdateien und Status veröffentlichen
+        if: always()
+        run: |
+          if git diff --quiet -- frontend/menus.json frontend/restaurants.json frontend/import-status.json; then
+            echo "Keine Änderungen an Menü- oder Statusdaten."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/menus.json frontend/restaurants.json frontend/import-status.json
+          git commit -m "Update menu import data and status"
+          git push origin HEAD:main
+
+      - name: Importfehler als Workflowfehler melden
+        if: steps.menu_import.outcome == 'failure'
+        run: |
+          echo "Der Import ist fehlgeschlagen. Der Status wurde trotzdem protokolliert; vorhandene Menüdateien werden vom Importer bei Abruffehlern nicht ersetzt."
+          exit 1
