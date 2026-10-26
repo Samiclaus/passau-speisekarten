@@ -66,8 +66,8 @@ public final class GoldenesSchiffImportCommand {
         List<Map<String, Object>> imported = new ArrayList<>();
         for (var day : days) {
             List<Map<String, Object>> items = new ArrayList<>();
-            items.add(item(day.mainDish(), "Hauptgericht", DAY_PRICE, List.of()));
-            items.add(item(day.vegetarianDish(), "Vegetarisch", null, List.of("VEGETARIAN")));
+            items.add(item(day.mainDish(), "Hauptgerichte", DAY_PRICE, List.of()));
+            items.add(item(day.vegetarianDish(), "Hauptgerichte", DAY_PRICE, List.of("VEGETARIAN")));
             Map<String, Object> menu = new LinkedHashMap<>();
             menu.put("restaurantId", ID);
             menu.put("validFrom", day.date().toString());
