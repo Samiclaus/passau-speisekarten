@@ -7,5 +7,5 @@ goldenes-schiff,Wirtshaus & Pension Goldenes Schiff,https://goldenesschiff.de/,h
 la-piazza,"La Piazza Passau",https://www.lapiazza-passau.de/Mittagsrenner/,html,planned,false,"Mittagsrenner laut Website; Aktualisierungsrhythmus und HTML-Struktur noch zu prüfen"
 wilma-wunder,"Wilma Wunder Passau",https://www.wilma-wunder.de/restaurants/passau/,html-amadeusgo,implemented,true,"Aktiv: folgt dem Kartenlink zur AmadeusGo-Response; liest Mittagsangebot aus articleitem-Blöcken, ignoriert Einträge ohne Preis und überspringt bayerische Feiertage"
 ratskeller-passau,"Ratskeller Passau",https://www.ratskeller-passau.de/,html,planned,false,"Hinweise auf Wochenkarten gefunden; offizielle Menüquelle und Aktualisierung noch zu prüfen"
-halli-galli,"Halli-Galli Passau-Maierhof",https://halli-galli.net/,html,planned,false,"Wochenkarten offenbar über Facebook; stabiler Zugriff und Importierbarkeit noch zu prüfen"
 heilig-geist-stiftskeller,"Heilig-Geist-Stiftskeller Passau",https://stiftskeller-passau.de/,html,planned,false,"Saisonale Wochenkarte; genaue Quelle und Struktur noch zu prüfen"
+
