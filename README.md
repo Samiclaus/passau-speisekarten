@@ -17,10 +17,10 @@ Die erste Version benötigt keine Datenbank. Git hält Änderungen an Konfigurat
 
 Die beiden Mensa-Varianten sind bewusst als getrennte, deaktivierte Quellen konfiguriert. Wir vergleichen Zuverlässigkeit, Datenvollständigkeit und Wartbarkeit, bevor wir eine davon aktivieren; eine automatische Vermischung beider Quellen ist zunächst nicht vorgesehen.
 - **Restaurant Pomeranz (PDF):** die offizielle Seite `https://www.restaurant-pomeranz.de/Speisekarte/` enthält den aktuellen PDF-Link. Nicht die wechselnde PDF-URL fest konfigurieren, sondern auf der Seite den Link zur Mittagskarte ermitteln.
-- **I Sapori della Toscana (HTML):** `https://sapori-toscana.com/` zeigt Mittagsgerichte nach Wochentag samt Preisen. Der HTML-Importer liest Gerichte, Preise und optionale Zutatenbeschreibungen aus den Wochentagsblöcken und ersetzt die Einträge dieser Quelle beim Import. Er berücksichtigt das Referenzdatum bis einschließlich Freitag; historische und veraltete Einträge dieser Quelle werden entfernt. Die heuristische Merkmalsklassifikation erkennt unter anderem Nduja/Salsiccia/Speck, Salmone/Tonno, Carne/Ragù sowie deutsche Begriffe für Fleisch und Fisch. Vegetarisch wird nur dann automatisch ergänzt, wenn eine Beschreibung vorhanden ist und keine Fleisch-/Fischbegriffe erkannt wurden; das bleibt eine Heuristik und keine garantierte Zutatenprüfung. Die Quelle bleibt bis zum lokalen Live-Test deaktiviert.
+- **I Sapori della Toscana (HTML):** `https://sapori-toscana.com/` zeigt Mittagsgerichte nach Wochentag samt Preisen. Der HTML-Importer liest Gerichte, Preise und optionale Zutatenbeschreibungen aus den Wochentagsblöcken und ersetzt die Einträge dieser Quelle beim Import. Er berücksichtigt das Referenzdatum bis einschließlich Freitag; historische und veraltete Einträge dieser Quelle werden entfernt. Die gemeinsame `DishMarkerClassifier`-Komponente wird von Sapori, Pomeranz, Goldenes Schiff und dem Mensa-HTML-Parser verwendet. Sie erkennt bekannte deutsche und italienische Begriffe für Schwein, Fisch, Rind, Kalb, Lamm, Geflügel und Wild sowie allgemeine Fleischbegriffe. Sapori aktiviert zusätzlich ausdrücklich die vorsichtige Quellenheuristik, bei vorhandener Beschreibung ohne erkannte Tierbegriffe `VEGETARIAN` zu ergänzen. Diese Heuristik ist keine garantierte Zutatenprüfung; Brühen, Fonds und nicht erkannte Begriffe können weiterhin zu Fehlklassifikationen führen. Die Quelle ist aktiviert und wird von `import-all` berücksichtigt.
 - **Wirtshaus & Pension Goldenes Schiff (HTML/PDF):** `https://goldenesschiff.de/` zeigt einen Mittagstisch-Block und eine Wochenkarte als PDF. Der erste Importer liest datierte Gerichte aus der Wochenkarte aus und akzeptiert historische Daten. Der Preis von 11,80 € wird derzeit dem Hauptgericht zugeordnet; der HTML-Tagesblock ist noch nicht als Fallback angebunden. Vor Aktivierung muss der Import anhand der aktuellen PDF lokal geprüft werden.
 
-Die Einträge in `config/sources.csv` sind zunächst deaktiviert. Erst nach Implementierung und Tests des jeweiligen Adapters wird `enabled` auf `true` gesetzt.
+Die Spalte `enabled` in `config/sources.csv` steuert den konfigurierten Aktivierungsstatus der Quellen. `import-all` führt aktuell Uni-Mensa HTML, Pomeranz und die aktivierte Sapori-Toscana-Quelle aus; Goldenes Schiff besitzt weiterhin einen separaten manuellen Importbefehl.
 
 ## Importstatus und Diagnose
 
@@ -153,7 +153,7 @@ Der Import ersetzt alle bisherigen Einträge von i Sapori della Toscana, sodass 
 
 ### Alle implementierten Quellen importieren
 
-Der Sammelbefehl `import-all` führt die derzeit vorgesehenen Quellen Uni-Mensa HTML und Pomeranz nacheinander aus. Goldenes Schiff bleibt zunächst deaktiviert in `config/sources.csv`; der separate Importbefehl dient erst einmal der lokalen Prüfung und wird nicht von `import-all` gestartet.
+Der Sammelbefehl `import-all` führt Uni-Mensa HTML, Pomeranz und I Sapori della Toscana nacheinander aus. Goldenes Schiff bleibt zunächst deaktiviert in `config/sources.csv`; der separate Importbefehl dient erst einmal der lokalen Prüfung und wird nicht von `import-all` gestartet.
 
 ```powershell
 mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
