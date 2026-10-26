@@ -22,7 +22,7 @@ public final class PomeranzMenuParser {
     private static final Locale DE = Locale.GERMAN;
     private static final Pattern RANGE = Pattern.compile("(?i)(?:für\\s+den\\s+)?(\\d{1,2})\\.\\s*(?:bis\\s*)?(\\d{1,2})?\\.?\\s*(Januar|Februar|März|Maerz|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)(?:\\s+(20\\d{2}))?");
     private static final Pattern TIME = Pattern.compile("(\\d{1,2}:\\d{2})\\s*(?:bis|[-–])\\s*(\\d{1,2}:\\d{2})", Pattern.CASE_INSENSITIVE);
-    private static final Pattern PRICE = Pattern.compile("(\\d{1,3}[,.]\\d{2})\\s*€");
+    private static final Pattern PRICE = Pattern.compile("(?:€\\s*(\\d{1,3}[,.]\\d{2})|(\\d{1,3}[,.]\\d{2})\\s*€)");
     private static final Pattern WEEKDAY = Pattern.compile("(?i)\\b(Montag|Dienstag|Mittwoch|Donnerstag|Freitag|Samstag|Sonntag)\\b");
     private static final Pattern FILENAME_DATE = Pattern.compile("(20\\d{2})-(\\d{2})-(\\d{2})");
 
@@ -70,9 +70,14 @@ public final class PomeranzMenuParser {
         while (price.find()) {
             String before = normalized.substring(Math.max(0, price.start() - 100), price.start()).toLowerCase(DE);
             if (before.contains("komb") || before.contains("angebot") || before.contains("menü") || before.contains("menu")) {
-                comboPrice = new BigDecimal(price.group(1).replace(',', '.'));
+                String amount = price.group(1) != null ? price.group(1) : price.group(2);
+                comboPrice = new BigDecimal(amount.replace(',', '.'));
                 break;
             }
+        }
+        if (comboPrice == null && normalized.toLowerCase(DE).contains("schnelle nummer zwei für eins")) {
+            Matcher amount = Pattern.compile("€\\s*(\\d{1,3}[,.]\\d{2})").matcher(normalized);
+            if (amount.find()) comboPrice = new BigDecimal(amount.group(1).replace(',', '.'));
         }
 
         List<String> lines = normalized.lines().map(String::trim).filter(s -> !s.isBlank()).toList();
