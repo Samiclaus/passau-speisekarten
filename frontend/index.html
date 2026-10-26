@@ -21,7 +21,13 @@
       <label>Ernährung<select id="diet"><option value="all">Alle</option><option value="vegetarian">Vegetarisch</option><option value="vegan">Vegan</option></select></label>
       <label>Höchstpreis (€)<input id="max-price" type="number" min="0" step="0.50" placeholder="Beliebig"></label>
     </section>
-    <p id="status" role="status">Speisekarten werden geladen …</p>
+    <div class="results-toolbar">
+      <p id="status" role="status">Speisepläne werden geladen …</p>
+      <div class="view-toggle" role="group" aria-label="Ansicht">
+        <button type="button" data-view="list" class="is-active" aria-pressed="true"><span aria-hidden="true">☷</span> Liste</button>
+        <button type="button" data-view="cards" aria-pressed="false"><span aria-hidden="true">▦</span> Kacheln</button>
+      </div>
+    </div>
     <section id="menu-results" class="menu-grid" aria-live="polite"></section>
     <p class="note">Angaben können sich kurzfristig ändern. Bitte prüfe im Zweifel die verlinkte Originalkarte.</p>
   </main>
