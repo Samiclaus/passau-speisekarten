@@ -16,5 +16,6 @@ public enum MensaMarker
     LAMB,
     JURADISTL,
     GAME_MEAT,
-    FISH
+    FISH,
+    MEAT
 }
