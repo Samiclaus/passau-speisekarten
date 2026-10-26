@@ -59,3 +59,43 @@ footer { padding: 1.2rem 0; border-top: 1px solid var(--border); color: var(--mu
   .price-tier dt { font-size: .7rem; }
   .price-tier dd { font-size: .95rem; }
 }
+
+
+/* Kompakte Listenansicht mit optionaler Kachelansicht */
+.results-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.results-toolbar #status { margin: 1.1rem 0 1rem; }
+.view-toggle { display: inline-flex; flex: 0 0 auto; gap: .2rem; padding: .22rem; border: 1px solid var(--border); border-radius: .7rem; background: #fff; }
+.view-toggle button { min-height: 2.25rem; padding: .35rem .7rem; border: 0; border-radius: .45rem; background: transparent; color: #4b574c; font: inherit; font-size: .86rem; font-weight: 700; cursor: pointer; }
+.view-toggle button:hover { background: #f0f3ed; }
+.view-toggle button.is-active { background: var(--green-900); color: #fff; }
+.view-toggle button:focus-visible { outline: 3px solid #8ebd91; outline-offset: 2px; }
+.dish-grid { display: flex; flex-direction: column; gap: .55rem; }
+.dish-card { flex-direction: row; align-items: center; gap: 1.1rem; padding: .75rem .9rem; border-radius: .65rem; box-shadow: none; }
+.dish-heading h3 { margin: 0; font-size: 1rem; line-height: 1.35; }
+.dish-card > div:first-child { flex: 1 1 auto; min-width: 0; }
+.category-label { margin-bottom: .12rem; font-size: .68rem; }
+.dish-description { margin: .25rem 0 0; font-size: .88rem; }
+.dish-card .prices { flex: 0 0 min(43%, 370px); gap: .35rem; margin: 0; padding: 0; border: 0; }
+.price-tier dt { font-size: .68rem; }
+.price-tier dd { margin-top: .05rem; font-size: .9rem; }
+.dish-footer { margin-top: .25rem; padding-top: 0; text-align: right; font-size: .75rem; }
+.tags { gap: .25rem; margin: .45rem 0 0; }
+.tag { padding: .12rem .38rem; font-size: .7rem; }
+.card-view.dish-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.card-view .dish-card { flex-direction: column; align-items: stretch; gap: .6rem; padding: .9rem 1rem; }
+.card-view .dish-card .prices { flex-basis: auto; width: 100%; margin: .2rem 0 .15rem; padding: .6rem 0; border-top: 1px solid #e7ebe5; border-bottom: 1px solid #e7ebe5; }
+.card-view .price-tier dt { font-size: .72rem; }
+.card-view .price-tier dd { font-size: .98rem; }
+.card-view .dish-footer { padding-top: .15rem; text-align: left; }
+@media (max-width: 850px) {
+  .card-view.dish-grid { grid-template-columns: 1fr; }
+  .dish-card { gap: .75rem; }
+  .dish-card .prices { flex-basis: 45%; }
+}
+@media (max-width: 600px) {
+  .results-toolbar { align-items: flex-start; flex-direction: column; gap: .2rem; }
+  .results-toolbar #status { margin-bottom: .6rem; }
+  .dish-card { align-items: stretch; flex-direction: column; gap: .55rem; padding: .8rem; }
+  .dish-card .prices { flex-basis: auto; }
+  .dish-footer { text-align: left; }
+}
