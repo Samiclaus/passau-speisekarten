@@ -54,14 +54,19 @@ mvn clean verify
 ```
 
 ### Uni-Mensa live prüfen
-Der manuelle Diagnose-Runner ruft den echten STWNO-HTML-POST-Endpunkt ab, parst die Antwort und gibt Kategorie, Gericht, Kennzeichen sowie Studierenden-, Beschäftigten- und Gästepreis aus. Er schreibt keine Dateien und aktiviert keine Quelle.
+Der manuelle Diagnose-Runner ruft den echten STWNO-HTML-POST-Endpunkt für die Uni-Mensa Passau (`UNI-P`) für sieben aufeinanderfolgende Tage ab: vom Startdatum einschließlich bis sechs Tage später. Standardmäßig beginnt der Zeitraum heute; so entspricht ein Lauf am Montag dem Zeitraum Montag bis Sonntag. Für jeden Tag werden Kategorie, Gericht, Kennzeichen sowie alle drei Preise (Studierende, Beschäftigte, Gäste) ausgegeben. Eine Wochenübersicht fasst Gerichte, fehlende Angaben und Abruffehler zusammen. Der Runner schreibt keine Dateien und aktiviert keine Quelle.
 
-Im Verzeichnis `importer/` ausführen (das Datum und der Standort sind optional; Standard ist heute und `UNI-P`):
+Im Verzeichnis `importer/` ausführen:
 
 ```powershell
+# Heute und die folgenden sechs Tage
+mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  -Dexec.mainClass=de.passau.speisekarten.mensa.MensaHtmlLiveCheck
+
+# Optional mit festem Startdatum (Beispiel: Montag bis Sonntag)
 mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
   -Dexec.mainClass=de.passau.speisekarten.mensa.MensaHtmlLiveCheck `
-  '-Dexec.args=2026-10-26 UNI-P'
+  '-Dexec.args=2026-10-26'
 ```
 
-Für das aktuelle Datum kann `'-Dexec.args=2026-10-26 UNI-P'` weggelassen werden. Ein leeres Ergebnis zeigt eine Diagnose der Antwort an, statt stillschweigend eine leere Speisekarte auszugeben. Der Livecheck benötigt eine funktionierende Internetverbindung; die normalen Unit-Tests benötigen keinen Zugriff auf STWNO.
+Ein Tag ohne erkannte Gerichte wird mit Diagnose ausgegeben und zählt nicht automatisch als Parserfehler, da nicht jeder Tag zwingend einen Speiseplan haben muss. Abruffehler werden für den jeweiligen Tag ausgewiesen; die übrigen Tage werden trotzdem geprüft. Der Livecheck benötigt eine funktionierende Internetverbindung; die normalen Unit-Tests benötigen keinen Zugriff auf STWNO.
