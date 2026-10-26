@@ -18,7 +18,7 @@ class MensaHtmlPostClientTest
                 "locId", "UNI-P",
                 "lang", "de",
                 "date", "2026-10-26",
-                "w", "dw"
+                "w", ""
             ),
             MensaHtmlPostClient.buildFormParameters(
                 LocalDate.of(2026, 10, 26),
