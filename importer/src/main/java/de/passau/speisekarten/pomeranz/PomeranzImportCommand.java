@@ -62,10 +62,10 @@ public final class PomeranzImportCommand {
             List<Map<String, Object>> items = new ArrayList<>();
             if (day.vegetarianDish() != null) {
                 items.add(toItem(day.vegetarianDish(), day.vegetarianDescription(), menu.comboPrice(),
-                    "Vegetarisches Hauptgericht der Woche"));
+                    "Vegetarisch", List.of("VEGETARIAN")));
             }
             if (day.dishText() != null && !day.dishText().isBlank()) {
-                items.add(toItem(day.dishText(), day.dishDescription(), menu.comboPrice(), "Hauptgericht"));
+                items.add(toItem(day.dishText(), day.dishDescription(), menu.comboPrice(), "Hauptgericht", List.of()));
             }
             if (items.isEmpty()) continue;
             Map<String, Object> record = new LinkedHashMap<>();
@@ -76,7 +76,11 @@ public final class PomeranzImportCommand {
             record.put("sourceUrl", pdfUri.toString());
             record.put("serviceStart", menu.serviceStart());
             record.put("serviceEnd", menu.serviceEnd());
-            record.put("offerNote", "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte, dazu Suppe oder Vorspeise oder Dessert; nur in Verbindung mit mindestens einem Getränk.");
+            String components = menu.optionalComponents().isEmpty() ? "" :
+                " Wahlweise dazu: " + String.join("; ", menu.optionalComponents()) + ".";
+            record.put("offerNote", "Kombiangebot: " + menu.comboPrice().toPlainString().replace('.', ',')
+                + " € für die Kombination der beiden Hauptgerichte." + components
+                + " Nur in Verbindung mit mindestens einem Getränk.");
             record.put("items", items);
             importedMenus.add(record);
         }
@@ -104,14 +108,14 @@ public final class PomeranzImportCommand {
             importedMenus.size(), importedMenus.stream().mapToInt(m -> ((List<?>) m.get("items")).size()).sum(), pdfUri);
     }
 
-    private static Map<String, Object> toItem(String name, String description, BigDecimal price, String category) {
+    private static Map<String, Object> toItem(String name, String description, BigDecimal price,
+                                                String category, List<String> dietary) {
         Map<String, Object> item = new LinkedHashMap<>();
         item.put("name", name);
         item.put("category", category);
         item.put("price", price);
-        item.put("description", description == null || description.isBlank()
-            ? "Im Kombiangebot zum angegebenen Preis." : description + " — im Kombiangebot zum angegebenen Preis.");
-        item.put("dietary", List.of());
+        item.put("description", description == null || description.isBlank() ? "" : description);
+        item.put("dietary", dietary);
         return item;
     }
 
