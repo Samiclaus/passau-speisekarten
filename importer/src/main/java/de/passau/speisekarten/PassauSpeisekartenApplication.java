@@ -1,6 +1,7 @@
 package de.passau.speisekarten;
 
 import de.passau.speisekarten.pomeranz.PomeranzImportCommand;
+import de.passau.speisekarten.goldenesschiff.GoldenesSchiffImportCommand;
 import de.passau.speisekarten.pomeranz.PomeranzLiveCheck;
 import java.io.IOException;
 import java.util.Arrays;
@@ -19,8 +20,10 @@ public final class PassauSpeisekartenApplication
             System.out.println("Starte alle implementierten Speisekartenimporte.");
             System.out.println("1/2: Uni-Mensa Passau");
             MensaHtmlImportCommand.main(new String[0]);
-            System.out.println("2/2: Pomeranz");
+            System.out.println("2/3: Pomeranz");
             PomeranzImportCommand.main(new String[0]);
+            System.out.println("3/3: Goldenes Schiff");
+            GoldenesSchiffImportCommand.main(new String[0]);
             System.out.println("Alle Speisekartenimporte abgeschlossen.");
             return;
         }
@@ -39,11 +42,17 @@ public final class PassauSpeisekartenApplication
             PomeranzImportCommand.main(Arrays.copyOfRange(args, 1, args.length));
             return;
         }
+        if (args.length > 0 && "import-goldenes-schiff".equals(args[0]))
+        {
+            GoldenesSchiffImportCommand.main(Arrays.copyOfRange(args, 1, args.length));
+            return;
+        }
 
         System.out.println("Passau Speisekarten importer.");
         System.out.println("Alle implementierten Quellen importieren: import-all");
         System.out.println("Uni-Mensa: import-mensa-html [Startdatum YYYY-MM-DD] [Tage]");
         System.out.println("Pomeranz-PDF prüfen (schreibt keine Dateien): check-pomeranz");
         System.out.println("Pomeranz importieren und JSON ergänzen: import-pomeranz");
+        System.out.println("Goldenes Schiff importieren und JSON ergänzen: import-goldenes-schiff");
     }
 }
