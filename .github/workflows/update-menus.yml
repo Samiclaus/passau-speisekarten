@@ -2,8 +2,10 @@ name: Update menus
 
 on:
   schedule:
-    # 05:30 UTC. Revisit the local-time target before enabling production imports.
-    - cron: "30 5 * * *"
+    # GitHub cron uses UTC. Trigger at 05, 06, 08 and 09 UTC, then keep
+    # only the runs that correspond to 07:00 or 10:00 in Europe/Berlin.
+    # This handles CET/CEST changes without running at the wrong local hour.
+    - cron: "0 5,6,8,9 * * *"
   workflow_dispatch:
 
 permissions:
@@ -17,20 +19,35 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Select the 07:00 and 10:00 Europe/Berlin runs
+        id: local-time
+        run: |
+          hour="$(TZ=Europe/Berlin date +%H)"
+          if [[ "$hour" == "07" || "$hour" == "10" ]]; then
+            echo "run_import=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_import=false" >> "$GITHUB_OUTPUT"
+            echo "Not the 07:00 or 10:00 local run; skipping."
+          fi
       - uses: actions/checkout@v4
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.local-time.outputs.run_import == 'true' }}
         with:
           ref: main
       - uses: actions/setup-java@v4
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.local-time.outputs.run_import == 'true' }}
         with:
           distribution: temurin
           java-version: "21"
           cache: maven
           cache-dependency-path: importer/pom.xml
       - name: Build importer
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.local-time.outputs.run_import == 'true' }}
         run: mvn -B -f importer/pom.xml package
       - name: Run importer
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.local-time.outputs.run_import == 'true' }}
         run: java -jar importer/target/passau-speisekarten-importer-0.1.0-SNAPSHOT.jar
       - name: Commit generated JSON when changed
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.local-time.outputs.run_import == 'true' }}
         run: |
           if [[ -z "$(git status --porcelain -- frontend/*.json)" ]]; then
             echo "No generated data changes."
