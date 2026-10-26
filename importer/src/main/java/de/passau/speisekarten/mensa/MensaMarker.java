@@ -1,6 +1,6 @@
 package de.passau.speisekarten.mensa;
 
-/** Normalized meaning of a marker in the Studentenwerk CSV column "kennz". */
+/** Normalized meanings of markers found in the Mensa CSV or HTML menu. */
 public enum MensaMarker
 {
     VEGETARIAN,
@@ -13,5 +13,7 @@ public enum MensaMarker
     PORK,
     CONTAINS_ALCOHOL,
     LAMB,
-    JURADISTL
+    JURADISTL,
+    GAME_MEAT,
+    FISH
 }
