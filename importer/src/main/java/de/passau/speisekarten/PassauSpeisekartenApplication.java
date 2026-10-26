@@ -14,6 +14,16 @@ public final class PassauSpeisekartenApplication
 
     public static void main(String[] args) throws IOException, InterruptedException
     {
+        if (args.length > 0 && "import-all".equals(args[0]))
+        {
+            System.out.println("Starte alle implementierten Speisekartenimporte.");
+            System.out.println("1/2: Uni-Mensa Passau");
+            MensaHtmlImportCommand.main(new String[0]);
+            System.out.println("2/2: Pomeranz");
+            PomeranzImportCommand.main(new String[0]);
+            System.out.println("Alle Speisekartenimporte abgeschlossen.");
+            return;
+        }
         if (args.length > 0 && "import-mensa-html".equals(args[0]))
         {
             MensaHtmlImportCommand.main(Arrays.copyOfRange(args, 1, args.length));
@@ -31,6 +41,7 @@ public final class PassauSpeisekartenApplication
         }
 
         System.out.println("Passau Speisekarten importer.");
+        System.out.println("Alle implementierten Quellen importieren: import-all");
         System.out.println("Uni-Mensa: import-mensa-html [Startdatum YYYY-MM-DD] [Tage]");
         System.out.println("Pomeranz-PDF prüfen (schreibt keine Dateien): check-pomeranz");
         System.out.println("Pomeranz importieren und JSON ergänzen: import-pomeranz");
