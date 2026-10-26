@@ -114,9 +114,30 @@ public final class MensaHtmlImportCommand
         restaurant.put("address", "Innstraße 27, 94032 Passau");
         restaurant.put("sourceUrl", SOURCE_URL);
 
+        List<Map<String, Object>> allRestaurants = new ArrayList<>();
+        if (Files.exists(restaurantsPath))
+        {
+            Map<String, Object> previous = objectMapper.readValue(restaurantsPath.toFile(),
+                new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
+            Object previousRestaurants = previous.get("restaurants");
+            if (previousRestaurants instanceof List<?> list)
+            {
+                for (Object value : list)
+                {
+                    if (value instanceof Map<?, ?> item && !RESTAURANT_ID.equals(item.get("id")))
+                    {
+                        @SuppressWarnings("unchecked")
+                        Map<String, Object> otherRestaurant = (Map<String, Object>) item;
+                        allRestaurants.add(otherRestaurant);
+                    }
+                }
+            }
+        }
+        allRestaurants.add(restaurant);
+
         Map<String, Object> restaurantsDocument = new LinkedHashMap<>();
         restaurantsDocument.put("schemaVersion", 1);
-        restaurantsDocument.put("restaurants", List.of(restaurant));
+        restaurantsDocument.put("restaurants", allRestaurants);
 
         writeAtomically(menusPath, menusDocument);
         writeAtomically(restaurantsPath, restaurantsDocument);
