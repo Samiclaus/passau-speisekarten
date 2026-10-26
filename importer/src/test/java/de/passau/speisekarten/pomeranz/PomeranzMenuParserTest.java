@@ -75,6 +75,27 @@ class PomeranzMenuParserTest {
         assertEquals("Buttermakrelenfilet", menu.days().get(3).dishText());
     }
 
+    @Test void doesNotTreatNextWeekdayHeadingAsMissingDish() {
+        String text = """
+            Mittagskarte
+            für den 20. bis 23. Oktober von 11:30 bis 14:00 Uhr
+            Schnelle Nummer Zwei für Eins € 12,80
+            Vegetarisches Hauptgericht der Woche
+            Pilz-Risotto 7
+            Am Dienstag in Kombination mit
+            Am Mittwoch in Kombination mit
+            Gebratenes Hähnchenbrustfilet 1,7
+            Zucchini / Graupen / Kräuterschaum
+            """;
+        var menu = new PomeranzMenuParser().parse(text, "2026-10-20-Mittagskarte.pdf");
+
+        assertEquals(2, menu.days().size());
+        assertNull(menu.days().get(0).dishText());
+        assertEquals(LocalDate.of(2026, 10, 21), menu.days().get(1).date());
+        assertEquals("Gebratenes Hähnchenbrustfilet", menu.days().get(1).dishText());
+        assertEquals("Zucchini / Graupen / Kräuterschaum", menu.days().get(1).dishDescription());
+    }
+
     @Test void fallsBackToFilenameDateWhenTextOmitsRange() {
         var menu = new PomeranzMenuParser().parse("Mittagskarte", "2026-10-20-Mittagskarte.pdf");
         assertEquals(LocalDate.of(2026, 10, 20), menu.startDate());
