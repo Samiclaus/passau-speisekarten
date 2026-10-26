@@ -23,7 +23,7 @@ public final class DishMarkerClassifier
         new AnimalTerm(MensaMarker.VEAL, "\\b(?:kalb\\w*|vitello|veal)\\b"),
         new AnimalTerm(MensaMarker.LAMB, "\\b(?:lamm\\w*|schaf\\w*|agnello|lamb|mutton)\\b"),
         new AnimalTerm(MensaMarker.POULTRY, "\\b(?:huhn\\w*|hahnchen\\w*|haehnchen\\w*|pute\\w*|truthahn\\w*|geflugel\\w*|pollo|tacchino|chicken|turkey|poultry)\\b"),
-        new AnimalTerm(MensaMarker.GAME_MEAT, "\\b(?:wildfleisch|wildschwein|hirsch|reh\\w*|venison|game meat)\\b"),
+        new AnimalTerm(MensaMarker.GAME_MEAT, "\\b(?:wildfleisch\\w*|wildschwein\\w*|hirsch\\w*|reh\\w*|venison|game meat)\\b"),
         new AnimalTerm(MensaMarker.MEAT, "\\b(?:carne|ragu|fleisch\\w*|meat)\\b")
     );
 
