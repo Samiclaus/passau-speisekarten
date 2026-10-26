@@ -90,6 +90,7 @@ public final class MensaHtmlResponseParser
                     markers.add(marker);
                 }
             }
+            markers.addAll(new DishMarkerClassifier().classify(name, ""));
             if (markers.contains(MensaMarker.VEGAN))
             {
                 markers.add(MensaMarker.VEGETARIAN);
