@@ -18,9 +18,10 @@ public final class PomeranzSource {
         Document doc = Jsoup.parse(html, pageUri.toString());
         return doc.select("a[href]")
             .stream()
-            .filter(a -> (a.text() + " " + a.attr("href")).toLowerCase(java.util.Locale.GERMAN).contains("mittagskarte"))
+            // The date prefix changes; the stable filename token is Mittagskarte.pdf.
             .map(a -> pageUri.resolve(a.attr("href")))
-            .filter(uri -> uri.getPath() != null && uri.getPath().toLowerCase().endsWith(".pdf"))
+            .filter(uri -> uri.getPath() != null
+                && uri.getPath().matches("(?i).*Mittagskarte\\.pdf$"))
             .max(Comparator.comparing(PomeranzSource::dateFromFilename, Comparator.nullsFirst(Comparator.naturalOrder()))
                 .thenComparing(URI::toString))
             .orElseThrow(() -> new IllegalArgumentException("No PDF link labelled Mittagskarte found"));
