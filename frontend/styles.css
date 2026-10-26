@@ -99,3 +99,23 @@ footer { padding: 1.2rem 0; border-top: 1px solid var(--border); color: var(--mu
   .dish-card .prices { flex-basis: auto; }
   .dish-footer { text-align: left; }
 }
+
+/* Listenansicht: Gericht links, Preise rechts, Kennzeichnungen darunter */
+.dish-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(290px, 43%); grid-template-areas: "heading prices" "description prices" "tags footer"; column-gap: 1.1rem; row-gap: .2rem; }
+.dish-heading { grid-area: heading; min-width: 0; }
+.dish-card > .dish-description { grid-area: description; }
+.dish-card > .prices { grid-area: prices; align-self: center; min-width: 0; }
+.dish-card > .tags { grid-area: tags; align-self: center; }
+.dish-card > .dish-footer { grid-area: footer; align-self: center; }
+.card-view .dish-card { display: flex; }
+.card-view .dish-card > .dish-heading,
+.card-view .dish-card > .dish-description,
+.card-view .dish-card > .prices,
+.card-view .dish-card > .tags,
+.card-view .dish-card > .dish-footer { grid-area: auto; }
+@media (max-width: 850px) {
+  .dish-card { grid-template-columns: minmax(0, 1fr) minmax(240px, 45%); column-gap: .75rem; }
+}
+@media (max-width: 600px) {
+  .dish-card { display: flex; }
+}
