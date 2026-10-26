@@ -41,6 +41,8 @@ def main():
         menu for menu in menus_doc.get("menus", [])
         if (source_id == "uni-passau-mensa-html" and menu.get("restaurantId") == "uni-passau-mensa")
         or (source_id == "pomeranz" and menu.get("restaurantId") == "pomeranz")
+        or (source_id == "isapori" and menu.get("restaurantId") == "isapori")
+        or (source_id == "goldenes-schiff" and menu.get("restaurantId") == "goldenes-schiff")
     ]
     source["menuCount"] = len(matching)
     source["dishCount"] = sum(len(menu.get("items", [])) for menu in matching)
