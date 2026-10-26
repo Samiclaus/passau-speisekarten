@@ -12,7 +12,10 @@ Statischer Aggregator für Mittags-, Tages- und Wochenkarten in Passau.
 Die erste Version benötigt keine Datenbank. Git hält Änderungen an Konfiguration und Daten nachvollziehbar fest.
 
 ## Erste Quellenkandidaten
-- **Uni-Mensa Passau (CSV):** Wochenplan unter `https://www.stwno.de/infomax/daten-extern/csv/UNI-P/{isoWeek}.csv`; `{isoWeek}` steht für die aktuelle ISO-Kalenderwoche. Die Spalte `kennz` liefert strukturierte Kennzeichen.
+- **Uni-Mensa Passau (CSV, Alternative A):** `https://www.stwno.de/infomax/daten-extern/csv/UNI-P/{isoWeek}.csv`; `{isoWeek}` ist zunächst nur ein Abrufparameter. Der Dateiname ist kein verlässlicher Beleg für die enthaltene Kalenderwoche: Beispielsweise kann `44.csv` bereits Daten für KW 45 enthalten. Der Adapter muss die tatsächlichen Daten aus dem Dateiinhalt ableiten und darf die Gültigkeit nicht aus dem Dateinamen erraten. Die Spalte `kennz` liefert strukturierte Kennzeichen.
+- **Uni-Mensa Passau (HTML-POST, Alternative B):** `https://stwno.de/de/gastronomie/speiseplan/uni-passau/uni-passau-mensa`. Die Seite fordert über `speiseplan-render.php` einen HTML-Speiseplan per POST an; wichtigster Parameter ist ein Datum im Format `yyyy-MM-dd`. Der Adapter muss die übrigen benötigten POST-Parameter ermitteln. Kennzeichen liegen als Icons mit Mouseover-Text vor und werden aus deren zugänglichen Texten ausgelesen.
+
+Die beiden Mensa-Varianten sind bewusst als getrennte, deaktivierte Quellen konfiguriert. Wir vergleichen Zuverlässigkeit, Datenvollständigkeit und Wartbarkeit, bevor wir eine davon aktivieren; eine automatische Vermischung beider Quellen ist zunächst nicht vorgesehen.
 - **Restaurant Pomeranz (PDF):** die offizielle Seite `https://www.restaurant-pomeranz.de/Speisekarte/` enthält den aktuellen PDF-Link. Nicht die wechselnde PDF-URL fest konfigurieren, sondern auf der Seite den Link zur Mittagskarte ermitteln.
 - **I Sapori della Toscana (HTML, bevorzugter Kandidat):** `https://sapori-toscana.com/` zeigt Mittagsgerichte nach Wochentag samt Preisen. Das eignet sich gut, um einen HTML-Adapter für wiederkehrende Tagesabschnitte zu testen.
 - **Wirtshaus & Pension Goldenes Schiff (HTML, Alternative):** `https://goldenesschiff.de/` zeigt einen aktuellen Mittagstisch und eine Wochenkarte. Das ist eine zweite Option, falls sich die Daten bei I Sapori nicht stabil extrahieren lassen.
