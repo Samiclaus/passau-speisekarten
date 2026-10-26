@@ -13,7 +13,7 @@ Die erste Version benötigt keine Datenbank. Git hält Änderungen an Konfigurat
 
 ## Erste Quellenkandidaten
 - **Uni-Mensa Passau (CSV, Alternative A):** `https://www.stwno.de/infomax/daten-extern/csv/UNI-P/{isoWeek}.csv`; `{isoWeek}` ist der Abrufparameter. Ein beobachteter Versatz zwischen Dateinummer und enthaltenem Wochenplan kann ein temporärer Fehler sein und wird nicht als allgemeine Regel vorausgesetzt. Der Adapter soll anhand der tatsächlichen Datums-/Tagesangaben prüfen, welche Woche enthalten ist; die Spalte `kennz` liefert strukturierte Kennzeichen.
-- **Uni-Mensa Passau (HTML-POST, Alternative B):** Endpoint `https://www.stwno.de/infomax/daten-extern/html/speiseplan-render.php`. Bekannte Formularparameter: `func=make_spl`, `locId=UNI-P`, `lang=de`, `date=yyyy-MM-dd`, `w=dw`. Der Request verwendet `application/x-www-form-urlencoded` und `X-Requested-With: XMLHttpRequest`; als Referer dient `https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P&w=dw`. Die Antwort enthält den gerenderten Speiseplan. Kennzeichen liegen als Icons mit Mouseover-Text vor und sollen anhand dieser Texte gelesen werden.
+- **Uni-Mensa Passau (HTML-POST, Alternative B):** Endpoint `https://www.stwno.de/infomax/daten-extern/html/speiseplan-render.php`. Bekannte Formularparameter: `func=make_spl`, `locId=UNI-P`, `lang=de`, `date=yyyy-MM-dd`, `w=` (leer, wie im beobachteten Browserrequest). Der Request verwendet `application/x-www-form-urlencoded`, `X-Requested-With: XMLHttpRequest` und den Referer `https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P`. Die Antwort ist ein HTML-Fragment mit `tr.gruppenkopf` für Kategorien und `tr.essenzeile` für Gerichte. Namen stehen in `td.cell1`, Kennzeichen in `td.cell2` als Icon-`alt`/Tooltip-Text und Preise in den drei `td.preis`-Zellen (Studierende, Beschäftigte, Gäste). `MensaHtmlResponseParser` extrahiert diese Informationen; Allergene in `sup`-Elementen werden aus dem angezeigten Namen entfernt.
 
 Die beiden Mensa-Varianten sind bewusst als getrennte, deaktivierte Quellen konfiguriert. Wir vergleichen Zuverlässigkeit, Datenvollständigkeit und Wartbarkeit, bevor wir eine davon aktivieren; eine automatische Vermischung beider Quellen ist zunächst nicht vorgesehen.
 - **Restaurant Pomeranz (PDF):** die offizielle Seite `https://www.restaurant-pomeranz.de/Speisekarte/` enthält den aktuellen PDF-Link. Nicht die wechselnde PDF-URL fest konfigurieren, sondern auf der Seite den Link zur Mittagskarte ermitteln.
@@ -36,30 +36,14 @@ Gerichte erhalten eine erweiterbare Liste typisierter Merkmale. Für die Uni-Men
 | `B` | Bio |
 | `S` | Schwein |
 | `A` | Enthält Alkohol |
-| `L` | Vermutlich Lamm; Zuordnung noch zu bestätigen |
-| `JD` | Vermutlich Juradistl; Zuordnung noch zu bestätigen |
+| `L` | Lamm |
+| `JD` | Juradistl |
+
+Im HTML-Adapter werden die sichtbaren Icon- und Tooltip-Texte ausgewertet, unter anderem Vegetarisch, Vegan, Bio-Gericht, Schwein, Lamm, Juradistl Lamm und Alkohol. Weitere bekannte Quelllabels wie Wild und Fisch sind ebenfalls abgebildet. Unbekannte Labels werden ignoriert, statt ihnen ungeprüft eine Bedeutung zuzuweisen.
 
 Die Merkmale sollen nicht auf Ernährungsformen beschränkt sein: beispielsweise sind `MV` und `BIO` andere Arten von Kennzeichnungen als `VEGAN`. Die Auswertung muss vollständige Kürzel tokenisieren, damit etwa `V` nicht mit `VG` verwechselt wird. Die am Ende des Gerichtnamens in Klammern aufgeführten Allergene werden zunächst ignoriert und nicht als Merkmale ausgegeben.
 
 Ein Merkmal sollte neben seinem Wert auch seine Herkunft abbilden (z. B. explizite Quellenkennzeichnung, strukturierter Quellcode oder manuelle Korrektur). Nicht vorhandene Angaben gelten als **unbekannt**, nicht als Gegenbeweis.
 
 ## Lokal testen
-Voraussetzung: Java 21 und Maven.
-
-```bash
-mvn -f importer/pom.xml verify
-```
-
-Der Importer ist zunächst ein Gerüst. Vor dem produktiven Import müssen die Quellenadapter, Validierung und der JSON-Export implementiert und getestet werden.
-
-## Scheduler
-Der Workflow ist für **07:00 und 10:00 Uhr Europe/Berlin** vorgesehen. GitHub Actions interpretiert Cron-Zeitpläne in UTC; deshalb löst er viermal pro Tag einen kurzen Zeitzonencheck aus und führt Import/Commit nur bei 07:00 oder 10:00 Ortszeit aus. Ein manueller Start über `workflow_dispatch` läuft unabhängig von der Uhrzeit.
-
-## Cloudflare Pages
-Repository verbinden, Produktionsbranch `main`, kein Build-Befehl, Output-Verzeichnis `frontend`.
-
-## Qualitätsregeln
-- Abrufzeitpunkt und Gültigkeit einer Karte getrennt halten.
-- Unsichere oder abgelaufene Karten nicht als aktuell ausgeben.
-- Manuelle Korrekturen getrennt von generierten Daten speichern.
-- Bei Importfehlern die letzte gültige Veröffentlichung behalten.
+Voraussetzung: Java 21 und Maven. Im Verzeichnis `importer/` `mvn test` bzw. `mvn verify` ausführen.
