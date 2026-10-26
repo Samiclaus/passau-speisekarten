@@ -136,3 +136,5 @@ footer { padding: 1.2rem 0; border-top: 1px solid var(--border); color: var(--mu
   .list-view .dish-card > .prices { width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .list-view .price-tier dt { white-space: normal; }
 }
+
+.menu-meta { margin: .3rem 0 0; color: var(--muted); font-size: .84rem; }
