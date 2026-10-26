@@ -4,6 +4,7 @@ import de.passau.speisekarten.pomeranz.PomeranzImportCommand;
 import de.passau.speisekarten.goldenesschiff.GoldenesSchiffImportCommand;
 import de.passau.speisekarten.pomeranz.PomeranzLiveCheck;
 import de.passau.speisekarten.saporitoscana.SaporiToscanaImportCommand;
+import de.passau.speisekarten.loewen.LoewenImportCommand;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -25,8 +26,10 @@ public final class PassauSpeisekartenApplication
             PomeranzImportCommand.main(new String[0]);
             System.out.println("3/4: Goldenes Schiff");
             GoldenesSchiffImportCommand.main(new String[0]);
-            System.out.println("4/4: I Sapori della Toscana");
+            System.out.println("4/5: I Sapori della Toscana");
             SaporiToscanaImportCommand.main(new String[0]);
+            System.out.println("5/5: Bayerischer Löwe");
+            LoewenImportCommand.main(new String[0]);
             System.out.println("Alle Speisekartenimporte abgeschlossen.");
             return;
         }
@@ -50,6 +53,11 @@ public final class PassauSpeisekartenApplication
             GoldenesSchiffImportCommand.main(Arrays.copyOfRange(args, 1, args.length));
             return;
         }
+        if (args.length > 0 && "import-loewen".equals(args[0]))
+        {
+            LoewenImportCommand.main(Arrays.copyOfRange(args, 1, args.length));
+            return;
+        }
         if (args.length > 0 && "import-sapori-toscana".equals(args[0]))
         {
             SaporiToscanaImportCommand.main(Arrays.copyOfRange(args, 1, args.length));
@@ -63,5 +71,6 @@ public final class PassauSpeisekartenApplication
         System.out.println("Pomeranz importieren und JSON ergänzen: import-pomeranz");
         System.out.println("Goldenes Schiff importieren und JSON ergänzen: import-goldenes-schiff");
         System.out.println("I Sapori della Toscana importieren: import-sapori-toscana [Referenzdatum YYYY-MM-DD]");
+        System.out.println("Bayerischer Löwe importieren (benötigt Tesseract OCR): import-loewen [Referenzdatum YYYY-MM-DD]");
     }
 }
