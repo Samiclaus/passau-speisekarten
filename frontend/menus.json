@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-10-26T17:43:03.697808900+01:00",
+  "generatedAt" : "2026-10-26T17:54:19.575341100+01:00",
   "menus" : [ {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-10-20",
@@ -87,7 +87,7 @@
       "category" : "Hauptgerichte",
       "price" : 12.8,
       "description" : "Pilze / Risotto / Pesto",
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -263,7 +263,7 @@
       "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
       "category" : "Hauptgerichte",
       "price" : 12.9,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -302,7 +302,7 @@
       "studentPrice" : 4.4,
       "employeePrice" : 5.7,
       "guestPrice" : 7.4,
-      "dietary" : [ "BEEF", "PORK" ]
+      "dietary" : [ "BEEF", "PORK", "VEGETARIAN" ]
     }, {
       "name" : "Salatteller mit gebackenen Hirtenkäse",
       "category" : "Hauptgerichte",
@@ -378,7 +378,7 @@
       "name" : "Rahmbraten mit Spätzle",
       "category" : "Hauptgerichte",
       "price" : 11.8,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Aubergine in Weinteig gebacken mit Joghurtsauce und Salatgarnitur",
       "category" : "Hauptgerichte",
@@ -424,7 +424,7 @@
       "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
       "category" : "Hauptgerichte",
       "price" : 12.9,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -539,7 +539,7 @@
       "name" : "Hackbraten mit Kartoffelpüree",
       "category" : "Hauptgerichte",
       "price" : 11.8,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Aubergine in Weinteig gebacken mit Joghurtsauce und Salatgarnitur",
       "category" : "Hauptgerichte",
@@ -591,7 +591,7 @@
       "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
       "category" : "Hauptgerichte",
       "price" : 12.9,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -638,7 +638,7 @@
       "studentPrice" : 5.5,
       "employeePrice" : 6.7,
       "guestPrice" : 8.2,
-      "dietary" : [ "PORK" ]
+      "dietary" : [ "PORK", "VEGETARIAN" ]
     }, {
       "name" : "Bio-Paprikareis",
       "category" : "Beilagen",
@@ -706,7 +706,7 @@
       "name" : "Hackbraten mit Kartoffelpüree",
       "category" : "Hauptgerichte",
       "price" : 11.8,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Linsencurry mit Reis",
       "category" : "Hauptgerichte",
@@ -752,7 +752,7 @@
       "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
       "category" : "Hauptgerichte",
       "price" : 12.9,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -859,7 +859,7 @@
       "name" : "Gebackenes Seelachsfilet mit Kartoffelsalat",
       "category" : "Hauptgerichte",
       "price" : 11.8,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Linsencurry mit Reis",
       "category" : "Hauptgerichte",
@@ -905,7 +905,7 @@
       "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
       "category" : "Hauptgerichte",
       "price" : 12.9,
-      "dietary" : [ ]
+      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
