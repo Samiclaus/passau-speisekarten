@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": null,
+  "lastImportAt": null,
+  "summary": "Importstatus wird noch nicht automatisch protokolliert.",
+  "sources": [
+    {
+      "id": "uni-passau-mensa-html",
+      "name": "Uni-Mensa Passau",
+      "enabled": false,
+      "status": "NOT_YET_AUTOMATED",
+      "lastAttemptAt": null,
+      "lastSuccessAt": null,
+      "menuCount": null,
+      "dishCount": null,
+      "message": "Quelle ist deaktiviert, bis CSV- und HTML-Variante abschließend verglichen sind."
+    },
+    {
+      "id": "pomeranz",
+      "name": "Restaurant Pomeranz",
+      "enabled": false,
+      "status": "STALE_SOURCE",
+      "lastAttemptAt": null,
+      "lastSuccessAt": null,
+      "menuCount": null,
+      "dishCount": null,
+      "message": "Die zuletzt geprüfte offizielle PDF-Karte war vom 20. bis 23. Oktober 2026 datiert und damit abgelaufen. Der Import muss bis zu einer aktuellen Karte blockiert bleiben."
+    },
+    {
+      "id": "isapori",
+      "name": "I Sapori della Toscana",
+      "enabled": false,
+      "status": "NOT_IMPLEMENTED",
+      "lastAttemptAt": null,
+      "lastSuccessAt": null,
+      "menuCount": null,
+      "dishCount": null,
+      "message": "Quelle ist noch nicht implementiert."
+    },
+    {
+      "id": "goldenes-schiff",
+      "name": "Wirtshaus & Pension Goldenes Schiff",
+      "enabled": false,
+      "status": "NOT_IMPLEMENTED",
+      "lastAttemptAt": null,
+      "lastSuccessAt": null,
+      "menuCount": null,
+      "dishCount": null,
+      "message": "Quelle ist noch nicht implementiert."
+    }
+  ]
+}
