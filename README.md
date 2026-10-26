@@ -18,7 +18,7 @@ Die erste Version benötigt keine Datenbank. Git hält Änderungen an Konfigurat
 Die beiden Mensa-Varianten sind bewusst als getrennte, deaktivierte Quellen konfiguriert. Wir vergleichen Zuverlässigkeit, Datenvollständigkeit und Wartbarkeit, bevor wir eine davon aktivieren; eine automatische Vermischung beider Quellen ist zunächst nicht vorgesehen.
 - **Restaurant Pomeranz (PDF):** die offizielle Seite `https://www.restaurant-pomeranz.de/Speisekarte/` enthält den aktuellen PDF-Link. Nicht die wechselnde PDF-URL fest konfigurieren, sondern auf der Seite den Link zur Mittagskarte ermitteln.
 - **I Sapori della Toscana (HTML, bevorzugter Kandidat):** `https://sapori-toscana.com/` zeigt Mittagsgerichte nach Wochentag samt Preisen. Das eignet sich gut, um einen HTML-Adapter für wiederkehrende Tagesabschnitte zu testen.
-- **Wirtshaus & Pension Goldenes Schiff (HTML, Alternative):** `https://goldenesschiff.de/` zeigt einen aktuellen Mittagstisch und eine Wochenkarte. Das ist eine zweite Option, falls sich die Daten bei I Sapori nicht stabil extrahieren lassen.
+- **Wirtshaus & Pension Goldenes Schiff (HTML/PDF):** `https://goldenesschiff.de/` zeigt einen Mittagstisch-Block und eine Wochenkarte als PDF. Der erste Importer liest datierte Gerichte aus der Wochenkarte aus und akzeptiert historische Daten. Der Preis von 11,80 € wird derzeit dem Hauptgericht zugeordnet; der HTML-Tagesblock ist noch nicht als Fallback angebunden. Vor Aktivierung muss der Import anhand der aktuellen PDF lokal geprüft werden.
 
 Die Einträge in `config/sources.csv` sind zunächst deaktiviert. Erst nach Implementierung und Tests des jeweiligen Adapters wird `enabled` auf `true` gesetzt.
 
@@ -128,3 +128,22 @@ mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plug
 ```
 
 Die oben gesetzte `MAVEN_OPTS`-Variable stellt den lokalen Java-Truststore auch für diese Maven-Aufrufe bereit. Der Import schreibt die JSON-Dateien erst nach erfolgreichem Abruf aller angeforderten Tage; bei einem Abruffehler bleiben die bisherigen Dateien unverändert. Die Importquelle ist noch nicht für einen automatischen Zeitplan aktiviert.
+
+
+### Alle implementierten Quellen importieren
+
+Der Sammelbefehl `import-all` führt alle aktuell integrierten Importer nacheinander aus (Uni-Mensa HTML, Pomeranz und Goldenes Schiff). Goldenes Schiff ist zunächst noch deaktiviert in `config/sources.csv`, der Importbefehl ist aber bereits verfügbar.
+
+```powershell
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
+  '-Dexec.args=import-all'
+```
+
+Einzelner Goldenes-Schiff-Import zur lokalen Prüfung:
+
+```powershell
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
+  '-Dexec.args=import-goldenes-schiff'
+```
