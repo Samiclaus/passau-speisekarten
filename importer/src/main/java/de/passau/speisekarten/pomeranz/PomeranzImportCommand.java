@@ -1,5 +1,7 @@
 package de.passau.speisekarten.pomeranz;
 
+import de.passau.speisekarten.mensa.DishMarkerClassifier;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -29,6 +31,7 @@ public final class PomeranzImportCommand {
     private static final String SOURCE_URL = "https://www.restaurant-pomeranz.de/Speisekarte/";
     private static final String ADDRESS = "Bratfischwinkel 5, 94032 Passau";
     private final ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+    private static final DishMarkerClassifier MARKER_CLASSIFIER = new DishMarkerClassifier();
 
     private PomeranzImportCommand() {}
 
@@ -114,8 +117,14 @@ public final class PomeranzImportCommand {
         item.put("name", name);
         item.put("category", category);
         item.put("price", price);
-        item.put("description", description == null || description.isBlank() ? "" : description);
-        item.put("dietary", dietary);
+        String safeDescription = description == null || description.isBlank() ? "" : description;
+        item.put("description", safeDescription);
+        List<String> markers = new ArrayList<>(dietary);
+        MARKER_CLASSIFIER.classify(name, safeDescription).stream()
+            .map(Enum::name)
+            .filter(marker -> !markers.contains(marker))
+            .forEach(markers::add);
+        item.put("dietary", markers.stream().sorted().toList());
         return item;
     }
 
