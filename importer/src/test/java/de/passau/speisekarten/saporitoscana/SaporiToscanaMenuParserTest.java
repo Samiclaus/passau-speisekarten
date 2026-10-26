@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.time.LocalDate;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -69,6 +71,24 @@ class SaporiToscanaMenuParserTest
         assertFalse(dishes.get(0).markers().contains(MensaMarker.VEGETARIAN));
         assertTrue(dishes.get(1).markers().contains(MensaMarker.MEAT));
         assertFalse(dishes.get(1).markers().contains(MensaMarker.VEGETARIAN));
+    }
+
+
+    @Test
+    void assignsOnlyCurrentAndFutureWeekdaysThroughFriday()
+    {
+        assertEquals(Map.of(
+            "montag", LocalDate.parse("2026-10-26"),
+            "dienstag", LocalDate.parse("2026-10-27"),
+            "mittwoch", LocalDate.parse("2026-10-28"),
+            "donnerstag", LocalDate.parse("2026-10-29"),
+            "freitag", LocalDate.parse("2026-10-30")
+        ), SaporiToscanaImportCommand.datesForReferenceDate(LocalDate.parse("2026-10-26")));
+
+        assertEquals(Map.of(
+            "donnerstag", LocalDate.parse("2026-10-29"),
+            "freitag", LocalDate.parse("2026-10-30")
+        ), SaporiToscanaImportCommand.datesForReferenceDate(LocalDate.parse("2026-10-29")));
     }
 
     @Test
