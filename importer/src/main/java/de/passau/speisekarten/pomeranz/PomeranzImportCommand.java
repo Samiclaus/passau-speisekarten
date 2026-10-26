@@ -47,6 +47,8 @@ public final class PomeranzImportCommand {
 
         String fileName = Path.of(pdfUri.getPath()).getFileName().toString();
         var menu = new PomeranzMenuParser().parse(new java.io.ByteArrayInputStream(response.body()), fileName);
+        if (menu.endDate().isBefore(LocalDate.now(ZoneId.of("Europe/Berlin"))))
+            throw new IOException("Pomeranz PDF is expired (" + menu.endDate() + "); refusing to publish stale menus");
         if (menu.comboPrice() == null || menu.serviceStart() == null || menu.serviceEnd() == null)
             throw new IOException("Pomeranz PDF is missing price or service hours; refusing to publish");
         if (menu.vegetarianDish() == null || menu.days().size() < 2)
