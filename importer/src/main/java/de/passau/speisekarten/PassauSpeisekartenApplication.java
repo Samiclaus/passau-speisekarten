@@ -4,6 +4,7 @@ import de.passau.speisekarten.pomeranz.PomeranzImportCommand;
 import de.passau.speisekarten.goldenesschiff.GoldenesSchiffImportCommand;
 import de.passau.speisekarten.pomeranz.PomeranzLiveCheck;
 import de.passau.speisekarten.saporitoscana.SaporiToscanaImportCommand;
+import de.passau.speisekarten.wilmawunder.WilmaWunderImportCommand;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -25,8 +26,10 @@ public final class PassauSpeisekartenApplication
             PomeranzImportCommand.main(new String[0]);
             System.out.println("3/4: Goldenes Schiff");
             GoldenesSchiffImportCommand.main(new String[0]);
-            System.out.println("4/4: I Sapori della Toscana");
+            System.out.println("4/5: I Sapori della Toscana");
             SaporiToscanaImportCommand.main(new String[0]);
+            System.out.println("5/5: Wilma Wunder Passau");
+            WilmaWunderImportCommand.main(new String[0]);
             System.out.println("Alle Speisekartenimporte abgeschlossen.");
             return;
         }
@@ -55,6 +58,11 @@ public final class PassauSpeisekartenApplication
             SaporiToscanaImportCommand.main(Arrays.copyOfRange(args, 1, args.length));
             return;
         }
+        if (args.length > 0 && "import-wilma-wunder".equals(args[0]))
+        {
+            WilmaWunderImportCommand.main(Arrays.copyOfRange(args, 1, args.length));
+            return;
+        }
 
         System.out.println("Passau Speisekarten importer.");
         System.out.println("Alle implementierten Quellen importieren: import-all");
@@ -63,5 +71,6 @@ public final class PassauSpeisekartenApplication
         System.out.println("Pomeranz importieren und JSON ergänzen: import-pomeranz");
         System.out.println("Goldenes Schiff importieren und JSON ergänzen: import-goldenes-schiff");
         System.out.println("I Sapori della Toscana importieren: import-sapori-toscana [Referenzdatum YYYY-MM-DD]");
+        System.out.println("Wilma Wunder importieren: import-wilma-wunder [Referenzdatum YYYY-MM-DD]");
     }
 }
