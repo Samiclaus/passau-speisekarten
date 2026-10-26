@@ -6,6 +6,7 @@ const markerLabels = {
   VEGAN: "🌱 Vegan",
   ORGANIC: "🌿 Bio",
   BEEF: "🐄 Rind",
+  VEAL: "🐄 Kalb",
   PORK: "🐖 Schwein",
   POULTRY: "🍗 Geflügel",
   LAMB: "🐑 Lamm",
