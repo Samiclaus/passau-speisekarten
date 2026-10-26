@@ -83,6 +83,15 @@ public final class PomeranzMenuParser {
         List<String> lines = normalized.lines().map(String::trim).filter(s -> !s.isBlank()).toList();
         String vegetarian = null;
         String vegetarianDescription = null;
+        List<String> optionalComponents = new ArrayList<>();
+        for (String line : lines) {
+            String lowerLine = line.toLowerCase(DE);
+            if (lowerLine.startsWith("suppe:") || lowerLine.startsWith("vorspeise:") || lowerLine.startsWith("dessert:")) {
+                int colon = line.indexOf(':');
+                String component = cleanDish(line.substring(colon + 1));
+                if (!component.isBlank()) optionalComponents.add(line.substring(0, colon).trim() + ": " + component);
+            }
+        }
         List<PomeranzDay> days = new ArrayList<>();
         for (int i = 0; i < lines.size(); i++) {
             String lower = lines.get(i).toLowerCase(DE);
@@ -114,7 +123,7 @@ public final class PomeranzMenuParser {
         }
 
         return new PomeranzMenu(start, end, from, to, comboPrice, vegetarian, vegetarianDescription,
-            List.copyOf(days), text);
+            List.copyOf(optionalComponents), List.copyOf(days), text);
     }
 
     private static LocalDate filenameDate(String fileName) {
@@ -176,7 +185,7 @@ public final class PomeranzMenuParser {
 
     public record PomeranzMenu(LocalDate startDate, LocalDate endDate, String serviceStart, String serviceEnd,
                                BigDecimal comboPrice, String vegetarianDish, String vegetarianDescription,
-                               List<PomeranzDay> days, String extractedText) {}
+                               List<String> optionalComponents, List<PomeranzDay> days, String extractedText) {}
     public record PomeranzDay(LocalDate date, String dishText, String dishDescription,
                               String vegetarianDish, String vegetarianDescription) {}
 }
