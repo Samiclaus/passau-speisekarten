@@ -50,6 +50,10 @@ jobs:
             mvn -f importer/pom.xml -B -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java \
               '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' \
               '-Dexec.args=import-pomeranz'
+          elif [ "$SELECTED_SOURCE" = "goldenes-schiff" ]; then
+            mvn -f importer/pom.xml -B -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java \
+              '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' \
+              '-Dexec.args=import-goldenes-schiff'
           else
             echo "Unbekannte Quelle: $SELECTED_SOURCE" >&2
             exit 2
