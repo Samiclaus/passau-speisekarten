@@ -46,11 +46,11 @@ Die Merkmale sollen nicht auf Ernährungsformen beschränkt sein: beispielsweise
 Ein Merkmal sollte neben seinem Wert auch seine Herkunft abbilden (z. B. explizite Quellenkennzeichnung, strukturierter Quellcode oder manuelle Korrektur). Nicht vorhandene Angaben gelten als **unbekannt**, nicht als Gegenbeweis.
 
 ## Lokal testen
-Voraussetzung: Java 21 und Maven. Im Verzeichnis `importer/` die automatisierten Tests und den Build ausführen:
+Voraussetzung: Java 21 und Maven. **Alle Befehle werden im Repository-Hauptverzeichnis** ausgeführt (dort, wo `frontend/`, `importer/` und `config/` liegen). Git-Befehle und Maven-Aufrufe verwenden damit dieselbe Verzeichnisebene:
 
 ```powershell
-mvn clean test
-mvn clean verify
+git pull
+mvn -f importer/pom.xml clean verify
 ```
 
 ### Pomeranz-PDF prüfen und importieren
@@ -60,7 +60,7 @@ Die Pomeranz-Quelle sucht auf der offiziellen Speisekartenseite nach der aktuell
 Zuerst kann der Livecheck den erkannten Zeitraum, die Mittagszeit, den Kombipreis und den PDF-Text ausgeben, ohne Dateien zu verändern:
 
 ```powershell
-mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
   '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
   '-Dexec.args=check-pomeranz'
 ```
@@ -68,7 +68,7 @@ mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
 Der eigentliche Import wird mit `import-pomeranz` gestartet. Er ergänzt die bestehenden JSON-Dateien und erhält Menü- und Restaurantdaten anderer Quellen. Bei fehlendem Preis, fehlenden Servicezeiten, einem abgelaufenen PDF oder unzureichend erkannten Gerichten bricht er vor dem Schreiben ab. Pomeranz bleibt in `config/sources.csv` deaktiviert, bis der Import lokal geprüft wurde:
 
 ```powershell
-mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
   '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
   '-Dexec.args=import-pomeranz'
 ```
@@ -78,15 +78,15 @@ Die offizielle Website nennt für Pomeranz regulär Dienstag bis Samstag 11:30�
 ### Uni-Mensa live prüfen
 Der manuelle Diagnose-Runner ruft den echten STWNO-HTML-POST-Endpunkt für die Uni-Mensa Passau (`UNI-P`) für sieben aufeinanderfolgende Tage ab: vom Startdatum einschließlich bis sechs Tage später. Standardmäßig beginnt der Zeitraum heute; so entspricht ein Lauf am Montag dem Zeitraum Montag bis Sonntag. Für jeden Tag werden Kategorie, Gericht, Kennzeichen sowie alle drei Preise (Studierende, Beschäftigte, Gäste) ausgegeben. Eine Wochenübersicht fasst Gerichte, fehlende Angaben und Abruffehler zusammen. Der Runner schreibt keine Dateien und aktiviert keine Quelle.
 
-Im Verzeichnis `importer/` ausführen:
+Im Repository-Hauptverzeichnis ausführen:
 
 ```powershell
 # Heute und die folgenden sechs Tage
-mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
   -Dexec.mainClass=de.passau.speisekarten.mensa.MensaHtmlLiveCheck
 
 # Optional mit festem Startdatum (Beispiel: Montag bis Sonntag)
-mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
   -Dexec.mainClass=de.passau.speisekarten.mensa.MensaHtmlLiveCheck `
   '-Dexec.args=2026-10-26'
 ```
@@ -101,13 +101,13 @@ Im Verzeichnis `importer/` ausführen:
 
 ```powershell
 # Sieben Tage ab heute
-mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java \\
-  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' \\
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
   '-Dexec.args=import-mensa-html'
 
 # Optional: fester Starttag und Anzahl der Tage
-mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java \\
-  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' \\
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
   '-Dexec.args=import-mensa-html 2026-10-26 7'
 ```
 
