@@ -1,0 +1,43 @@
+name: Update menus
+
+on:
+  schedule:
+    # 05:30 UTC. Revisit the local-time target before enabling production imports.
+    - cron: "30 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-menus
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+          cache-dependency-path: importer/pom.xml
+      - name: Build importer
+        run: mvn -B -f importer/pom.xml package
+      - name: Run importer
+        run: java -jar importer/target/passau-speisekarten-importer-0.1.0-SNAPSHOT.jar
+      - name: Commit generated JSON when changed
+        run: |
+          if [[ -z "$(git status --porcelain -- frontend/*.json)" ]]; then
+            echo "No generated data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/*.json
+          git commit -m "data: refresh menu exports"
+          git push

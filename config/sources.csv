@@ -1,0 +1,2 @@
+id,restaurant_name,source_url,importer_type,enabled,notes
+# Beispiel: restaurant-id,Restaurantname,https://example.org/mittag,html,false,Nach Implementierung des Importers aktivieren

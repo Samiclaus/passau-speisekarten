@@ -1,0 +1,41 @@
+name: Build and validate
+
+on:
+  push:
+    branches: [main]
+    paths: ["importer/**", "frontend/**", "config/**", "corrections/**", ".github/workflows/build.yml"]
+  pull_request:
+    paths: ["importer/**", "frontend/**", "config/**", "corrections/**", ".github/workflows/build.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+          cache-dependency-path: importer/pom.xml
+      - name: Test importer
+        run: mvn -B -f importer/pom.xml verify
+      - name: Validate JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in sorted(Path("frontend").glob("*.json")):
+              with path.open(encoding="utf-8") as stream:
+                  json.load(stream)
+              print(f"Valid JSON: {path}")
+          with Path("corrections/menu-decisions.json").open(encoding="utf-8") as stream:
+              json.load(stream)
+          print("Valid JSON: corrections/menu-decisions.json")
+          PY
