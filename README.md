@@ -17,7 +17,7 @@ Die erste Version benötigt keine Datenbank. Git hält Änderungen an Konfigurat
 
 Die beiden Mensa-Varianten sind bewusst als getrennte, deaktivierte Quellen konfiguriert. Wir vergleichen Zuverlässigkeit, Datenvollständigkeit und Wartbarkeit, bevor wir eine davon aktivieren; eine automatische Vermischung beider Quellen ist zunächst nicht vorgesehen.
 - **Restaurant Pomeranz (PDF):** die offizielle Seite `https://www.restaurant-pomeranz.de/Speisekarte/` enthält den aktuellen PDF-Link. Nicht die wechselnde PDF-URL fest konfigurieren, sondern auf der Seite den Link zur Mittagskarte ermitteln.
-- **I Sapori della Toscana (HTML, bevorzugter Kandidat):** `https://sapori-toscana.com/` zeigt Mittagsgerichte nach Wochentag samt Preisen. Das eignet sich gut, um einen HTML-Adapter für wiederkehrende Tagesabschnitte zu testen.
+- **I Sapori della Toscana (HTML):** `https://sapori-toscana.com/` zeigt Mittagsgerichte nach Wochentag samt Preisen. Der HTML-Importer liest Gerichte, Preise und optionale Zutatenbeschreibungen aus den Wochentagsblöcken und ersetzt die Einträge dieser Quelle beim Import. Er berücksichtigt das Referenzdatum bis einschließlich Freitag; historische und veraltete Einträge dieser Quelle werden entfernt. Die heuristische Merkmalsklassifikation erkennt unter anderem Nduja/Salsiccia/Speck, Salmone/Tonno, Carne/Ragù sowie deutsche Begriffe für Fleisch und Fisch. Vegetarisch wird nur dann automatisch ergänzt, wenn eine Beschreibung vorhanden ist und keine Fleisch-/Fischbegriffe erkannt wurden; das bleibt eine Heuristik und keine garantierte Zutatenprüfung. Die Quelle bleibt bis zum lokalen Live-Test deaktiviert.
 - **Wirtshaus & Pension Goldenes Schiff (HTML/PDF):** `https://goldenesschiff.de/` zeigt einen Mittagstisch-Block und eine Wochenkarte als PDF. Der erste Importer liest datierte Gerichte aus der Wochenkarte aus und akzeptiert historische Daten. Der Preis von 11,80 € wird derzeit dem Hauptgericht zugeordnet; der HTML-Tagesblock ist noch nicht als Fallback angebunden. Vor Aktivierung muss der Import anhand der aktuellen PDF lokal geprüft werden.
 
 Die Einträge in `config/sources.csv` sind zunächst deaktiviert. Erst nach Implementierung und Tests des jeweiligen Adapters wird `enabled` auf `true` gesetzt.
@@ -129,6 +129,27 @@ mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plug
 
 Die oben gesetzte `MAVEN_OPTS`-Variable stellt den lokalen Java-Truststore auch für diese Maven-Aufrufe bereit. Der Import schreibt die JSON-Dateien erst nach erfolgreichem Abruf aller angeforderten Tage; bei einem Abruffehler bleiben die bisherigen Dateien unverändert. Die Importquelle ist noch nicht für einen automatischen Zeitplan aktiviert.
 
+
+
+### I Sapori della Toscana importieren
+
+Der Import verwendet die Wochentagsblöcke der offiziellen HTML-Seite. Für den aktuellen Referenztag und die folgenden Wochentage bis Freitag werden Gerichte mit Name, Preis und optionaler Zutatenbeschreibung eingelesen. Das Referenzdatum kann zum reproduzierbaren Testen übergeben werden.
+
+Im Repository-Hauptverzeichnis ausführen:
+
+```powershell
+# Import ab heute bis Freitag
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
+  '-Dexec.args=import-sapori-toscana'
+
+# Reproduzierbarer Test, z. B. Donnerstag bis Freitag
+mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
+  '-Dexec.args=import-sapori-toscana 2026-10-29'
+```
+
+Der Import ersetzt alle bisherigen Einträge von i Sapori della Toscana, sodass historische Daten nicht stehen bleiben. Vor dem Schreiben wird geprüft, ob für jeden erwarteten Wochentag mindestens ein Gericht mit Preis gefunden wurde. Bei unvollständiger Seite oder einem Fehler bleiben die vorhandenen JSON-Dateien unverändert. Samstags und sonntags wird der Import abgebrochen, da die Mittagskarte nur für Montag bis Freitag ausgewiesen ist.
 
 ### Alle implementierten Quellen importieren
 
