@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Status der Speisekarten-Importe und Hinweise zu den Quellen.">
+  <title>Importstatus – Mittagessen in Passau</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .status-intro { max-width: 52rem; color: var(--muted); }
+    .status-summary { margin: 1.25rem 0; padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: .8rem; background: #fff; }
+    .source-list { display: grid; gap: .85rem; }
+    .source-status { padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: .8rem; background: #fff; }
+    .source-status h2 { margin: 0; font-size: 1.15rem; }
+    .source-topline { display: flex; justify-content: space-between; align-items: center; gap: .8rem; }
+    .status-pill { display: inline-block; padding: .18rem .55rem; border-radius: 999px; background: #edf0eb; color: #3d493e; font-size: .75rem; font-weight: 750; }
+    .status-pill.warning { background: #fff0d6; color: #704a00; }
+    .status-pill.good { background: #e1f1e3; color: #20552d; }
+    .source-status p { margin: .55rem 0 0; }
+    .source-meta { color: var(--muted); font-size: .85rem; }
+    .status-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }
+    .status-actions a { display: inline-block; padding: .55rem .8rem; border: 1px solid var(--border); border-radius: .55rem; background: #fff; font-weight: 700; }
+    @media (max-width: 600px) { .source-topline { align-items: flex-start; flex-direction: column; } }
+  </style>
+  <script src="./status.js" defer></script>
+</head>
+<body>
+  <header class="hero"><div class="container">
+    <p class="eyebrow">Transparenz und Datenqualität</p>
+    <h1>Importstatus</h1>
+    <p>Welche Quellen sind eingebunden, wann wurden sie geprüft und wo gibt es Probleme?</p>
+  </div></header>
+  <main class="container">
+    <p class="status-intro">Diese Seite zeigt den dokumentierten Status der Speisekartenquellen. Ein erfolgreicher Import bedeutet nicht automatisch, dass die Quelle neue Gerichte geliefert hat: Auch leere Ergebnisse und veraltete Karten sollen sichtbar werden.</p>
+    <section id="overall-status" class="status-summary" aria-live="polite">Statusinformationen werden geladen …</section>
+    <section id="source-statuses" class="source-list" aria-live="polite"></section>
+    <section class="status-summary">
+      <h2>Manueller Import</h2>
+      <p>Ein Import kann hier noch nicht direkt gestartet werden. Die Website ist statisch und hat keine sicheren Server-Zugangsdaten. Als nächster Schritt kann ein geschützter manueller Start über GitHub Actions ergänzt werden; dabei sollen Ergebnis und Fehler automatisch hier protokolliert werden.</p>
+    </section>
+    <div class="status-actions"><a href="./index.html">Zur Speisekartenübersicht</a><a href="./import-status.json">Statusdaten als JSON</a></div>
+  </main>
+  <footer><div class="container">Ein unabhängiges Projekt für Mittagskarten in Passau.</div></footer>
+</body>
+</html>
