@@ -1,6 +1,6 @@
 package de.passau.speisekarten.mensa;
 
-/** Normalized meanings of markers found in the Mensa CSV or HTML menu. */
+/** Shared normalized dish markers used by the Mensa and restaurant importers. */
 public enum MensaMarker
 {
     VEGETARIAN,
