@@ -87,7 +87,11 @@ function renderPrices(item) {
 
 function renderDish({menu, item, restaurant}) {
   const dietary = Array.isArray(item.dietary) ? item.dietary : [];
-  const markers = dietary.map(marker => markerLabels[marker] ?? marker)
+  // Vegan schließt vegetarisch bereits ein: zeige dafür nur das spezifischere Vegan-Icon.
+  const visibleDietary = dietary.includes("VEGAN")
+    ? dietary.filter(marker => marker !== "VEGETARIAN")
+    : dietary;
+  const markers = visibleDietary.map(marker => markerLabels[marker] ?? marker)
     .map(label => `<span class="tag">${escapeHtml(label)}</span>`).join("");
   const source = menu.sourceUrl
     ? `<a href="${escapeHtml(menu.sourceUrl)}" target="_blank" rel="noopener noreferrer">Original-Speiseplan <span aria-hidden="true">↗</span></a>`
