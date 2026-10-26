@@ -9,6 +9,11 @@ function localDateString() {
 function escapeHtml(value = "") {
   return String(value).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
+function formatPrice(value) {
+  return typeof value === "number"
+    ? new Intl.NumberFormat("de-DE",{style:"currency",currency:"EUR"}).format(value)
+    : "—";
+}
 function matches(item, restaurant) {
   const query = el.search.value.trim().toLocaleLowerCase("de");
   if (query && ![item.name,item.description,restaurant?.name].filter(Boolean).join(" ").toLocaleLowerCase("de").includes(query)) return false;
@@ -28,12 +33,19 @@ function render() {
   }
   visible.sort((a,b) => (a.restaurant?.name ?? "").localeCompare(b.restaurant?.name ?? "","de") || (a.item.name ?? "").localeCompare(b.item.name ?? "","de"));
   el["menu-results"].innerHTML = visible.map(({menu,item,restaurant}) => {
-    const price = typeof item.price === "number" ? new Intl.NumberFormat("de-DE",{style:"currency",currency:"EUR"}).format(item.price) : "Preis nicht angegeben";
+    const studentPrice = item.studentPrice ?? item.price;
+    const prices = [
+      ["Studierende", studentPrice],
+      ["Beschäftigte", item.employeePrice],
+      ["Gäste", item.guestPrice]
+    ];
     const source = menu.sourceUrl ? `<a href="${escapeHtml(menu.sourceUrl)}" target="_blank" rel="noopener noreferrer">Originalkarte</a>` : "";
-    return `<article class="card"><div class="card-title"><h2>${escapeHtml(item.name ?? "Gericht ohne Namen")}</h2><strong>${price}</strong></div>
+    return `<article class="card"><div class="card-title"><h2>${escapeHtml(item.name ?? "Gericht ohne Namen")}</h2></div>
       <p class="restaurant">${escapeHtml(restaurant?.name ?? "Unbekanntes Lokal")}</p>
+      ${item.category ? `<p class="muted category">${escapeHtml(item.category)}</p>` : ""}
       ${restaurant?.address ? `<p class="muted">${escapeHtml(restaurant.address)}</p>` : ""}
       ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
+      <dl class="prices">${prices.map(([label,value]) => `<div><dt>${label}</dt><dd>${formatPrice(value)}</dd></div>`).join("")}</dl>
       ${item.dietary?.length ? `<p class="muted">${item.dietary.map(escapeHtml).join(" · ")}</p>` : ""}
       <p>${source}</p></article>`;
   }).join("");
