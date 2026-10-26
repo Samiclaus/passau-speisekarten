@@ -53,6 +53,7 @@ public final class PomeranzImportCommand {
             throw new IOException("Pomeranz PDF is missing price or service hours; refusing to publish");
         if (menu.vegetarianDish() == null || menu.vegetarianDish().isBlank()
             || menu.days().size() < 2
+            || menu.days().stream().map(PomeranzMenuParser.PomeranzDay::date).distinct().count() != menu.days().size()
             || menu.days().stream().anyMatch(day -> day.dishText() == null || day.dishText().isBlank()))
             throw new IOException("Pomeranz PDF did not yield the weekly vegetarian dish and at least two complete weekday dishes; refusing to publish");
 
