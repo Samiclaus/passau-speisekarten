@@ -30,6 +30,19 @@ function localDateString() {
   return `${values.year}-${values.month}-${values.day}`;
 }
 
+function addDays(dateString, days) {
+  const date = new Date(`${dateString}T12:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function calendarWeekRange(today) {
+  const weekday = new Date(`${today}T12:00:00Z`).getUTCDay();
+  const daysSinceMonday = (weekday + 6) % 7;
+  const start = addDays(today, -daysSinceMonday);
+  return {start, end: addDays(start, 6)};
+}
+
 function escapeHtml(value = "") {
   return String(value).replace(/[&<>"']/g, c => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
@@ -113,12 +126,22 @@ function renderDish({menu, item, restaurant}) {
 
 function render() {
   const today = localDateString();
+  const week = calendarWeekRange(today);
   const dayGroups = [];
 
   for (const menu of state.menus) {
     if (menu.status && menu.status !== "CURRENT") continue;
+    const validFrom = menu.validFrom ?? "";
+    const validUntil = menu.validUntil ?? validFrom;
     if (el.day.value === "today" &&
-      ((menu.validFrom && menu.validFrom > today) || (menu.validUntil && menu.validUntil < today))) {
+      ((validFrom && validFrom > today) || (validUntil && validUntil < today))) {
+      continue;
+    }
+    if (el.day.value === "week" &&
+      ((validFrom && validFrom > week.end) || (validUntil && validUntil < week.start))) {
+      continue;
+    }
+    if (el.day.value === "future" && validUntil && validUntil < today) {
       continue;
     }
 
