@@ -9,6 +9,7 @@ public enum MensaMarker
     POULTRY,
     GLUTEN_FREE,
     BEEF,
+    VEAL,
     ORGANIC,
     PORK,
     CONTAINS_ALCOHOL,
