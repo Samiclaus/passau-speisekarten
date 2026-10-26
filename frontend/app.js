@@ -148,53 +148,63 @@ function renderDish({menu, item: rawItem, restaurant}) {
 function render() {
   const today = localDateString();
   const week = calendarWeekRange(today);
-  const dayGroups = [];
+  const menusByDay = new Map();
 
   for (const menu of state.menus) {
     if (menu.status && menu.status !== "CURRENT") continue;
     const validFrom = menu.validFrom ?? "";
     const validUntil = menu.validUntil ?? validFrom;
     if (el.day.value === "today" &&
-      ((validFrom && validFrom > today) || (validUntil && validUntil < today))) {
-      continue;
-    }
+      ((validFrom && validFrom > today) || (validUntil && validUntil < today))) continue;
     if (el.day.value === "week" &&
-      ((validFrom && validFrom > week.end) || (validUntil && validUntil < week.start))) {
-      continue;
-    }
-    if (el.day.value === "future" && validUntil && validUntil < today) {
-      continue;
-    }
+      ((validFrom && validFrom > week.end) || (validUntil && validUntil < week.start))) continue;
+    if (el.day.value === "future" && validUntil && validUntil < today) continue;
 
     const restaurant = state.restaurants.get(menu.restaurantId);
     const items = (menu.items ?? [])
       .map((item, index) => ({menu, item, restaurant, index}))
       .filter(({item}) => el["show-sides"].checked || String(item.category ?? "").trim().toLocaleLowerCase("de") !== "beilagen")
       .filter(({item}) => matches(item, restaurant));
+    if (!items.length) continue;
 
-    if (items.length) dayGroups.push({menu, restaurant, items});
+    const dateKey = validFrom || "undated";
+    if (!menusByDay.has(dateKey)) menusByDay.set(dateKey, {date: validFrom, restaurants: new Map()});
+    const day = menusByDay.get(dateKey);
+    const restaurantKey = menu.restaurantId ?? restaurant?.name ?? "unknown";
+    if (!day.restaurants.has(restaurantKey)) day.restaurants.set(restaurantKey, {menu, restaurant, items: []});
+    day.restaurants.get(restaurantKey).items.push(...items);
   }
 
-  dayGroups.sort((a, b) => (a.menu.validFrom ?? "").localeCompare(b.menu.validFrom ?? ""));
-  const totalVisible = dayGroups.reduce((sum, group) => sum + group.items.length, 0);
+  const dayGroups = [...menusByDay.values()].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+  const totalVisible = dayGroups.reduce((sum, day) =>
+    sum + [...day.restaurants.values()].reduce((subtotal, group) => subtotal + group.items.length, 0), 0);
 
   el["menu-results"].classList.toggle("card-view", viewMode === "cards");
   el["menu-results"].classList.toggle("list-view", viewMode === "list");
 
-  el["menu-results"].innerHTML = dayGroups.map(({menu, restaurant, items}) => {
-    const date = menu.validFrom ? formatDate(menu.validFrom) : "Datum nicht angegeben";
-    const cards = items.map(renderDish).join("");
+  el["menu-results"].innerHTML = dayGroups.map(day => {
+    const date = day.date ? formatDate(day.date) : "Datum nicht angegeben";
+    const restaurantGroups = [...day.restaurants.values()]
+      .sort((a, b) => (a.restaurant?.name ?? "").localeCompare(b.restaurant?.name ?? "", "de"));
+    const dayCount = restaurantGroups.reduce((sum, group) => sum + group.items.length, 0);
+    const restaurantsHtml = restaurantGroups.map(({menu, restaurant, items}) => {
+      const cards = items.map(renderDish).join("");
+      return `<section class="restaurant-group" aria-label="${escapeHtml(restaurant?.name ?? "Mittagskarte")}">
+        <header class="restaurant-heading">
+          <h3>${escapeHtml(restaurant?.name ?? "Mittagskarte")}</h3>
+          <span class="restaurant-dish-count">${items.length} ${items.length === 1 ? "Gericht" : "Gerichte"}</span>
+        </header>
+        ${menu.serviceStart && menu.serviceEnd ? `<p class="menu-meta">Essensausgabe: ${escapeHtml(menu.serviceStart)}–${escapeHtml(menu.serviceEnd)} Uhr</p>` : ""}
+        ${menu.offerNote ? `<p class="menu-meta">${escapeHtml(menu.offerNote)}</p>` : ""}
+        <div class="dish-grid">${cards}</div>
+      </section>`;
+    }).join("");
     return `<section class="day-group" aria-label="${escapeHtml(date)}">
       <header class="day-heading">
-        <div>
-          <p class="day-kicker">${escapeHtml(restaurant?.name ?? "Mittagskarte")}</p>
-          <h2>${escapeHtml(date)}</h2>
-          ${menu.serviceStart && menu.serviceEnd ? `<p class="menu-meta">Essensausgabe: ${escapeHtml(menu.serviceStart)}–${escapeHtml(menu.serviceEnd)} Uhr</p>` : ""}
-          ${menu.offerNote ? `<p class="menu-meta">${escapeHtml(menu.offerNote)}</p>` : ""}
-        </div>
-        <span class="dish-count">${items.length} ${items.length === 1 ? "Gericht" : "Gerichte"}</span>
+        <h2>${escapeHtml(date)}</h2>
+        <span class="dish-count">${dayCount} ${dayCount === 1 ? "Gericht" : "Gerichte"}</span>
       </header>
-      <div class="dish-grid">${cards}</div>
+      ${restaurantsHtml}
     </section>`;
   }).join("");
 
