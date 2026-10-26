@@ -42,29 +42,25 @@ public final class SaporiToscanaMenuParser
         }
 
         Document document = Jsoup.parse(html);
-        List<Element> candidates = new ArrayList<>();
-        for (Element div : document.select("div"))
-        {
-            String day = weekday(div.text());
-            if (day != null && !div.select("p").isEmpty())
-            {
-                candidates.add(div);
-            }
-        }
-
-        // Use the innermost weekday container to avoid parsing nested layout wrappers twice.
-        List<Element> dayBlocks = candidates.stream()
-            .filter(candidate -> candidate.select("div").stream()
-                .noneMatch(child -> weekday(child.text()) != null
-                    && weekday(child.text()).equals(weekday(candidate.text()))
-                    && !child.select("p").isEmpty()))
-            .sorted(Comparator.comparingInt(Element::elementSiblingIndex))
-            .toList();
-
         List<SaporiToscanaDish> dishes = new ArrayList<>();
-        for (Element block : dayBlocks)
+        for (Element heading : document.select("h1, h2, h3, h4, h5, h6"))
         {
-            String day = weekday(block.text());
+            String day = weekday(heading.text());
+            if (day == null)
+            {
+                continue;
+            }
+
+            Element block = heading.parent();
+            while (block != null && block.select("p").isEmpty())
+            {
+                block = block.parent();
+            }
+            if (block == null)
+            {
+                continue;
+            }
+
             List<Element> paragraphs = block.select("p");
             for (int i = 0; i < paragraphs.size(); i++)
             {
@@ -112,7 +108,7 @@ public final class SaporiToscanaMenuParser
             return null;
         }
         Matcher matcher = WEEKDAY.matcher(text.trim());
-        return matcher.find() ? matcher.group(1).toLowerCase(Locale.GERMAN) : null;
+        return matcher.matches() ? matcher.group(1).toLowerCase(Locale.GERMAN) : null;
     }
 
     private static BigDecimal parsePrice(String text)
