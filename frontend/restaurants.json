@@ -85,5 +85,10 @@
     "address" : "Unterer Sand 8, 94032 Passau",
     "sourceUrl" : "https://goldenesschiff.de/",
     "menuPdfUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote"
+  }, {
+    "id" : "isapori",
+    "name" : "i Sapori della Toscana",
+    "address" : "Theresienstraße 23, 94032 Passau",
+    "sourceUrl" : "https://sapori-toscana.com/"
   } ]
 }
