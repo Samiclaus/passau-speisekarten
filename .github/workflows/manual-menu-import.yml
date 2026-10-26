@@ -10,6 +10,7 @@ on:
         options:
           - uni-passau-mensa-html
           - pomeranz
+          - goldenes-schiff
 
 permissions:
   contents: write
