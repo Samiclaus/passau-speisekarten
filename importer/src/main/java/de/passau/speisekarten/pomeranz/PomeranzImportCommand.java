@@ -132,7 +132,7 @@ public final class PomeranzImportCommand {
     private static Map<String, Object> regularHours() {
         Map<String, Object> hours = new LinkedHashMap<>();
         for (DayOfWeek day : DayOfWeek.values()) {
-            if (day.getValue() >= DayOfWeek.TUESDAY.getValue() && day.getValue() <= DayOfWeek.SATURDAY) {
+            if (day.getValue() >= DayOfWeek.TUESDAY.getValue() && day.getValue() <= DayOfWeek.SATURDAY.getValue()) {
                 hours.put(day.name(), List.of(
                     Map.of("from", "11:30", "to", "14:00"),
                     Map.of("from", "17:30", "to", "23:00")));
