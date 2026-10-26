@@ -1,5 +1,7 @@
 package de.passau.speisekarten.goldenesschiff;
 
+import de.passau.speisekarten.mensa.DishMarkerClassifier;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -32,6 +34,7 @@ public final class GoldenesSchiffImportCommand {
     private static final String ADDRESS = "Unterer Sand 8, 94032 Passau";
     private static final BigDecimal DAY_PRICE = new BigDecimal("11.80");
     private final ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+    private static final DishMarkerClassifier MARKER_CLASSIFIER = new DishMarkerClassifier();
 
     private GoldenesSchiffImportCommand() {}
 
@@ -111,7 +114,12 @@ public final class GoldenesSchiffImportCommand {
         item.put("name", name);
         item.put("category", category);
         item.put("price", price);
-        item.put("dietary", dietary);
+        List<String> markers = new ArrayList<>(dietary);
+        MARKER_CLASSIFIER.classify(name, "").stream()
+            .map(Enum::name)
+            .filter(marker -> !markers.contains(marker))
+            .forEach(markers::add);
+        item.put("dietary", markers.stream().sorted().toList());
         return item;
     }
 
