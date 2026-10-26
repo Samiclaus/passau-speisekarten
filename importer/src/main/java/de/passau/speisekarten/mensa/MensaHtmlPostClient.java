@@ -23,7 +23,7 @@ public final class MensaHtmlPostClient
         "https://www.stwno.de/infomax/daten-extern/html/speiseplan-render.php";
 
     private static final String REFERER =
-        "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=%s&w=dw";
+        "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=%s";
 
     private static final DateTimeFormatter REQUEST_DATE = DateTimeFormatter.ISO_LOCAL_DATE;
 
@@ -49,6 +49,7 @@ public final class MensaHtmlPostClient
             .method(Connection.Method.POST)
             .data(buildFormParameters(date, locationId))
             .header("Accept", "application/json")
+            .header("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
             .header("X-Request", "JSON")
             .header("X-Requested-With", "XMLHttpRequest")
             .header("Origin", "https://www.stwno.de")
@@ -70,7 +71,8 @@ public final class MensaHtmlPostClient
         parameters.put("locId", locationId);
         parameters.put("lang", "de");
         parameters.put("date", REQUEST_DATE.format(date));
-        parameters.put("w", "dw");
+        // Match the browser request: the w parameter is present but empty.
+        parameters.put("w", "");
         return Map.copyOf(parameters);
     }
 }
