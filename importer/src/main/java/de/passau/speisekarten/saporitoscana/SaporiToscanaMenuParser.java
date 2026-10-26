@@ -25,12 +25,13 @@ public final class SaporiToscanaMenuParser
         "(?i)(?:€\\s*|\\bEUR\\s*)(\\d{1,3}(?:[.,]\\s*\\d{1,2})?)|"
             + "(\\d{1,3}(?:[.,]\\s*\\d{1,2})?)\\s*€");
     private static final List<AnimalTerm> ANIMAL_TERMS = List.of(
-        new AnimalTerm(MensaMarker.PORK, "\\b(?:nduja|salsiccia|salsicia|speck|maiale|porco|schwein|schweinefleisch|pancetta|prosciutto|salami|guanciale)\\b"),
-        new AnimalTerm(MensaMarker.FISH, "\\b(?:salmone|salmon|lachs|tonno|thunfisch|fisch|pesce|sardellen|anchovis|anchovy)\\b"),
-        new AnimalTerm(MensaMarker.BEEF, "\\b(?:rind|rindfleisch|rinder|beef|manzo)\\b"),
-        new AnimalTerm(MensaMarker.LAMB, "\\b(?:lamm|schaf|agnello)\\b"),
-        new AnimalTerm(MensaMarker.POULTRY, "\\b(?:huhn|hahnchen|haehnchen|pute|truthahn|geflugel|pollo|tacchino)\\b"),
-        new AnimalTerm(MensaMarker.MEAT, "\\b(?:carne|ragu|fleisch|fleischsauce)\\b")
+        new AnimalTerm(MensaMarker.PORK, "\\b(?:nduja|salsiccia|salsicia|speck|maiale|porco|schwein\\w*|pancetta|prosciutto|salami|guanciale)\\b"),
+        new AnimalTerm(MensaMarker.FISH, "\\b(?:salmone|salmon|lachs\\w*|tonno|thunfisch\\w*|fisch\\w*|pesce|sardellen|anchovis|anchovy)\\b"),
+        new AnimalTerm(MensaMarker.BEEF, "\\b(?:rind\\w*|beef|manzo)\\b"),
+        new AnimalTerm(MensaMarker.VEAL, "\\b(?:kalb\\w*|vitello)\\b"),
+        new AnimalTerm(MensaMarker.LAMB, "\\b(?:lamm\\w*|schaf\\w*|agnello)\\b"),
+        new AnimalTerm(MensaMarker.POULTRY, "\\b(?:huhn\\w*|hahnchen\\w*|haehnchen\\w*|pute\\w*|truthahn\\w*|geflugel\\w*|pollo|tacchino)\\b"),
+        new AnimalTerm(MensaMarker.MEAT, "\\b(?:carne|ragu|fleisch\\w*)\\b")
     );
 
     public List<SaporiToscanaDish> parse(String html)
