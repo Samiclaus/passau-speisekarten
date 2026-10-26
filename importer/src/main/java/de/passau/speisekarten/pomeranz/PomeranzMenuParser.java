@@ -82,8 +82,16 @@ public final class PomeranzMenuParser {
             if (line.isEmpty()) continue;
             Matcher weekday = WEEKDAY.matcher(line);
             if (weekday.find()) {
-                DayOfWeek day = DayOfWeek.valueOf(weekday.group(1).toUpperCase(DE)
-                    .replace("Ä", "Ä").replace("Ö", "Ö").replace("Ü", "Ü"));
+                DayOfWeek day = switch (weekday.group(1).toLowerCase(DE)) {
+                    case "montag" -> DayOfWeek.MONDAY;
+                    case "dienstag" -> DayOfWeek.TUESDAY;
+                    case "mittwoch" -> DayOfWeek.WEDNESDAY;
+                    case "donnerstag" -> DayOfWeek.THURSDAY;
+                    case "freitag" -> DayOfWeek.FRIDAY;
+                    case "samstag" -> DayOfWeek.SATURDAY;
+                    case "sonntag" -> DayOfWeek.SUNDAY;
+                    default -> throw new IllegalArgumentException("Unknown weekday");
+                };
                 LocalDate match = start;
                 while (match.getDayOfWeek() != day && !match.isAfter(end)) match = match.plusDays(1);
                 if (!match.isAfter(end)) currentDate = match;
