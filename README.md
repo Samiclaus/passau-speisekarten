@@ -53,6 +53,28 @@ mvn clean test
 mvn clean verify
 ```
 
+### Pomeranz-PDF prüfen und importieren
+
+Die Pomeranz-Quelle sucht auf der offiziellen Speisekartenseite nach der aktuellen PDF mit dem Label „Mittagskarte“. Der Parser berücksichtigt den Zeitraum ohne Jahresangabe im PDF-Text und übernimmt das Jahr aus dem datierten Dateinamen. Er extrahiert das vegetarische Wochengericht sowie die Tagesgerichte aus den Abschnitten „Am Dienstag/Mittwoch/… in Kombination mit“.
+
+Zuerst kann der Livecheck den erkannten Zeitraum, die Mittagszeit, den Kombipreis und den PDF-Text ausgeben, ohne Dateien zu verändern:
+
+```powershell
+mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
+  '-Dexec.args=check-pomeranz'
+```
+
+Der eigentliche Import wird mit `import-pomeranz` gestartet. Er ergänzt die bestehenden JSON-Dateien und erhält Menü- und Restaurantdaten anderer Quellen. Bei fehlendem Preis, fehlenden Servicezeiten oder unzureichend erkannten Gerichten bricht er vor dem Schreiben ab. Pomeranz bleibt in `config/sources.csv` deaktiviert, bis der Import lokal geprüft wurde:
+
+```powershell
+mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' `
+  '-Dexec.args=import-pomeranz'
+```
+
+Die offizielle Website nennt für Pomeranz regulär Dienstag bis Samstag 11:30–14:00 und 17:30–23:00 Uhr; Sonntag und Montag sind geschlossen. Für Feiertage werden dieselben Zeiten genannt. Diese Angaben werden im Restaurantdatensatz getrennt als Öffnungs- und Servicezeiten abgelegt; konkrete datierte Ausnahmen sind noch nicht automatisch erfasst. Quelle: https://www.restaurant-pomeranz.de/Speisekarte/
+
 ### Uni-Mensa live prüfen
 Der manuelle Diagnose-Runner ruft den echten STWNO-HTML-POST-Endpunkt für die Uni-Mensa Passau (`UNI-P`) für sieben aufeinanderfolgende Tage ab: vom Startdatum einschließlich bis sechs Tage später. Standardmäßig beginnt der Zeitraum heute; so entspricht ein Lauf am Montag dem Zeitraum Montag bis Sonntag. Für jeden Tag werden Kategorie, Gericht, Kennzeichen sowie alle drei Preise (Studierende, Beschäftigte, Gäste) ausgegeben. Eine Wochenübersicht fasst Gerichte, fehlende Angaben und Abruffehler zusammen. Der Runner schreibt keine Dateien und aktiviert keine Quelle.
 
