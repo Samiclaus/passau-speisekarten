@@ -20,7 +20,6 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -38,7 +37,6 @@ public final class WilmaWunderImportCommand
 
     private final ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
     private final WilmaWunderMenuParser parser = new WilmaWunderMenuParser();
-    private final DishMarkerClassifier classifier = new DishMarkerClassifier();
     private final HttpClient client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).build();
 
     private WilmaWunderImportCommand() {}
@@ -104,6 +102,8 @@ public final class WilmaWunderImportCommand
 
         Map<String, Object> menusDocument = readDocument(menusPath);
         List<Map<String, Object>> menus = mapList(menusDocument.get("menus"));
+        // Replace this source completely on every run: this removes past entries as well as stale future ones.
+        long removedMenus = menus.stream().filter(menu -> ID.equals(menu.get("restaurantId"))).count();
         menus.removeIf(menu -> ID.equals(menu.get("restaurantId")));
         menus.addAll(imported);
         menus.sort(java.util.Comparator.comparing(menu -> String.valueOf(menu.get("validFrom"))));
@@ -126,8 +126,8 @@ public final class WilmaWunderImportCommand
         writeAtomically(menusPath, menusDocument);
         writeAtomically(restaurantsPath, restaurantsDocument);
         int dishCount = imported.stream().mapToInt(menu -> ((List<?>) menu.get("items")).size()).sum();
-        System.out.printf("Wilma Wunder importiert: %d Tage, %d Gerichte, Referenzdatum %s.%n",
-            imported.size(), dishCount, referenceDate);
+        System.out.printf("Wilma Wunder importiert: %d Tage, %d Gerichte, Referenzdatum %s; %d alte Einträge ersetzt.%n",
+            imported.size(), dishCount, referenceDate, removedMenus);
     }
 
     private HttpResponse<String> get(String url) throws IOException, InterruptedException
@@ -198,12 +198,27 @@ public final class WilmaWunderImportCommand
             markers.add(MensaMarker.PORK);
         }
 
+        boolean containsMeat = markers.stream().anyMatch(WilmaWunderImportCommand::isAnimalMarker);
+        if (!containsMeat)
+        {
+            markers.add(MensaMarker.VEGETARIAN);
+        }
+
         Map<String, Object> item = new LinkedHashMap<>();
         item.put("name", dish.name());
         item.put("category", "Hauptgerichte");
         item.put("price", dish.price());
         item.put("dietary", markers.stream().distinct().map(MensaMarker::name).sorted().toList());
         return item;
+    }
+
+    private static boolean isAnimalMarker(MensaMarker marker)
+    {
+        return switch (marker)
+        {
+            case POULTRY, BEEF, VEAL, PORK, LAMB, GAME_MEAT, FISH, MEAT -> true;
+            default -> false;
+        };
     }
 
     private static boolean isBavarianPublicHoliday(LocalDate date)
