@@ -82,6 +82,27 @@ public final class MensaHtmlImportCommand
             System.out.printf("%s: %d Gerichte importiert.%n", date, dishes.size());
         }
 
+        // Preserve menus from other restaurants when refreshing the Mensa source.
+        if (Files.exists(menusPath))
+        {
+            Map<String, Object> previous = objectMapper.readValue(menusPath.toFile(),
+                new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
+            Object previousMenus = previous.get("menus");
+            if (previousMenus instanceof List<?> list)
+            {
+                for (Object value : list)
+                {
+                    if (value instanceof Map<?, ?> item && !RESTAURANT_ID.equals(item.get("restaurantId")))
+                    {
+                        @SuppressWarnings("unchecked")
+                        Map<String, Object> otherMenu = (Map<String, Object>) item;
+                        menus.add(otherMenu);
+                    }
+                }
+            }
+            menus.sort(java.util.Comparator.comparing(m -> String.valueOf(m.get("validFrom"))));
+        }
+
         Map<String, Object> menusDocument = new LinkedHashMap<>();
         menusDocument.put("schemaVersion", 1);
         menusDocument.put("generatedAt", OffsetDateTime.now(ZoneId.of("Europe/Berlin")).toString());
