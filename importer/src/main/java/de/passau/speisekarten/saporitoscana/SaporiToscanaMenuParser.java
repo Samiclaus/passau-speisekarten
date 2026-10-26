@@ -1,18 +1,15 @@
 package de.passau.speisekarten.saporitoscana;
 
+import de.passau.speisekarten.mensa.DishMarkerClassifier;
 import de.passau.speisekarten.mensa.MensaMarker;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.math.BigDecimal;
-import java.text.Normalizer;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.EnumSet;
 import java.util.List;
 import java.util.Locale;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,15 +21,7 @@ public final class SaporiToscanaMenuParser
     private static final Pattern PRICE = Pattern.compile(
         "(?i)(?:€\\s*|\\bEUR\\s*)(\\d{1,3}(?:[.,]\\s*\\d{1,2})?)|"
             + "(\\d{1,3}(?:[.,]\\s*\\d{1,2})?)\\s*€");
-    private static final List<AnimalTerm> ANIMAL_TERMS = List.of(
-        new AnimalTerm(MensaMarker.PORK, "\\b(?:nduja|salsiccia|salsicia|speck|maiale|porco|schwein\\w*|pancetta|prosciutto|salami|guanciale)\\b"),
-        new AnimalTerm(MensaMarker.FISH, "\\b(?:salmone|salmon|lachs\\w*|tonno|thunfisch\\w*|fisch\\w*|pesce|sardellen|anchovis|anchovy)\\b"),
-        new AnimalTerm(MensaMarker.BEEF, "\\b(?:rind\\w*|beef|manzo)\\b"),
-        new AnimalTerm(MensaMarker.VEAL, "\\b(?:kalb\\w*|vitello)\\b"),
-        new AnimalTerm(MensaMarker.LAMB, "\\b(?:lamm\\w*|schaf\\w*|agnello)\\b"),
-        new AnimalTerm(MensaMarker.POULTRY, "\\b(?:huhn\\w*|hahnchen\\w*|haehnchen\\w*|pute\\w*|truthahn\\w*|geflugel\\w*|pollo|tacchino)\\b"),
-        new AnimalTerm(MensaMarker.MEAT, "\\b(?:carne|ragu|fleisch\\w*)\\b")
-    );
+    private final DishMarkerClassifier markerClassifier = new DishMarkerClassifier();
 
     public List<SaporiToscanaDish> parse(String html)
     {
@@ -94,7 +83,7 @@ public final class SaporiToscanaMenuParser
                 }
                 if (price != null)
                 {
-                    dishes.add(new SaporiToscanaDish(day, name, price, description, classify(name, description)));
+                    dishes.add(new SaporiToscanaDish(day, name, price, description, markerClassifier.classify(name, description, true)));
                 }
             }
         }
@@ -128,39 +117,6 @@ public final class SaporiToscanaMenuParser
             return null;
         }
     }
-
-    private static List<MensaMarker> classify(String name, String description)
-    {
-        String source = normalize(name + " " + description);
-        Set<MensaMarker> markers = EnumSet.noneOf(MensaMarker.class);
-        for (AnimalTerm term : ANIMAL_TERMS)
-        {
-            if (Pattern.compile(term.regex()).matcher(source).find())
-            {
-                markers.add(term.marker());
-            }
-        }
-        boolean containsAnimalMeatOrFish = markers.contains(MensaMarker.PORK)
-            || markers.contains(MensaMarker.FISH)
-            || markers.contains(MensaMarker.BEEF)
-            || markers.contains(MensaMarker.LAMB)
-            || markers.contains(MensaMarker.POULTRY)
-            || markers.contains(MensaMarker.MEAT);
-        if (!containsAnimalMeatOrFish && !description.isBlank())
-        {
-            markers.add(MensaMarker.VEGETARIAN);
-        }
-        return markers.stream().sorted().toList();
-    }
-
-    private static String normalize(String value)
-    {
-        return Normalizer.normalize(value, Normalizer.Form.NFD)
-            .replaceAll("\\p{M}+", "")
-            .toLowerCase(Locale.ROOT);
-    }
-
-    private record AnimalTerm(MensaMarker marker, String regex) {}
 
     public record SaporiToscanaDish(String weekday, String name, BigDecimal price,
                                    String description, List<MensaMarker> markers) {}
