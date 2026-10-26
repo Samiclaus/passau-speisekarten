@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-10-26T14:52:38.252670100+01:00",
+  "generatedAt" : "2026-10-26T15:00:45.940850400+01:00",
   "menus" : [ {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-10-20",
@@ -9,18 +9,18 @@
     "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-10-20-Mittagskarte.pdf?cdp=a&_=1a156cfcf30",
     "serviceStart" : "11:30",
     "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte, dazu Suppe oder Vorspeise oder Dessert; nur in Verbindung mit mindestens einem Getränk.",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kürbiscremesuppe mit Kresse; Vorspeise: Tomaten-Aufstrich mit Brot; Dessert: Profiterole mit Mango. Nur in Verbindung mit mindestens einem Getränk.",
     "items" : [ {
       "name" : "Pilz-Risotto",
-      "category" : "Vegetarisches Hauptgericht der Woche",
+      "category" : "Vegetarisch",
       "price" : 12.80,
-      "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano — im Kombiangebot zum angegebenen Preis.",
-      "dietary" : [ ]
+      "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano",
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Penne con Filetto",
       "category" : "Hauptgericht",
       "price" : 12.80,
-      "description" : "Schweinefiletspitzen / Brokkoli / Tomaten — im Kombiangebot zum angegebenen Preis.",
+      "description" : "Schweinefiletspitzen / Brokkoli / Tomaten",
       "dietary" : [ ]
     } ]
   }, {
@@ -31,18 +31,18 @@
     "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-10-20-Mittagskarte.pdf?cdp=a&_=1a156cfcf30",
     "serviceStart" : "11:30",
     "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte, dazu Suppe oder Vorspeise oder Dessert; nur in Verbindung mit mindestens einem Getränk.",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kürbiscremesuppe mit Kresse; Vorspeise: Tomaten-Aufstrich mit Brot; Dessert: Profiterole mit Mango. Nur in Verbindung mit mindestens einem Getränk.",
     "items" : [ {
       "name" : "Pilz-Risotto",
-      "category" : "Vegetarisches Hauptgericht der Woche",
+      "category" : "Vegetarisch",
       "price" : 12.80,
-      "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano — im Kombiangebot zum angegebenen Preis.",
-      "dietary" : [ ]
+      "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano",
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Gebratenem Hähnchenbrustfilet",
       "category" : "Hauptgericht",
       "price" : 12.80,
-      "description" : "Zucchini / Graupen / Kräuterschaum — im Kombiangebot zum angegebenen Preis.",
+      "description" : "Zucchini / Graupen / Kräuterschaum",
       "dietary" : [ ]
     } ]
   }, {
@@ -53,18 +53,18 @@
     "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-10-20-Mittagskarte.pdf?cdp=a&_=1a156cfcf30",
     "serviceStart" : "11:30",
     "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte, dazu Suppe oder Vorspeise oder Dessert; nur in Verbindung mit mindestens einem Getränk.",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kürbiscremesuppe mit Kresse; Vorspeise: Tomaten-Aufstrich mit Brot; Dessert: Profiterole mit Mango. Nur in Verbindung mit mindestens einem Getränk.",
     "items" : [ {
       "name" : "Pilz-Risotto",
-      "category" : "Vegetarisches Hauptgericht der Woche",
+      "category" : "Vegetarisch",
       "price" : 12.80,
-      "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano — im Kombiangebot zum angegebenen Preis.",
-      "dietary" : [ ]
+      "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano",
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Spaghetti Pesce",
       "category" : "Hauptgericht",
       "price" : 12.80,
-      "description" : "Fischfilet / Calamari / Wurzelgemüse — im Kombiangebot zum angegebenen Preis.",
+      "description" : "Fischfilet / Calamari / Wurzelgemüse",
       "dietary" : [ ]
     } ]
   }, {
@@ -75,18 +75,18 @@
     "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-10-20-Mittagskarte.pdf?cdp=a&_=1a156cfcf30",
     "serviceStart" : "11:30",
     "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte, dazu Suppe oder Vorspeise oder Dessert; nur in Verbindung mit mindestens einem Getränk.",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kürbiscremesuppe mit Kresse; Vorspeise: Tomaten-Aufstrich mit Brot; Dessert: Profiterole mit Mango. Nur in Verbindung mit mindestens einem Getränk.",
     "items" : [ {
       "name" : "Pilz-Risotto",
-      "category" : "Vegetarisches Hauptgericht der Woche",
+      "category" : "Vegetarisch",
       "price" : 12.80,
-      "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano — im Kombiangebot zum angegebenen Preis.",
-      "dietary" : [ ]
+      "description" : "Frische Tomaten / Lauchzwiebeln / Grana Padano",
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Buttermakrelenfilet",
       "category" : "Hauptgericht",
       "price" : 12.80,
-      "description" : "Pilze / Risotto / Pesto — im Kombiangebot zum angegebenen Preis.",
+      "description" : "Pilze / Risotto / Pesto",
       "dietary" : [ ]
     } ]
   }, {
