@@ -36,7 +36,9 @@
     <section id="source-statuses" class="source-list" aria-live="polite"></section>
     <section class="status-summary">
       <h2>Manueller Import</h2>
-      <p>Ein Import kann hier noch nicht direkt gestartet werden. Die Website ist statisch und hat keine sicheren Server-Zugangsdaten. Als nächster Schritt kann ein geschützter manueller Start über GitHub Actions ergänzt werden; dabei sollen Ergebnis und Fehler automatisch hier protokolliert werden.</p>
+      <p>Der Import läuft geschützt über GitHub Actions. Dazu ist ein GitHub-Konto mit Schreibzugriff auf das Repository erforderlich; die öffentliche Website selbst erhält keine Zugangsdaten.</p>
+      <p><a href="https://github.com/Samiclaus/passau-speisekarten/actions/workflows/manual-menu-import.yml">Manuellen Import in GitHub Actions starten</a></p>
+      <p>Wähle dort „Run workflow“ und anschließend die Quelle. Ergebnis und Fehler werden danach hier protokolliert. Ein fehlgeschlagener Import soll vorhandene veröffentlichte Menüdaten nicht ersetzen.</p>
     </section>
     <div class="status-actions"><a href="./index.html">Zur Speisekartenübersicht</a><a href="./import-status.json">Statusdaten als JSON</a></div>
   </main>
