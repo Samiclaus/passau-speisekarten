@@ -2,20 +2,22 @@ const state = { menus: [], restaurants: new Map(), generatedAt: null };
 const el = Object.fromEntries(["search", "day", "diet", "max-price", "status", "menu-results"].map(id => [id, document.getElementById(id)]));
 
 const markerLabels = {
-  VEGETARIAN: "Vegetarisch",
-  VEGAN: "Vegan",
-  ORGANIC: "Bio",
-  BEEF: "Rind",
-  PORK: "Schwein",
-  POULTRY: "Geflügel",
-  LAMB: "Lamm",
-  FISH: "Fisch",
-  GAME_MEAT: "Wild",
-  GLUTEN_FREE: "Glutenfrei",
-  CONTAINS_ALCOHOL: "Enthält Alkohol",
-  MENSA_VITAL: "MensaVital",
-  JURADISTL: "Juradistl"
+  VEGETARIAN: "🥕 Vegetarisch",
+  VEGAN: "🌱 Vegan",
+  ORGANIC: "🌿 Bio",
+  BEEF: "🐄 Rind",
+  PORK: "🐖 Schwein",
+  POULTRY: "🍗 Geflügel",
+  LAMB: "🐑 Lamm",
+  FISH: "🐟 Fisch",
+  GAME_MEAT: "🦌 Wild",
+  GLUTEN_FREE: "🌾 Glutenfrei",
+  CONTAINS_ALCOHOL: "🍷 Enthält Alkohol",
+  MENSA_VITAL: "💚 MensaVital",
+  JURADISTL: "🏞️ Juradistl"
 };
+
+let viewMode = "list";
 
 function localDateString() {
   const parts = new Intl.DateTimeFormat("en-CA", {
@@ -127,6 +129,9 @@ function render() {
   dayGroups.sort((a, b) => (a.menu.validFrom ?? "").localeCompare(b.menu.validFrom ?? ""));
   const totalVisible = dayGroups.reduce((sum, group) => sum + group.items.length, 0);
 
+  el["menu-results"].classList.toggle("card-view", viewMode === "cards");
+  el["menu-results"].classList.toggle("list-view", viewMode === "list");
+
   el["menu-results"].innerHTML = dayGroups.map(({menu, restaurant, items}) => {
     const date = menu.validFrom ? formatDate(menu.validFrom) : "Datum nicht angegeben";
     const cards = items.map(renderDish).join("");
@@ -172,6 +177,18 @@ async function loadData() {
     el.status.textContent = "Speisepläne sind momentan nicht verfügbar. Bitte versuche es später erneut.";
     console.error(error);
   }
+}
+
+for (const button of document.querySelectorAll("[data-view]")) {
+  button.addEventListener("click", () => {
+    viewMode = button.dataset.view;
+    document.querySelectorAll("[data-view]").forEach(option => {
+      const active = option === button;
+      option.classList.toggle("is-active", active);
+      option.setAttribute("aria-pressed", String(active));
+    });
+    render();
+  });
 }
 
 for (const id of ["search", "day", "diet", "max-price"]) {
