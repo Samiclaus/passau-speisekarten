@@ -68,14 +68,19 @@ public final class MensaHtmlLiveCheck
 
                 if (dishes.isEmpty())
                 {
-                    System.err.println("WARNUNG: Keine Gerichte erkannt.");
-                    System.err.println("Antworttext (max. 1200 Zeichen) zur Diagnose:");
-                    String text = response.text().replaceAll("\\s+", " ").trim();
-                    System.err.println(text.substring(0, Math.min(text.length(), 1200)));
-                    System.err.println(
-                        "Ein leerer Speiseplan kann für diesen Tag legitim sein; " +
-                        "prüfe andernfalls, ob sich das Quell-HTML geändert hat."
-                    );
+                    if (date.getDayOfWeek() == java.time.DayOfWeek.SATURDAY
+                        || date.getDayOfWeek() == java.time.DayOfWeek.SUNDAY)
+                    {
+                        System.out.println("Kein Speiseplan am Wochenende erwartet.");
+                    }
+                    else
+                    {
+                        System.err.println("WARNUNG: An einem Werktag wurden keine Gerichte erkannt.");
+                        System.err.println("Antworttext (max. 1200 Zeichen) zur Diagnose:");
+                        String text = response.text().replaceAll("\\s+", " ").trim();
+                        System.err.println(text.substring(0, Math.min(text.length(), 1200)));
+                        System.err.println("Prüfe, ob für diesen Tag ein Speiseplan veröffentlicht ist.");
+                    }
                 }
                 else
                 {
@@ -166,11 +171,32 @@ public final class MensaHtmlLiveCheck
 
         for (DayResult result : results)
         {
-            String status = result.error() != null
-                ? "FEHLER: " + result.error()
-                : result.dishCount() == 0
-                    ? "Keine Gerichte erkannt"
-                    : "OK";
+            String status;
+            if (result.error() != null)
+            {
+                status = "FEHLER: " + result.error();
+            }
+            else if (result.dishCount() == 0
+                && (result.date().getDayOfWeek() == java.time.DayOfWeek.SATURDAY
+                    || result.date().getDayOfWeek() == java.time.DayOfWeek.SUNDAY))
+            {
+                status = "Wochenende (erwartet)";
+            }
+            else if (result.dishCount() == 0)
+            {
+                status = "Keine Gerichte erkannt";
+            }
+            else if (result.withoutCategory() > 0
+                || result.withoutStudentPrice() > 0
+                || result.withoutEmployeePrice() > 0
+                || result.withoutGuestPrice() > 0)
+            {
+                status = "Prüfen: Angaben fehlen";
+            }
+            else
+            {
+                status = "OK";
+            }
             System.out.printf("%-12s | %8d | %14d | %10d | %10d | %10d | %s%n",
                 result.date(),
                 result.dishCount(),
