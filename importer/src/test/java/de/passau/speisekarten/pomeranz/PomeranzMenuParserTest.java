@@ -3,6 +3,7 @@ package de.passau.speisekarten.pomeranz;
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PomeranzMenuParserTest {
@@ -66,6 +67,10 @@ class PomeranzMenuParserTest {
         assertEquals("11:30", menu.serviceStart());
         assertEquals("14:00", menu.serviceEnd());
         assertEquals("Pilz-Risotto", menu.vegetarianDish());
+        assertEquals(List.of(
+            "Suppe: Kürbiscremesuppe mit Kresse",
+            "Vorspeise: Tomaten-Aufstrich mit Brot",
+            "Dessert: Profiterole mit Mango"), menu.optionalComponents());
         assertEquals(4, menu.days().size());
         assertEquals(LocalDate.of(2026, 10, 20), menu.days().get(0).date());
         assertEquals("Penne con Filetto", menu.days().get(0).dishText());
