@@ -29,13 +29,13 @@
     {
       "id": "isapori",
       "name": "I Sapori della Toscana",
-      "enabled": false,
-      "status": "NOT_IMPLEMENTED",
+      "enabled": true,
+      "status": "READY",
       "lastAttemptAt": null,
       "lastSuccessAt": null,
       "menuCount": null,
       "dishCount": null,
-      "message": "Quelle ist noch nicht implementiert."
+      "message": "Importer implementiert und aktiviert; nächster manueller Importlauf aktualisiert den Status."
     },
     {
       "id": "goldenes-schiff",
