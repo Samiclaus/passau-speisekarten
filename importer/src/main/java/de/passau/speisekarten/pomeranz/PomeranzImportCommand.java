@@ -62,10 +62,10 @@ public final class PomeranzImportCommand {
             List<Map<String, Object>> items = new ArrayList<>();
             if (day.vegetarianDish() != null) {
                 items.add(toItem(day.vegetarianDish(), day.vegetarianDescription(), menu.comboPrice(),
-                    "Vegetarisch", List.of("VEGETARIAN")));
+                    "Hauptgerichte", List.of("VEGETARIAN")));
             }
             if (day.dishText() != null && !day.dishText().isBlank()) {
-                items.add(toItem(day.dishText(), day.dishDescription(), menu.comboPrice(), "Hauptgericht", List.of()));
+                items.add(toItem(day.dishText(), day.dishDescription(), menu.comboPrice(), "Hauptgerichte", List.of()));
             }
             if (items.isEmpty()) continue;
             Map<String, Object> record = new LinkedHashMap<>();
