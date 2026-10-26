@@ -65,11 +65,7 @@ public final class SaporiToscanaImportCommand
         }
 
         List<SaporiToscanaMenuParser.SaporiToscanaDish> parsed = parser.parse(response.body());
-        Map<String, LocalDate> datesByWeekday = new LinkedHashMap<>();
-        for (LocalDate date = referenceDate; date.getDayOfWeek() != DayOfWeek.SATURDAY; date = date.plusDays(1))
-        {
-            datesByWeekday.put(dayName(date.getDayOfWeek()), date);
-        }
+        Map<String, LocalDate> datesByWeekday = datesForReferenceDate(referenceDate);
 
         List<Map<String, Object>> imported = new ArrayList<>();
         for (Map.Entry<String, LocalDate> entry : datesByWeekday.entrySet())
@@ -123,6 +119,17 @@ public final class SaporiToscanaImportCommand
             imported.size(), dishCount, referenceDate);
         imported.forEach(menu -> System.out.printf("  %s: %d Gerichte%n",
             menu.get("validFrom"), ((List<?>) menu.get("items")).size()));
+    }
+
+
+    static Map<String, LocalDate> datesForReferenceDate(LocalDate referenceDate)
+    {
+        Map<String, LocalDate> datesByWeekday = new LinkedHashMap<>();
+        for (LocalDate date = referenceDate; date.getDayOfWeek() != DayOfWeek.SATURDAY; date = date.plusDays(1))
+        {
+            datesByWeekday.put(dayName(date.getDayOfWeek()), date);
+        }
+        return datesByWeekday;
     }
 
     private static Map<String, Object> toItem(SaporiToscanaMenuParser.SaporiToscanaDish dish)
