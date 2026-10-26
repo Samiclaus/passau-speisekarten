@@ -28,7 +28,7 @@ Die statische Statusseite liegt unter `frontend/status.html` und ist von der Spe
 
 Aktuell ist das Statusdokument ein initialer Stand: Importversuche und Ergebnisse werden noch nicht automatisch protokolliert. Deshalb werden unbekannte Zeitpunkte und Zählwerte ausdrücklich als „noch nicht erfasst“ angezeigt und nicht als erfolgreicher Import ausgegeben.
 
-Der manuelle Workflow liegt unter `.github/workflows/manual-menu-import.yml` und kann über die Importstatusseite oder direkt in GitHub Actions gestartet werden. Er bietet die Uni-Mensa-HTML-Quelle und Pomeranz zur Auswahl. Der Aufruf benötigt ein GitHub-Konto mit Schreibzugriff auf das Repository; es werden keine Zugangsdaten in der öffentlichen Website hinterlegt.
+Der manuelle Workflow liegt unter `.github/workflows/manual-menu-import.yml` und kann über die Importstatusseite oder direkt in GitHub Actions gestartet werden. Er bietet die Uni-Mensa-HTML-Quelle, Pomeranz, I Sapori della Toscana und Goldenes Schiff zur Auswahl. Der Aufruf benötigt ein GitHub-Konto mit Schreibzugriff auf das Repository; es werden keine Zugangsdaten in der öffentlichen Website hinterlegt.
 
 Nach jedem Lauf protokolliert `.github/scripts/update_import_status.py` den Versuch, den Ausgang und die in den veröffentlichten JSON-Daten vorhandenen Menü-/Gerichtszahlen. Auch fehlgeschlagene Läufe aktualisieren den Status; dabei werden `menus.json` und `restaurants.json` durch den Statusschritt nicht verändert. Erfolgreiche Importläufe veröffentlichen Menü- und Statusdaten gemeinsam per Git-Commit. Ein Ergebnis `NO_DISHES` wird angezeigt, wenn ein Lauf erfolgreich war, aber danach keine Gerichte dieser Quelle in den veröffentlichten Daten vorhanden sind.
 
