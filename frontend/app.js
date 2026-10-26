@@ -109,13 +109,20 @@ function renderPrices(item) {
 }
 
 function normalizedItem(item) {
-  const title = `${item.name ?? ""} ${item.category ?? ""}`.toLocaleLowerCase("de");
+  const category = String(item.category ?? "").trim();
   const dietary = Array.isArray(item.dietary) ? [...item.dietary] : [];
-  if (title.includes("vegetarisch")) {
+  if (/vegetarisch/i.test(String(item.name ?? "") + " " + category)) {
     if (!dietary.includes("VEGETARIAN")) dietary.push("VEGETARIAN");
-    return {...item, category: "Vegetarisch", dietary};
   }
-  return {...item, dietary};
+
+  // Keep dietary properties separate from dish categories and normalize legacy values.
+  const normalizedCategory = /^vegetarisch$/i.test(category) || /^hauptgericht$/i.test(category)
+    ? "Hauptgerichte"
+    : /^suppe$/i.test(category) ? "Suppen"
+    : /^vorspeise$/i.test(category) ? "Vorspeisen"
+    : /^nachspeise$/i.test(category) ? "Nachspeisen"
+    : category;
+  return {...item, category: normalizedCategory, dietary};
 }
 
 function renderDish({menu, item: rawItem, restaurant}) {
