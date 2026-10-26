@@ -62,6 +62,9 @@ class PomeranzMenuParserTest {
         var menu = new PomeranzMenuParser().parse(text, "2026-10-20-Mittagskarte.pdf");
         assertEquals(LocalDate.of(2026, 10, 20), menu.startDate());
         assertEquals(LocalDate.of(2026, 10, 23), menu.endDate());
+        assertEquals(new BigDecimal("12.80"), menu.comboPrice());
+        assertEquals("11:30", menu.serviceStart());
+        assertEquals("14:00", menu.serviceEnd());
         assertEquals("Pilz-Risotto", menu.vegetarianDish());
         assertEquals(4, menu.days().size());
         assertEquals(LocalDate.of(2026, 10, 20), menu.days().get(0).date());
