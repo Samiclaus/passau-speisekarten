@@ -109,9 +109,9 @@ function renderPrices(item) {
 }
 
 function normalizedItem(item) {
-  const name = String(item.name ?? "").toLocaleLowerCase("de");
+  const title = `${item.name ?? ""} ${item.category ?? ""}`.toLocaleLowerCase("de");
   const dietary = Array.isArray(item.dietary) ? [...item.dietary] : [];
-  if (name.includes("vegetarisch")) {
+  if (title.includes("vegetarisch")) {
     if (!dietary.includes("VEGETARIAN")) dietary.push("VEGETARIAN");
     return {...item, category: "Vegetarisch", dietary};
   }
