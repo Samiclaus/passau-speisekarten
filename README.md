@@ -46,9 +46,13 @@ Die Merkmale sollen nicht auf Ernährungsformen beschränkt sein: beispielsweise
 Ein Merkmal sollte neben seinem Wert auch seine Herkunft abbilden (z. B. explizite Quellenkennzeichnung, strukturierter Quellcode oder manuelle Korrektur). Nicht vorhandene Angaben gelten als **unbekannt**, nicht als Gegenbeweis.
 
 ## Lokal testen
-Voraussetzung: Java 21 und Maven. **Alle Befehle werden im Repository-Hauptverzeichnis** ausgeführt (dort, wo `frontend/`, `importer/` und `config/` liegen). Git-Befehle und Maven-Aufrufe verwenden damit dieselbe Verzeichnisebene:
+Voraussetzung: Java 21 und Maven. **Alle Befehle werden im Repository-Hauptverzeichnis** ausgeführt (dort, wo `frontend/`, `importer/` und `config/` liegen). Git-Befehle und Maven-Aufrufe verwenden damit dieselbe Verzeichnisebene.
+
+Bei aktivierter Zscaler-TLS-Inspection zuerst in jeder neuen PowerShell-Sitzung den bereits eingerichteten lokalen Truststore setzen. Der Truststore liegt unter `%LOCALAPPDATA%\PassauSpeisekarten\truststore.jks`; das Zertifikat muss nicht erneut importiert werden:
 
 ```powershell
+$env:MAVEN_OPTS = "-Djavax.net.ssl.trustStore=$env:LOCALAPPDATA\PassauSpeisekarten\truststore.jks -Djavax.net.ssl.trustStorePassword=changeit"
+
 git pull
 mvn -f importer/pom.xml clean verify
 ```
@@ -111,4 +115,4 @@ mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plug
   '-Dexec.args=import-mensa-html 2026-10-26 7'
 ```
 
-Bei einer Unternehmens-TLS-Inspection kann zusätzlich der zuvor eingerichtete lokale Java-Truststore über `-Djavax.net.ssl.trustStore=...` und `-Djavax.net.ssl.trustStorePassword=changeit` angegeben werden. Der Import schreibt die JSON-Dateien erst nach erfolgreichem Abruf aller angeforderten Tage; bei einem Abruffehler bleiben die bisherigen Dateien unverändert. Die Importquelle ist noch nicht für einen automatischen Zeitplan aktiviert.
+Die oben gesetzte `MAVEN_OPTS`-Variable stellt den lokalen Java-Truststore auch für diese Maven-Aufrufe bereit. Der Import schreibt die JSON-Dateien erst nach erfolgreichem Abruf aller angeforderten Tage; bei einem Abruffehler bleiben die bisherigen Dateien unverändert. Die Importquelle ist noch nicht für einen automatischen Zeitplan aktiviert.
