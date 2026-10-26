@@ -65,7 +65,8 @@ function formatDate(date) {
   }).format(new Date(`${date}T12:00:00+01:00`));
 }
 
-function matches(item, restaurant) {
+function matches(rawItem, restaurant) {
+  const item = normalizedItem(rawItem);
   const query = el.search.value.trim().toLocaleLowerCase("de");
   const searchable = [item.name, item.description, item.category, restaurant?.name]
     .filter(Boolean).join(" ").toLocaleLowerCase("de");
@@ -84,6 +85,15 @@ function matches(item, restaurant) {
 }
 
 function renderPrices(item) {
+  const hasStudentDiscount = typeof item.studentPrice === "number" &&
+    ((typeof item.employeePrice === "number" && item.studentPrice < item.employeePrice) ||
+     (typeof item.guestPrice === "number" && item.studentPrice < item.guestPrice));
+
+  if (!hasStudentDiscount) {
+    const price = item.price ?? item.studentPrice ?? item.employeePrice ?? item.guestPrice;
+    return `<dl class="prices prices-single"><div class="price-tier"><dt>Preis</dt><dd${typeof price === "number" ? "" : ' class="price-missing"'}>${formatPrice(price)}</dd></div></dl>`;
+  }
+
   const prices = [
     ["Studierende", item.studentPrice ?? item.price],
     ["Beschäftigte", item.employeePrice],
@@ -98,7 +108,18 @@ function renderPrices(item) {
   </dl>`;
 }
 
-function renderDish({menu, item, restaurant}) {
+function normalizedItem(item) {
+  const name = String(item.name ?? "").toLocaleLowerCase("de");
+  const dietary = Array.isArray(item.dietary) ? [...item.dietary] : [];
+  if (name.includes("vegetarisch")) {
+    if (!dietary.includes("VEGETARIAN")) dietary.push("VEGETARIAN");
+    return {...item, category: "Vegetarisch", dietary};
+  }
+  return {...item, dietary};
+}
+
+function renderDish({menu, item: rawItem, restaurant}) {
+  const item = normalizedItem(rawItem);
   const dietary = Array.isArray(item.dietary) ? item.dietary : [];
   // Vegan schließt vegetarisch bereits ein: zeige dafür nur das spezifischere Vegan-Icon.
   const visibleDietary = dietary.includes("VEGAN")
