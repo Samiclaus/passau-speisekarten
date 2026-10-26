@@ -20,7 +20,25 @@ Die erste Version benötigt keine Datenbank. Git hält Änderungen an Konfigurat
 Die Einträge in `config/sources.csv` sind zunächst deaktiviert. Erst nach Implementierung und Tests des jeweiligen Adapters wird `enabled` auf `true` gesetzt.
 
 ## Merkmale und Herkunft
-Gerichte erhalten eine erweiterbare Liste von Merkmalen, zunächst `VEGAN` und `VEGETARIAN`. Weitere Merkmale wie Fisch, Schwein oder Bio können später ergänzt werden. Ein Merkmal sollte neben seinem Wert auch seine Herkunft abbilden (z. B. explizite Quellenkennzeichnung, strukturierter Quellcode oder manuelle Korrektur). Nicht vorhandene Angaben gelten als **unbekannt**, nicht als Gegenbeweis.
+Gerichte erhalten eine erweiterbare Liste typisierter Merkmale. Für die Uni-Mensa werden die Kennzeichen aus der CSV-Spalte `kennz` zunächst wie folgt interpretiert:
+
+| Kennzeichen | Merkmal |
+| --- | --- |
+| `V` | Vegetarisch |
+| `VG` | Vegan (gilt im Frontend zugleich als vegetarisch) |
+| `MV` | mensaVital |
+| `G` | Geflügel |
+| `GF` | Glutenfrei |
+| `R` | Rind |
+| `B` | Bio |
+| `S` | Schwein |
+| `A` | Enthält Alkohol |
+| `L` | Vermutlich Lamm; Zuordnung noch zu bestätigen |
+| `JD` | Vermutlich Juradistl; Zuordnung noch zu bestätigen |
+
+Die Merkmale sollen nicht auf Ernährungsformen beschränkt sein: beispielsweise sind `MV` und `BIO` andere Arten von Kennzeichnungen als `VEGAN`. Die Auswertung muss vollständige Kürzel tokenisieren, damit etwa `V` nicht mit `VG` verwechselt wird. Die am Ende des Gerichtnamens in Klammern aufgeführten Allergene werden zunächst ignoriert und nicht als Merkmale ausgegeben.
+
+Ein Merkmal sollte neben seinem Wert auch seine Herkunft abbilden (z. B. explizite Quellenkennzeichnung, strukturierter Quellcode oder manuelle Korrektur). Nicht vorhandene Angaben gelten als **unbekannt**, nicht als Gegenbeweis.
 
 ## Lokal testen
 Voraussetzung: Java 21 und Maven.
