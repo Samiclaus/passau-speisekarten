@@ -94,7 +94,7 @@ public final class MensaHtmlLiveCheck
             return "—";
         }
         return markers.stream()
-            .sorted(Comparator.comparing(Enum::name))
+            .sorted(Comparator.comparing(MensaMarker::name))
             .map(Enum::name)
             .collect(Collectors.joining(", "));
     }
