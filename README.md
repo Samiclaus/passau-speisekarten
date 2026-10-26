@@ -70,3 +70,23 @@ mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
 ```
 
 Ein Tag ohne erkannte Gerichte wird mit Diagnose ausgegeben und zählt nicht automatisch als Parserfehler, da nicht jeder Tag zwingend einen Speiseplan haben muss. Abruffehler werden für den jeweiligen Tag ausgewiesen; die übrigen Tage werden trotzdem geprüft. Der Livecheck benötigt eine funktionierende Internetverbindung; die normalen Unit-Tests benötigen keinen Zugriff auf STWNO.
+
+### Uni-Mensa importieren und JSON erzeugen
+
+Der erste ausführbare Importpfad liest die Uni-Mensa Passau über den HTML-POST-Endpunkt ein und erzeugt die beiden JSON-Dateien, die das Frontend direkt lädt: `frontend/menus.json` und `frontend/restaurants.json`. Es werden sieben Tage ab heute verarbeitet; Gerichte mit fehlenden Preisen bleiben enthalten und die fehlenden Preisstufen werden als `null` exportiert.
+
+Im Verzeichnis `importer/` ausführen:
+
+```powershell
+# Sieben Tage ab heute
+mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java \\
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' \\
+  '-Dexec.args=import-mensa-html'
+
+# Optional: fester Starttag und Anzahl der Tage
+mvn -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java \\
+  '-Dexec.mainClass=de.passau.speisekarten.PassauSpeisekartenApplication' \\
+  '-Dexec.args=import-mensa-html 2026-10-26 7'
+```
+
+Bei einer Unternehmens-TLS-Inspection kann zusätzlich der zuvor eingerichtete lokale Java-Truststore über `-Djavax.net.ssl.trustStore=...` und `-Djavax.net.ssl.trustStorePassword=changeit` angegeben werden. Der Import schreibt die JSON-Dateien erst nach erfolgreichem Abruf aller angeforderten Tage; bei einem Abruffehler bleiben die bisherigen Dateien unverändert. Die Importquelle ist noch nicht für einen automatischen Zeitplan aktiviert.
