@@ -132,7 +132,7 @@ Die oben gesetzte `MAVEN_OPTS`-Variable stellt den lokalen Java-Truststore auch 
 
 ### Alle implementierten Quellen importieren
 
-Der Sammelbefehl `import-all` führt alle aktuell integrierten Importer nacheinander aus (Uni-Mensa HTML, Pomeranz und Goldenes Schiff). Goldenes Schiff ist zunächst noch deaktiviert in `config/sources.csv`, der Importbefehl ist aber bereits verfügbar.
+Der Sammelbefehl `import-all` führt die derzeit vorgesehenen Quellen Uni-Mensa HTML und Pomeranz nacheinander aus. Goldenes Schiff bleibt zunächst deaktiviert in `config/sources.csv`; der separate Importbefehl dient erst einmal der lokalen Prüfung und wird nicht von `import-all` gestartet.
 
 ```powershell
 mvn -f importer/pom.xml -q -DskipTests compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java `
