@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-10-26T16:46:45.879332400+01:00",
+  "generatedAt" : "2026-10-26T17:43:03.697808900+01:00",
   "menus" : [ {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-10-20",
@@ -233,15 +233,37 @@
     "items" : [ {
       "name" : "Spaghettoni Nduja",
       "category" : "Hauptgerichte",
-      "price" : 13.00,
+      "price" : 13.0,
       "description" : "Zwiebeln, Pomodoro, Nduja, Öl",
       "dietary" : [ "PORK" ]
     }, {
       "name" : "Malfatti Ricotta – Spinat",
       "category" : "Hauptgerichte",
-      "price" : 12.50,
+      "price" : 12.5,
       "description" : "Spinat-Ricotta-Nocken",
       "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-10-26",
+    "validUntil" : "2026-10-26",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Kürbispfanne mit Frischen Kräutern, Spätzle und Hackfleisch",
+      "category" : "Hauptgerichte",
+      "price" : 13.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Gnocchi mit Schinken und Brokkoli in Rahm",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -372,15 +394,37 @@
     "items" : [ {
       "name" : "Farfale con panna e salmone",
       "category" : "Hauptgerichte",
-      "price" : 15.00,
+      "price" : 15.0,
       "description" : "Butter, Sahne, Lachsfilet",
       "dietary" : [ "FISH" ]
     }, {
       "name" : "Fagioli con Salsicia Italiana",
       "category" : "Hauptgerichte",
-      "price" : 14.00,
+      "price" : 14.0,
       "description" : "Zwiebeln, Karotten, Pomodori, Salsicia, Sellerie, Canelini Bohenen",
       "dietary" : [ "PORK" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-10-27",
+    "validUntil" : "2026-10-27",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Kürbispfanne mit Frischen Kräutern, Spätzle und Hackfleisch",
+      "category" : "Hauptgerichte",
+      "price" : 13.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Gnocchi mit Schinken und Brokkoli in Rahm",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -511,21 +555,43 @@
     "items" : [ {
       "name" : "Pizza Gurme",
       "category" : "Hauptgerichte",
-      "price" : 15.70,
+      "price" : 15.7,
       "description" : "Speck al crudo, Mascarpone, Nduja",
       "dietary" : [ "PORK" ]
     }, {
       "name" : "Fussili al Pesto",
       "category" : "Hauptgerichte",
-      "price" : 13.00,
+      "price" : 13.0,
       "description" : "Öl, Parmesan, Knoblauch, Basilikum",
       "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Fussili con Tonno Limone",
       "category" : "Hauptgerichte",
-      "price" : 13.80,
+      "price" : 13.8,
       "description" : "Öl, Butter, Kapern, Tonno, Zitronen",
       "dietary" : [ "FISH" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-10-28",
+    "validUntil" : "2026-10-28",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Kürbispfanne mit Frischen Kräutern, Spätzle und Hackfleisch",
+      "category" : "Hauptgerichte",
+      "price" : 13.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Gnocchi mit Schinken und Brokkoli in Rahm",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -656,15 +722,37 @@
     "items" : [ {
       "name" : "Tortelini Di carne in brodo Vegetale von Facaccia",
       "category" : "Hauptgerichte",
-      "price" : 12.00,
+      "price" : 12.0,
       "description" : "",
       "dietary" : [ "MEAT" ]
     }, {
       "name" : "Penne al Ragu oder Tomatensauce",
       "category" : "Hauptgerichte",
-      "price" : 13.00,
+      "price" : 13.0,
       "description" : "",
       "dietary" : [ "MEAT" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-10-29",
+    "validUntil" : "2026-10-29",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Kürbispfanne mit Frischen Kräutern, Spätzle und Hackfleisch",
+      "category" : "Hauptgerichte",
+      "price" : 13.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Gnocchi mit Schinken und Brokkoli in Rahm",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -787,15 +875,37 @@
     "items" : [ {
       "name" : "Pizza Nduja",
       "category" : "Hauptgerichte",
-      "price" : 14.00,
+      "price" : 14.0,
       "description" : "Nduja, Oliven, Peperoni, kapern",
       "dietary" : [ "PORK" ]
     }, {
       "name" : "Pollo al forno in sugo di pomodoro",
       "category" : "Hauptgerichte",
-      "price" : 13.70,
+      "price" : 13.7,
       "description" : "",
       "dietary" : [ "POULTRY" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-10-30",
+    "validUntil" : "2026-10-30",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Kürbispfanne mit Frischen Kräutern, Spätzle und Hackfleisch",
+      "category" : "Hauptgerichte",
+      "price" : 13.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Gnocchi mit Schinken und Brokkoli in Rahm",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Flammkuchen mit frischen Pilzen, Zwiebel, Petersilie und Schmand",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
