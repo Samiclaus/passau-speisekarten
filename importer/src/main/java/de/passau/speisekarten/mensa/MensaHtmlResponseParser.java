@@ -17,7 +17,6 @@ import java.util.Set;
 /** Parses the HTML fragment returned by the STWNO menu-render POST endpoint. */
 public final class MensaHtmlResponseParser
 {
-    private static final DishMarkerClassifier DISH_MARKER_CLASSIFIER = new DishMarkerClassifier();
     private static final Map<String, MensaMarker> MARKERS = Map.ofEntries(
         Map.entry("vegetarisch", MensaMarker.VEGETARIAN),
         Map.entry("vegan", MensaMarker.VEGAN),
@@ -91,12 +90,6 @@ public final class MensaHtmlResponseParser
                     markers.add(marker);
                 }
             }
-            markers.addAll(DISH_MARKER_CLASSIFIER.classify(name, ""));
-            if (markers.contains(MensaMarker.VEGAN))
-            {
-                markers.add(MensaMarker.VEGETARIAN);
-            }
-
             Elements prices = row.select("td.preis");
             dishes.add(new MensaHtmlDish(
                 category,
