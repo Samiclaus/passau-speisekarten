@@ -49,12 +49,6 @@ public final class MensaKennzeichenParser
             }
         }
 
-        // Vegan dishes are also vegetarian for filtering purposes.
-        if (result.contains(MensaMarker.VEGAN))
-        {
-            result.add(MensaMarker.VEGETARIAN);
-        }
-
         return result.isEmpty()
             ? Set.of()
             : Collections.unmodifiableSet(EnumSet.copyOf(result));
