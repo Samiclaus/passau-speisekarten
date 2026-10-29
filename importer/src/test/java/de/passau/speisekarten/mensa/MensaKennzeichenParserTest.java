@@ -33,20 +33,20 @@ class MensaKennzeichenParserTest
     }
 
     @Test
-    void veganIsAlsoVegetarianForFiltering()
+    void veganMarkerIsPreservedWithoutAddingVegetarian()
     {
         Set<MensaMarker> markers = parser.parse("VG");
 
         assertTrue(markers.contains(MensaMarker.VEGAN));
-        assertTrue(markers.contains(MensaMarker.VEGETARIAN));
-        assertEquals(2, markers.size());
+        assertFalse(markers.contains(MensaMarker.VEGETARIAN));
+        assertEquals(1, markers.size());
     }
 
     @Test
     void matchesCompleteTokensSoVDoesNotMatchVG()
     {
         assertEquals(
-            Set.of(MensaMarker.VEGAN, MensaMarker.VEGETARIAN),
+            Set.of(MensaMarker.VEGAN),
             parser.parse("VG")
         );
         assertEquals(
@@ -59,7 +59,7 @@ class MensaKennzeichenParserTest
     void acceptsCommonSeparatorsAndIgnoresCase()
     {
         assertEquals(
-            Set.of(MensaMarker.VEGAN, MensaMarker.VEGETARIAN, MensaMarker.GLUTEN_FREE),
+            Set.of(MensaMarker.VEGAN, MensaMarker.GLUTEN_FREE),
             parser.parse("vg, GF")
         );
     }
