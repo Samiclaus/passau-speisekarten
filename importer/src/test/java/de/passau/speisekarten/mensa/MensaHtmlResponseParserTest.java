@@ -36,7 +36,7 @@ class MensaHtmlResponseParserTest
         assertEquals("Hauptgerichte", vegan.category());
         assertEquals("Blumenkohlröschen auf Gerstoni", vegan.name());
         assertTrue(vegan.markers().contains(MensaMarker.VEGAN));
-        assertTrue(vegan.markers().contains(MensaMarker.VEGETARIAN));
+        assertFalse(vegan.markers().contains(MensaMarker.VEGETARIAN));
         assertEquals(new BigDecimal("2.30"), vegan.studentPrice());
         assertEquals(new BigDecimal("3.30"), vegan.employeePrice());
         assertEquals(new BigDecimal("6.10"), vegan.guestPrice());
@@ -46,6 +46,32 @@ class MensaHtmlResponseParserTest
         assertTrue(lamb.markers().contains(MensaMarker.JURADISTL));
         assertTrue(lamb.markers().contains(MensaMarker.CONTAINS_ALCOHOL));
         assertEquals("Vollkorn Pasta, Jura-Distl Lammfleisch, Auberginen", lamb.name());
+    }
+
+
+    @Test
+    void preservesOriginalMarkersWithoutInferringDietaryClassificationFromDishName()
+    {
+        String html = """
+            <table>
+              <tr class='essenzeile'>
+                <td></td><td class='cell1'>Krustenbraten "Sauguad", Pilzrahm u. Semmelknödel</td>
+                <td class='cell2'><img class='icon' alt='Schwein'></td>
+                <td class='preis'>5,50 €</td><td class='preis'>6,70 €</td><td class='preis'>8,20 €</td>
+              </tr>
+              <tr class='essenzeile'>
+                <td></td><td class='cell1'>Gemüsegericht</td>
+                <td class='cell2'></td>
+                <td class='preis'>4,00 €</td><td class='preis'>5,00 €</td><td class='preis'>6,00 €</td>
+              </tr>
+            </table>
+            """;
+
+        List<MensaHtmlDish> dishes = parser.parse(html);
+
+        assertEquals(2, dishes.size());
+        assertEquals(java.util.Set.of(MensaMarker.PORK), dishes.get(0).markers());
+        assertTrue(dishes.get(1).markers().isEmpty());
     }
 
     @Test
