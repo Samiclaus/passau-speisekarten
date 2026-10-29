@@ -25,11 +25,11 @@ public final class PassauSpeisekartenApplication
             System.out.println("Starte alle implementierten Speisekartenimporte.");
             List<String> failures = new ArrayList<>();
 
-            runImport("1/5: Uni-Mensa Passau", MensaHtmlImportCommand::runImport, failures);
-            runImport("2/5: Pomeranz", PomeranzImportCommand::main, failures);
-            runImport("3/5: Goldenes Schiff", GoldenesSchiffImportCommand::main, failures);
-            runImport("4/5: I Sapori della Toscana", SaporiToscanaImportCommand::main, failures);
-            runImport("5/5: Wilma Wunder Passau", WilmaWunderImportCommand::main, failures);
+            runImport("1/5: Uni-Mensa Passau", () -> MensaHtmlImportCommand.main(new String[0]), failures);
+            runImport("2/5: Pomeranz", () -> PomeranzImportCommand.main(new String[0]), failures);
+            runImport("3/5: Goldenes Schiff", () -> GoldenesSchiffImportCommand.main(new String[0]), failures);
+            runImport("4/5: I Sapori della Toscana", () -> SaporiToscanaImportCommand.main(new String[0]), failures);
+            runImport("5/5: Wilma Wunder Passau", () -> WilmaWunderImportCommand.main(new String[0]), failures);
 
             if (failures.isEmpty())
             {
