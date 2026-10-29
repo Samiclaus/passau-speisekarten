@@ -1,7 +1,9 @@
 package de.passau.speisekarten.pomeranz;
 
 import org.junit.jupiter.api.Test;
+
 import java.net.URI;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PomeranzSourceTest {
@@ -12,6 +14,15 @@ class PomeranzSourceTest {
             <a href="/abendkarte.pdf">Abendkarte</a>
             """, URI.create("https://www.restaurant-pomeranz.de/Speisekarte/"));
         assertEquals("https://www.restaurant-pomeranz.de/.cm4all/mediadb/2026-10-20-Mittagskarte.pdf", uri.toString());
+    }
+
+    @Test void findsPdfWhenLunchCardIsOnlyInLinkLabel() {
+        var source = new PomeranzSource();
+        URI uri = source.findCurrentPdf("""
+            <a href="/.cm4all/mediadb/2026-10-20-karte.pdf" title="Mittagskarte">Download</a>
+            <a href="/abendkarte.pdf">Abendkarte</a>
+            """, URI.create("https://www.restaurant-pomeranz.de/Speisekarte/"));
+        assertEquals("https://www.restaurant-pomeranz.de/.cm4all/mediadb/2026-10-20-karte.pdf", uri.toString());
     }
 
     @Test void prefersNewestDatedLunchCardWhenPageContainsSeveral() {
