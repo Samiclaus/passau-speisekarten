@@ -11,30 +11,7 @@
     "address" : "Bratfischwinkel 5, 94032 Passau",
     "sourceUrl" : "https://www.restaurant-pomeranz.de/Speisekarte/",
     "openingHours" : {
-      "regularServiceHours" : {
-        "MONDAY" : [ ],
-        "TUESDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "WEDNESDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "THURSDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "FRIDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "SATURDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "SUNDAY" : [ ]
-      },
+      "exceptions" : [ ],
       "regularOpeningHours" : {
         "MONDAY" : [ ],
         "TUESDAY" : [ {
@@ -74,9 +51,32 @@
         } ],
         "SUNDAY" : [ ]
       },
-      "exceptions" : [ ],
-      "sourceUrl" : "https://www.restaurant-pomeranz.de/Speisekarte/",
-      "seasonalRuleNote" : "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen."
+      "regularServiceHours" : {
+        "MONDAY" : [ ],
+        "TUESDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "WEDNESDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "THURSDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "FRIDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "SATURDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "SUNDAY" : [ ]
+      },
+      "seasonalRuleNote" : "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen.",
+      "sourceUrl" : "https://www.restaurant-pomeranz.de/Speisekarte/"
     },
     "menuPdfUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-10-27-Mittagskarte.pdf?cdp=a&_=1a1792e6898"
   }, {
