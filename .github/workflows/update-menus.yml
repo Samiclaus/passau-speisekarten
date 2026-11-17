@@ -2,10 +2,14 @@ name: Update menus
 
 on:
   schedule:
-    # GitHub cron uses UTC. Trigger at 05, 06, 08 and 09 UTC, then keep
-    # only the runs that correspond to 07:00 or 10:00 in Europe/Berlin.
-    # This handles CET/CEST changes without running at the wrong local hour.
-    - cron: "0 5,6,8,9 * * *"
+    # GitHub cron uses UTC. Separate expressions let us identify the intended
+    # local run even when GitHub starts the scheduled workflow late.
+    # 07:00 Europe/Berlin: 05:00 UTC in CEST, 06:00 UTC in CET.
+    # 10:00 Europe/Berlin: 08:00 UTC in CEST, 09:00 UTC in CET.
+    - cron: "0 5 * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 8 * * *"
+    - cron: "0 9 * * *"
   workflow_dispatch:
 
 permissions:
@@ -23,14 +27,20 @@ jobs:
       - name: Select the 07:00 and 10:00 Europe/Berlin runs
         id: local-time
         if: ${{ github.event_name == 'schedule' }}
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
         run: |
-          hour="$(TZ=Europe/Berlin date +%H)"
-          if [[ "$hour" == "07" || "$hour" == "10" ]]; then
-            echo "run_import=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run_import=false" >> "$GITHUB_OUTPUT"
-            echo "Not the 07:00 or 10:00 local run; skipping."
-          fi
+          offset="$(TZ=Europe/Berlin date +%z)"
+          case "$offset:$SCHEDULE" in
+            "+0200:0 5 * * *"|"+0100:0 6 * * *"|"+0200:0 8 * * *"|"+0100:0 9 * * *")
+              echo "run_import=true" >> "$GITHUB_OUTPUT"
+              echo "Scheduled import selected (Europe/Berlin UTC offset: $offset)."
+              ;;
+            *)
+              echo "run_import=false" >> "$GITHUB_OUTPUT"
+              echo "This UTC schedule does not correspond to 07:00 or 10:00 Europe/Berlin (offset: $offset); skipping."
+              ;;
+          esac
 
       - uses: actions/checkout@v4
         if: ${{ github.event_name == 'workflow_dispatch' || steps.local-time.outputs.run_import == 'true' }}
