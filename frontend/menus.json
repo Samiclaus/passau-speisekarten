@@ -1,99 +1,68 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-11-11T16:24:45.539802761+01:00",
+  "generatedAt" : "2026-11-17T15:34:49.857947291+01:00",
   "menus" : [ {
-    "restaurantId" : "pomeranz",
-    "validFrom" : "2026-11-10",
-    "validUntil" : "2026-11-10",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-10-Mittagskarte.pdf?cdp=a&_=1a1c25790a8",
-    "serviceStart" : "11:30",
-    "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Karotten-Ingwer-Suppe mit geröstetem Sesam; Vorspeise: Waldorfsalat; Dessert: Profiterole. Nur in Verbindung mit mindestens einem Getränk.",
-    "items" : [ {
-      "name" : "Kürbis-Lasagne",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Zucchini / Käse / Kerne und Öl",
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Penne alla Contadina",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Blumenkohl / Speck / Grana Padano",
-      "dietary" : [ "PORK" ]
-    } ]
-  }, {
-    "restaurantId" : "goldenes-schiff",
-    "validFrom" : "2026-11-10",
-    "validUntil" : "2026-11-10",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
-    "items" : [ {
-      "name" : "Rahmbraten mit Reibeknödel",
-      "category" : "Hauptgerichte",
-      "price" : 11.8,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "hausgemachte Spinatlasagne mit Salatgarnitur",
-      "category" : "Hauptgerichte",
-      "price" : 11.8,
-      "dietary" : [ "VEGETARIAN" ]
-    } ]
-  }, {
     "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-11",
-    "validUntil" : "2026-11-11",
+    "validFrom" : "2026-11-17",
+    "validUntil" : "2026-11-17",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
     "items" : [ {
-      "name" : "Gemüsecremesuppe",
+      "name" : "Nudelsuppe",
       "category" : "Suppen",
       "price" : 0.8,
       "studentPrice" : 0.8,
       "employeePrice" : 1.0,
       "guestPrice" : 1.5,
-      "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Wokgemüse - Bio-Basmatireis mit Mungobohnensprossen",
+      "name" : "Pasta mit Gemüse-Soja Bolognese",
       "category" : "Hauptgerichte",
       "price" : 2.3,
       "studentPrice" : 2.3,
       "employeePrice" : 3.3,
       "guestPrice" : 6.1,
-      "dietary" : [ "GLUTEN_FREE", "MENSA_VITAL", "VEGAN" ]
+      "dietary" : [ "MENSA_VITAL", "VEGAN" ]
     }, {
-      "name" : "Apfelküchel in Zimt und Zucker mit Vanillesoße",
+      "name" : "Chili con Carne mit Baguette",
       "category" : "Hauptgerichte",
-      "price" : 3.3,
-      "studentPrice" : 3.3,
-      "employeePrice" : 4.1,
-      "guestPrice" : 6.7,
+      "price" : 3.8,
+      "studentPrice" : 3.8,
+      "employeePrice" : 4.7,
+      "guestPrice" : 7.1,
+      "dietary" : [ "BEEF", "PORK" ]
+    }, {
+      "name" : "Mediterraner Gemüsegulasch, Tofu, Gerstoni",
+      "category" : "Hauptgerichte",
+      "price" : 4.4,
+      "studentPrice" : 4.4,
+      "employeePrice" : 5.7,
+      "guestPrice" : 7.4,
+      "dietary" : [ "MENSA_VITAL", "VEGAN" ]
+    }, {
+      "name" : "Pizza Margherita",
+      "category" : "Hauptgerichte",
+      "price" : 6.7,
+      "studentPrice" : 6.7,
+      "employeePrice" : 7.1,
+      "guestPrice" : 7.1,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Vegane Hirsetaler mit Radieschen-Sprossensalat",
+      "name" : "Pizza Vegan",
       "category" : "Hauptgerichte",
-      "price" : 3.3,
-      "studentPrice" : 3.3,
-      "employeePrice" : 4.1,
-      "guestPrice" : 6.7,
+      "price" : 8.1,
+      "studentPrice" : 8.1,
+      "employeePrice" : 8.6,
+      "guestPrice" : 8.6,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Brioche Cheesburger mit Pommes frites",
+      "name" : "Pizza Funghi",
       "category" : "Hauptgerichte",
-      "price" : 5.5,
-      "studentPrice" : 5.5,
-      "employeePrice" : 6.7,
-      "guestPrice" : 8.2,
-      "dietary" : [ "BEEF" ]
-    }, {
-      "name" : "Bio-Basmatireis",
-      "category" : "Beilagen",
-      "price" : 1.2,
-      "studentPrice" : 1.2,
-      "employeePrice" : 1.4,
-      "guestPrice" : 1.9,
-      "dietary" : [ "GLUTEN_FREE", "ORGANIC", "VEGAN" ]
+      "price" : 8.2,
+      "studentPrice" : 8.2,
+      "employeePrice" : 8.7,
+      "guestPrice" : 8.7,
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Gemischter Salat",
       "category" : "Beilagen",
@@ -103,7 +72,7 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Pommes frites",
+      "name" : "Pommes",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
@@ -111,13 +80,21 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Erbsen-Karotten-Lauchgemüse",
+      "name" : "Spätzle",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
       "guestPrice" : 2.0,
-      "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Pariser Karotten",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGAN" ]
     }, {
       "name" : "Salat Buffet",
       "category" : "Beilagen",
@@ -127,7 +104,7 @@
       "guestPrice" : 4.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Bananenquark",
+      "name" : "Pudding mit Vanillegeschmack und Heidelbeeren",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -135,7 +112,7 @@
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Bio-Erdbeerjoghurt",
+      "name" : "Bio-Vanillejoghurt",
       "category" : "Nachspeisen",
       "price" : 1.0,
       "studentPrice" : 1.0,
@@ -143,7 +120,7 @@
       "guestPrice" : 1.6,
       "dietary" : [ "ORGANIC", "VEGETARIAN" ]
     }, {
-      "name" : "Joghurtcreme Ananas-Kokos",
+      "name" : "Cappuccinomousse",
       "category" : "Nachspeisen",
       "price" : 1.2,
       "studentPrice" : 1.2,
@@ -153,47 +130,230 @@
     } ]
   }, {
     "restaurantId" : "pomeranz",
-    "validFrom" : "2026-11-11",
-    "validUntil" : "2026-11-11",
+    "validFrom" : "2026-11-17",
+    "validUntil" : "2026-11-17",
     "status" : "CURRENT",
-    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-10-Mittagskarte.pdf?cdp=a&_=1a1c25790a8",
+    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150",
     "serviceStart" : "11:30",
     "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Karotten-Ingwer-Suppe mit geröstetem Sesam; Vorspeise: Waldorfsalat; Dessert: Profiterole. Nur in Verbindung mit mindestens einem Getränk.",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kartoffelsuppe mit Speck; Vorspeise: Tomaten-Käse-Aufstrich mit Brot und Pesto; Dessert: Duett vom Schoko-Parfait mit Beerensoße. Nur in Verbindung mit mindestens einem Getränk.",
     "items" : [ {
-      "name" : "Kürbis-Lasagne",
+      "name" : "Pilz-Risotto",
       "category" : "Hauptgerichte",
       "price" : 12.8,
-      "description" : "Zucchini / Käse / Kerne und Öl",
+      "description" : "Tomaten / Lauchzwiebeln / Grana Padano",
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Coq au Vin",
+      "name" : "Putengeschnetzeltem",
       "category" : "Hauptgerichte",
       "price" : 12.8,
-      "description" : "Glasierte Karotten / Polenta / Schmorsoße",
-      "dietary" : [ "VEGETARIAN" ]
+      "description" : "Pilze / Langkornreis / Rahmsoße",
+      "dietary" : [ "POULTRY" ]
     } ]
   }, {
     "restaurantId" : "goldenes-schiff",
-    "validFrom" : "2026-11-11",
-    "validUntil" : "2026-11-11",
+    "validFrom" : "2026-11-17",
+    "validUntil" : "2026-11-17",
     "status" : "CURRENT",
     "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
     "items" : [ {
-      "name" : "Schweinswürstel mit Sauerkraut",
+      "name" : "Linseneintopf mit Debreziner",
       "category" : "Hauptgerichte",
       "price" : 11.8,
-      "dietary" : [ "PORK" ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "hausgemachte Spinatlasagne mit Salatgarnitur",
+      "name" : "ganze gekochte Bio-Artischocke mit 2erlei Dips und Salatgarnitur",
       "category" : "Hauptgerichte",
       "price" : 11.8,
       "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "isapori",
-    "validFrom" : "2026-11-11",
-    "validUntil" : "2026-11-11",
+    "validFrom" : "2026-11-17",
+    "validUntil" : "2026-11-17",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://sapori-toscana.com/",
+    "items" : [ {
+      "name" : "Farfale con panna e salmone",
+      "category" : "Hauptgerichte",
+      "price" : 15.0,
+      "description" : "Butter, Sahne, Lachsfilet",
+      "dietary" : [ "FISH" ]
+    }, {
+      "name" : "Fagioli con Salsicia Italiana",
+      "category" : "Hauptgerichte",
+      "price" : 14.0,
+      "description" : "Zwiebeln, Karotten, Pomodori, Salsicia, Sellerie, Canelini Bohenen",
+      "dietary" : [ "PORK" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-11-17",
+    "validUntil" : "2026-11-17",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Hähnchengeschnetzeltes mit Spätzle",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "FISH" ]
+    } ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-11-18",
+    "validUntil" : "2026-11-18",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ {
+      "name" : "ChinasuppeF",
+      "category" : "Suppen",
+      "price" : 0.8,
+      "studentPrice" : 0.8,
+      "employeePrice" : 1.0,
+      "guestPrice" : 1.5,
+      "dietary" : [ "GLUTEN_FREE", "POULTRY" ]
+    }, {
+      "name" : "Kartoffelrösti mit feinen Bohnen",
+      "category" : "Hauptgerichte",
+      "price" : 2.3,
+      "studentPrice" : 2.3,
+      "employeePrice" : 3.3,
+      "guestPrice" : 6.1,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Gemüse Pilaw mit Kichererbsen und Pilzen",
+      "category" : "Hauptgerichte",
+      "price" : 2.7,
+      "studentPrice" : 2.7,
+      "employeePrice" : 3.7,
+      "guestPrice" : 6.4,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Fleischpflanzerl mit Rahmsauce und Kartoffelpüree",
+      "category" : "Hauptgerichte",
+      "price" : 3.8,
+      "studentPrice" : 3.8,
+      "employeePrice" : 4.7,
+      "guestPrice" : 7.1,
+      "dietary" : [ "BEEF", "PORK" ]
+    }, {
+      "name" : "Scholle natur auf Gemüsebett, Salzkartoffeln",
+      "category" : "Hauptgerichte",
+      "price" : 5.5,
+      "studentPrice" : 5.5,
+      "employeePrice" : 6.7,
+      "guestPrice" : 8.2,
+      "dietary" : [ "FISH" ]
+    }, {
+      "name" : "Reis mit Gemüsewürfeln",
+      "category" : "Beilagen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.4,
+      "guestPrice" : 1.9,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Kartoffel-Selleriepüree",
+      "category" : "Beilagen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.4,
+      "guestPrice" : 1.9,
+      "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
+    }, {
+      "name" : "Gemischter Salat",
+      "category" : "Beilagen",
+      "price" : 1.3,
+      "studentPrice" : 1.3,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Rahmspinat",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Stracciatellaquark, vegan",
+      "category" : "Nachspeisen",
+      "price" : 1.0,
+      "studentPrice" : 1.0,
+      "employeePrice" : 1.2,
+      "guestPrice" : 1.6,
+      "dietary" : [ "VEGAN" ]
+    }, {
+      "name" : "Karamelpudding",
+      "category" : "Nachspeisen",
+      "price" : 1.0,
+      "studentPrice" : 1.0,
+      "employeePrice" : 1.2,
+      "guestPrice" : 1.6,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Amaretto Creme",
+      "category" : "Nachspeisen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.5,
+      "guestPrice" : 1.7,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "pomeranz",
+    "validFrom" : "2026-11-18",
+    "validUntil" : "2026-11-18",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150",
+    "serviceStart" : "11:30",
+    "serviceEnd" : "14:00",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kartoffelsuppe mit Speck; Vorspeise: Tomaten-Käse-Aufstrich mit Brot und Pesto; Dessert: Duett vom Schoko-Parfait mit Beerensoße. Nur in Verbindung mit mindestens einem Getränk.",
+    "items" : [ {
+      "name" : "Pilz-Risotto",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Tomaten / Lauchzwiebeln / Grana Padano",
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Gebratenem Hähnchenbrustfilet",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Erbsen / Graupen / Jus",
+      "dietary" : [ "POULTRY" ]
+    } ]
+  }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-11-18",
+    "validUntil" : "2026-11-18",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Geschnetzeltes \"Züricher Art\" mit hausgemachten Spätzle",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Kaspressknödel mit Parmesan und Salatgarnitur",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "isapori",
+    "validFrom" : "2026-11-18",
+    "validUntil" : "2026-11-18",
     "status" : "CURRENT",
     "sourceUrl" : "https://sapori-toscana.com/",
     "items" : [ {
@@ -217,8 +377,8 @@
     } ]
   }, {
     "restaurantId" : "wilma-wunder",
-    "validFrom" : "2026-11-11",
-    "validUntil" : "2026-11-11",
+    "validFrom" : "2026-11-18",
+    "validUntil" : "2026-11-18",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
     "items" : [ {
@@ -239,18 +399,66 @@
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-12",
-    "validUntil" : "2026-11-12",
+    "validFrom" : "2026-11-19",
+    "validUntil" : "2026-11-19",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
     "items" : [ {
-      "name" : "Schinkennudeln",
+      "name" : "Kaaspressknödelsuppe",
+      "category" : "Suppen",
+      "price" : 0.8,
+      "studentPrice" : 0.8,
+      "employeePrice" : 1.0,
+      "guestPrice" : 1.5,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Weißkohlcurry mit Bio-Basmatireis",
       "category" : "Hauptgerichte",
-      "price" : 2.7,
-      "studentPrice" : 2.7,
-      "employeePrice" : 3.7,
-      "guestPrice" : 6.4,
+      "price" : 2.3,
+      "studentPrice" : 2.3,
+      "employeePrice" : 3.3,
+      "guestPrice" : 6.1,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Grünkernbratling hausgemacht mit Champignons",
+      "category" : "Hauptgerichte",
+      "price" : 3.3,
+      "studentPrice" : 3.3,
+      "employeePrice" : 4.1,
+      "guestPrice" : 6.7,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Niederbayerischer Schweinebraten mit Semmelknödel",
+      "category" : "Hauptgerichte",
+      "price" : 4.4,
+      "studentPrice" : 4.4,
+      "employeePrice" : 5.7,
+      "guestPrice" : 7.4,
       "dietary" : [ "PORK" ]
+    }, {
+      "name" : "ruthahnsteak Gärtnerin mit Vollkornnudel",
+      "category" : "Hauptgerichte",
+      "price" : 5.5,
+      "studentPrice" : 5.5,
+      "employeePrice" : 6.7,
+      "guestPrice" : 8.2,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Bio-Basmatireis",
+      "category" : "Beilagen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.4,
+      "guestPrice" : 1.9,
+      "dietary" : [ "GLUTEN_FREE", "ORGANIC", "VEGAN" ]
+    }, {
+      "name" : "Vollkorn Penne Rigati",
+      "category" : "Beilagen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.4,
+      "guestPrice" : 1.9,
+      "dietary" : [ "VEGAN" ]
     }, {
       "name" : "Gemischter Salat",
       "category" : "Beilagen",
@@ -260,7 +468,7 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Schwarzwurzelgemüse",
+      "name" : "Wirsinggemüse",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
@@ -268,15 +476,23 @@
       "guestPrice" : 2.0,
       "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
     }, {
-      "name" : "Bio-Vanillejoghurt",
+      "name" : "Semmelknödel",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Buttermilch Dessert Birne-Vanille",
       "category" : "Nachspeisen",
       "price" : 1.0,
       "studentPrice" : 1.0,
       "employeePrice" : 1.2,
       "guestPrice" : 1.6,
-      "dietary" : [ "ORGANIC", "VEGETARIAN" ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Creme Caramel",
+      "name" : "Joghurtcreme Ananas-Kokos",
       "category" : "Nachspeisen",
       "price" : 1.2,
       "studentPrice" : 1.2,
@@ -284,57 +500,57 @@
       "guestPrice" : 1.7,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Obstsalat",
+      "name" : "Himbeerpudding - vegan",
       "category" : "Nachspeisen",
-      "price" : 1.6,
-      "studentPrice" : 1.6,
-      "employeePrice" : 1.8,
-      "guestPrice" : 2.0,
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.5,
+      "guestPrice" : 1.7,
       "dietary" : [ "VEGAN" ]
     } ]
   }, {
     "restaurantId" : "pomeranz",
-    "validFrom" : "2026-11-12",
-    "validUntil" : "2026-11-12",
+    "validFrom" : "2026-11-19",
+    "validUntil" : "2026-11-19",
     "status" : "CURRENT",
-    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-10-Mittagskarte.pdf?cdp=a&_=1a1c25790a8",
+    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150",
     "serviceStart" : "11:30",
     "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Karotten-Ingwer-Suppe mit geröstetem Sesam; Vorspeise: Waldorfsalat; Dessert: Profiterole. Nur in Verbindung mit mindestens einem Getränk.",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kartoffelsuppe mit Speck; Vorspeise: Tomaten-Käse-Aufstrich mit Brot und Pesto; Dessert: Duett vom Schoko-Parfait mit Beerensoße. Nur in Verbindung mit mindestens einem Getränk.",
     "items" : [ {
-      "name" : "Kürbis-Lasagne",
+      "name" : "Pilz-Risotto",
       "category" : "Hauptgerichte",
       "price" : 12.8,
-      "description" : "Zucchini / Käse / Kerne und Öl",
+      "description" : "Tomaten / Lauchzwiebeln / Grana Padano",
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "in Soja pochiertem Hähnchenbrustfilet",
+      "name" : "Polpette di Manzo",
       "category" : "Hauptgerichte",
       "price" : 12.8,
-      "description" : "Gurken / Glasnudeln / Erdnüsse",
-      "dietary" : [ "POULTRY" ]
+      "description" : "Gemüse / Kartoffeln / Brot",
+      "dietary" : [ "BEEF" ]
     } ]
   }, {
     "restaurantId" : "goldenes-schiff",
-    "validFrom" : "2026-11-12",
-    "validUntil" : "2026-11-12",
+    "validFrom" : "2026-11-19",
+    "validUntil" : "2026-11-19",
     "status" : "CURRENT",
     "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
     "items" : [ {
-      "name" : "Schweinswürstel mit Sauerkraut",
+      "name" : "Geschnetzeltes \"Züricher Art\" mit hausgemachten Spätzle",
       "category" : "Hauptgerichte",
       "price" : 11.8,
-      "dietary" : [ "PORK" ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Quarkknödel auf Pilzragout",
+      "name" : "Kaspressknödel mit Parmesan und Salatgarnitur",
       "category" : "Hauptgerichte",
       "price" : 11.8,
       "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "isapori",
-    "validFrom" : "2026-11-12",
-    "validUntil" : "2026-11-12",
+    "validFrom" : "2026-11-19",
+    "validUntil" : "2026-11-19",
     "status" : "CURRENT",
     "sourceUrl" : "https://sapori-toscana.com/",
     "items" : [ {
@@ -352,8 +568,8 @@
     } ]
   }, {
     "restaurantId" : "wilma-wunder",
-    "validFrom" : "2026-11-12",
-    "validUntil" : "2026-11-12",
+    "validFrom" : "2026-11-19",
+    "validUntil" : "2026-11-19",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
     "items" : [ {
@@ -374,37 +590,125 @@
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-13",
-    "validUntil" : "2026-11-13",
+    "validFrom" : "2026-11-20",
+    "validUntil" : "2026-11-20",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
-    "items" : [ ]
-  }, {
-    "restaurantId" : "pomeranz",
-    "validFrom" : "2026-11-13",
-    "validUntil" : "2026-11-13",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-10-Mittagskarte.pdf?cdp=a&_=1a1c25790a8",
-    "serviceStart" : "11:30",
-    "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Karotten-Ingwer-Suppe mit geröstetem Sesam; Vorspeise: Waldorfsalat; Dessert: Profiterole. Nur in Verbindung mit mindestens einem Getränk.",
     "items" : [ {
-      "name" : "Kürbis-Lasagne",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Zucchini / Käse / Kerne und Öl",
+      "name" : "Spargelcremesuppe",
+      "category" : "Suppen",
+      "price" : 0.8,
+      "studentPrice" : 0.8,
+      "employeePrice" : 1.0,
+      "guestPrice" : 1.5,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Backfisch vom Seelachsloin",
+      "name" : "Reibekuchen mit Apfelmus",
+      "category" : "Hauptgerichte",
+      "price" : 2.3,
+      "studentPrice" : 2.3,
+      "employeePrice" : 3.3,
+      "guestPrice" : 6.1,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Frikassee mit Sojageschnetzeltem und Reis",
+      "category" : "Hauptgerichte",
+      "price" : 3.8,
+      "studentPrice" : 3.8,
+      "employeePrice" : 4.7,
+      "guestPrice" : 7.1,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Spinat-Käseknödel auf Salat",
+      "category" : "Hauptgerichte",
+      "price" : 3.8,
+      "studentPrice" : 3.8,
+      "employeePrice" : 4.7,
+      "guestPrice" : 7.1,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Fischpflanzerl gebacken mit Kartoffelsalat",
+      "category" : "Hauptgerichte",
+      "price" : 4.4,
+      "studentPrice" : 4.4,
+      "employeePrice" : 5.7,
+      "guestPrice" : 7.4,
+      "dietary" : [ "FISH" ]
+    }, {
+      "name" : "Petersilienkartoffeln",
+      "category" : "Beilagen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.4,
+      "guestPrice" : 1.9,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Gemischter Salat",
+      "category" : "Beilagen",
+      "price" : 1.3,
+      "studentPrice" : 1.3,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Zucchinigemüse",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Gnocchi",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGAN" ]
+    }, {
+      "name" : "Vanillequark",
+      "category" : "Nachspeisen",
+      "price" : 0.9,
+      "studentPrice" : 0.9,
+      "employeePrice" : 1.1,
+      "guestPrice" : 1.6,
+      "dietary" : [ "CONTAINS_ALCOHOL", "VEGETARIAN" ]
+    }, {
+      "name" : "Chia Kokos Schokopudding mit Kirschen",
+      "category" : "Nachspeisen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.5,
+      "guestPrice" : 1.7,
+      "dietary" : [ "VEGAN" ]
+    } ]
+  }, {
+    "restaurantId" : "pomeranz",
+    "validFrom" : "2026-11-20",
+    "validUntil" : "2026-11-20",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150",
+    "serviceStart" : "11:30",
+    "serviceEnd" : "14:00",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kartoffelsuppe mit Speck; Vorspeise: Tomaten-Käse-Aufstrich mit Brot und Pesto; Dessert: Duett vom Schoko-Parfait mit Beerensoße. Nur in Verbindung mit mindestens einem Getränk.",
+    "items" : [ {
+      "name" : "Pilz-Risotto",
       "category" : "Hauptgerichte",
       "price" : 12.8,
-      "description" : "Ofenkartoffeln / Blattsalat / Zitronendip",
+      "description" : "Tomaten / Lauchzwiebeln / Grana Padano",
       "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Spaghetti Pescatore",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Fischfilet / Calamari / Tomaten",
+      "dietary" : [ "FISH" ]
     } ]
   }, {
     "restaurantId" : "goldenes-schiff",
-    "validFrom" : "2026-11-13",
-    "validUntil" : "2026-11-13",
+    "validFrom" : "2026-11-20",
+    "validUntil" : "2026-11-20",
     "status" : "CURRENT",
     "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
     "items" : [ {
@@ -420,8 +724,8 @@
     } ]
   }, {
     "restaurantId" : "isapori",
-    "validFrom" : "2026-11-13",
-    "validUntil" : "2026-11-13",
+    "validFrom" : "2026-11-20",
+    "validUntil" : "2026-11-20",
     "status" : "CURRENT",
     "sourceUrl" : "https://sapori-toscana.com/",
     "items" : [ {
@@ -439,8 +743,8 @@
     } ]
   }, {
     "restaurantId" : "wilma-wunder",
-    "validFrom" : "2026-11-13",
-    "validUntil" : "2026-11-13",
+    "validFrom" : "2026-11-20",
+    "validUntil" : "2026-11-20",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
     "items" : [ {
@@ -461,34 +765,34 @@
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-14",
-    "validUntil" : "2026-11-14",
+    "validFrom" : "2026-11-21",
+    "validUntil" : "2026-11-21",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
     "items" : [ ]
   }, {
     "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-15",
-    "validUntil" : "2026-11-15",
+    "validFrom" : "2026-11-22",
+    "validUntil" : "2026-11-22",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
     "items" : [ ]
   }, {
     "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-16",
-    "validUntil" : "2026-11-16",
+    "validFrom" : "2026-11-23",
+    "validUntil" : "2026-11-23",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
     "items" : [ {
-      "name" : "Französische Käsesuppe",
+      "name" : "Tomaten-Basilikum-Suppe",
       "category" : "Suppen",
       "price" : 0.8,
       "studentPrice" : 0.8,
       "employeePrice" : 1.0,
       "guestPrice" : 1.5,
-      "dietary" : [ "VEGETARIAN" ]
+      "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
     }, {
-      "name" : "Linseneintopf mit Tofu",
+      "name" : "Gemüsecouscous \"orientalisch\"",
       "category" : "Hauptgerichte",
       "price" : 2.3,
       "studentPrice" : 2.3,
@@ -496,39 +800,31 @@
       "guestPrice" : 6.1,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Pasta Saloniki",
-      "category" : "Hauptgerichte",
-      "price" : 3.3,
-      "studentPrice" : 3.3,
-      "employeePrice" : 4.1,
-      "guestPrice" : 6.7,
-      "dietary" : [ "BEEF", "PORK" ]
-    }, {
-      "name" : "Vegetarische Nuggets mit Meerrettich Senfdip und Kräuterkartoffeln",
+      "name" : "Ebly mit Zucchini, Paprika, Karotten und frischem Rosmarin",
       "category" : "Hauptgerichte",
       "price" : 3.8,
       "studentPrice" : 3.8,
       "employeePrice" : 4.7,
       "guestPrice" : 7.1,
-      "dietary" : [ "VEGETARIAN" ]
+      "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Schweineschnitzel paniert mit Speckkartoffeln",
+      "name" : "Cannelloni Ricotta Spinat",
       "category" : "Hauptgerichte",
       "price" : 4.4,
       "studentPrice" : 4.4,
       "employeePrice" : 5.7,
       "guestPrice" : 7.4,
-      "dietary" : [ "PORK" ]
+      "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Bio-Penne",
-      "category" : "Beilagen",
-      "price" : 1.2,
-      "studentPrice" : 1.2,
-      "employeePrice" : 1.4,
-      "guestPrice" : 1.9,
-      "dietary" : [ "ORGANIC", "VEGAN" ]
+      "name" : "Puten-Döner mit Paprikaquark, Fladenbrot",
+      "category" : "Hauptgerichte",
+      "price" : 5.5,
+      "studentPrice" : 5.5,
+      "employeePrice" : 6.7,
+      "guestPrice" : 8.2,
+      "dietary" : [ "MENSA_VITAL", "POULTRY" ]
     }, {
-      "name" : "Kräuterkartoffeln",
+      "name" : "Risoleekartoffeln",
       "category" : "Beilagen",
       "price" : 1.2,
       "studentPrice" : 1.2,
@@ -544,13 +840,13 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Lyoner Kartoffeln",
+      "name" : "Bohnengemüse italienische Art",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
       "guestPrice" : 2.0,
-      "dietary" : [ "VEGAN" ]
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
       "name" : "Pommes frites",
       "category" : "Beilagen",
@@ -558,17 +854,9 @@
       "studentPrice" : 1.4,
       "employeePrice" : 1.5,
       "guestPrice" : 2.0,
-      "dietary" : [ "VEGAN" ]
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Leipziger Allerlei Gemüse",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "VEGAN" ]
-    }, {
-      "name" : "Pfirsichquark",
+      "name" : "Ananasjoghurt",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -576,110 +864,7 @@
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Schwarzwälder Kirschpudding",
-      "category" : "Nachspeisen",
-      "price" : 1.0,
-      "studentPrice" : 1.0,
-      "employeePrice" : 1.2,
-      "guestPrice" : 1.6,
-      "dietary" : [ "CONTAINS_ALCOHOL", "VEGETARIAN" ]
-    }, {
-      "name" : "Grießspeise mit Erdbeeren",
-      "category" : "Nachspeisen",
-      "price" : 1.2,
-      "studentPrice" : 1.2,
-      "employeePrice" : 1.5,
-      "guestPrice" : 1.7,
-      "dietary" : [ "VEGETARIAN" ]
-    } ]
-  }, {
-    "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-17",
-    "validUntil" : "2026-11-17",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
-    "items" : [ {
-      "name" : "Nudelsuppe",
-      "category" : "Suppen",
-      "price" : 0.8,
-      "studentPrice" : 0.8,
-      "employeePrice" : 1.0,
-      "guestPrice" : 1.5,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Pasta mit Gemüse-Soja Bolognese",
-      "category" : "Hauptgerichte",
-      "price" : 2.3,
-      "studentPrice" : 2.3,
-      "employeePrice" : 3.3,
-      "guestPrice" : 6.1,
-      "dietary" : [ "MENSA_VITAL", "VEGAN" ]
-    }, {
-      "name" : "Kartoffel-Käsegratin",
-      "category" : "Hauptgerichte",
-      "price" : 3.8,
-      "studentPrice" : 3.8,
-      "employeePrice" : 4.7,
-      "guestPrice" : 7.1,
-      "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
-    }, {
-      "name" : "Zwiebelschnitzel mit Spätzle",
-      "category" : "Hauptgerichte",
-      "price" : 4.4,
-      "studentPrice" : 4.4,
-      "employeePrice" : 5.7,
-      "guestPrice" : 7.4,
-      "dietary" : [ "PORK" ]
-    }, {
-      "name" : "Mediterraner Gemüsegulasch, Tofu, Gerstoni",
-      "category" : "Hauptgerichte",
-      "price" : 4.4,
-      "studentPrice" : 4.4,
-      "employeePrice" : 5.7,
-      "guestPrice" : 7.4,
-      "dietary" : [ "MENSA_VITAL", "VEGAN" ]
-    }, {
-      "name" : "Bio-Paprikareis",
-      "category" : "Beilagen",
-      "price" : 1.2,
-      "studentPrice" : 1.2,
-      "employeePrice" : 1.4,
-      "guestPrice" : 1.9,
-      "dietary" : [ "GLUTEN_FREE", "ORGANIC", "VEGAN" ]
-    }, {
-      "name" : "Gemischter Salat",
-      "category" : "Beilagen",
-      "price" : 1.3,
-      "studentPrice" : 1.3,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Spätzle",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Rosmarinrösti",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "VEGAN" ]
-    }, {
-      "name" : "Pariser Karotten",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "VEGAN" ]
-    }, {
-      "name" : "Pudding mit Vanillegeschmack und Heidelbeeren",
+      "name" : "Pudding Pistazie",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -687,21 +872,13 @@
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Cappuccinomousse",
+      "name" : "Erdnuss-Aprikosen Creme",
       "category" : "Nachspeisen",
       "price" : 1.2,
       "studentPrice" : 1.2,
       "employeePrice" : 1.5,
       "guestPrice" : 1.7,
       "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Obstsalat",
-      "category" : "Nachspeisen",
-      "price" : 1.6,
-      "studentPrice" : 1.6,
-      "employeePrice" : 1.8,
-      "guestPrice" : 2.0,
-      "dietary" : [ "VEGAN" ]
     } ]
   } ]
 }
