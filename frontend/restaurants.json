@@ -11,6 +11,9 @@
     "address" : "Bratfischwinkel 5, 94032 Passau",
     "sourceUrl" : "https://www.restaurant-pomeranz.de/Speisekarte/",
     "openingHours" : {
+      "seasonalRuleNote" : "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen.",
+      "sourceUrl" : "https://www.restaurant-pomeranz.de/Speisekarte/",
+      "exceptions" : [ ],
       "regularOpeningHours" : {
         "MONDAY" : [ ],
         "TUESDAY" : [ {
@@ -50,9 +53,6 @@
         } ],
         "SUNDAY" : [ ]
       },
-      "exceptions" : [ ],
-      "sourceUrl" : "https://www.restaurant-pomeranz.de/Speisekarte/",
-      "seasonalRuleNote" : "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen.",
       "regularServiceHours" : {
         "MONDAY" : [ ],
         "TUESDAY" : [ {
