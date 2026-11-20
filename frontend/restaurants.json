@@ -1,35 +1,16 @@
 {
   "schemaVersion" : 1,
   "restaurants" : [ {
+    "id" : "uni-passau-mensa",
+    "name" : "Uni-Mensa Passau",
+    "address" : "Innstraße 27, 94032 Passau",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P"
+  }, {
     "id" : "pomeranz",
     "name" : "Restaurant Pomeranz",
     "address" : "Bratfischwinkel 5, 94032 Passau",
     "sourceUrl" : "https://www.restaurant-pomeranz.de/Speisekarte/",
     "openingHours" : {
-      "regularServiceHours" : {
-        "MONDAY" : [ ],
-        "TUESDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "WEDNESDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "THURSDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "FRIDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "SATURDAY" : [ {
-          "from" : "11:30",
-          "to" : "14:00"
-        } ],
-        "SUNDAY" : [ ]
-      },
       "regularOpeningHours" : {
         "MONDAY" : [ ],
         "TUESDAY" : [ {
@@ -69,16 +50,35 @@
         } ],
         "SUNDAY" : [ ]
       },
-      "exceptions" : [ ],
+      "regularServiceHours" : {
+        "MONDAY" : [ ],
+        "TUESDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "WEDNESDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "THURSDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "FRIDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "SATURDAY" : [ {
+          "from" : "11:30",
+          "to" : "14:00"
+        } ],
+        "SUNDAY" : [ ]
+      },
+      "seasonalRuleNote" : "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen.",
       "sourceUrl" : "https://www.restaurant-pomeranz.de/Speisekarte/",
-      "seasonalRuleNote" : "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen."
+      "exceptions" : [ ]
     },
     "menuPdfUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150"
-  }, {
-    "id" : "uni-passau-mensa",
-    "name" : "Uni-Mensa Passau",
-    "address" : "Innstraße 27, 94032 Passau",
-    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P"
   }, {
     "id" : "goldenes-schiff",
     "name" : "Wirtshaus & Pension Goldenes Schiff",
