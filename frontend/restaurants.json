@@ -11,11 +11,6 @@
     "address" : "Ludwigstraße 8, 94032 Passau",
     "sourceUrl" : "https://www.wilma-wunder.de/restaurants/passau/"
   }, {
-    "id" : "uni-passau-mensa",
-    "name" : "Uni-Mensa Passau",
-    "address" : "Innstraße 27, 94032 Passau",
-    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P"
-  }, {
     "id" : "pomeranz",
     "name" : "Restaurant Pomeranz",
     "address" : "Bratfischwinkel 5, 94032 Passau",
@@ -89,6 +84,11 @@
       "seasonalRuleNote" : "Laut offizieller Website gelten an Feiertagen ebenfalls 11:30–14:00 und 17:30–23:00 Uhr. Sondertermine bitte anhand der Website prüfen."
     },
     "menuPdfUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150"
+  }, {
+    "id" : "uni-passau-mensa",
+    "name" : "Uni-Mensa Passau",
+    "address" : "Innstraße 27, 94032 Passau",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P"
   }, {
     "id" : "goldenes-schiff",
     "name" : "Wirtshaus & Pension Goldenes Schiff",
