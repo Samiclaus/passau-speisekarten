@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-11-22T17:48:59.658287897+01:00",
+  "generatedAt" : "2026-11-23T18:40:07.537038831+01:00",
   "menus" : [ {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-11-17",
@@ -22,23 +22,6 @@
       "price" : 12.8,
       "description" : "Pilze / Langkornreis / Rahmsoße",
       "dietary" : [ "POULTRY" ]
-    } ]
-  }, {
-    "restaurantId" : "goldenes-schiff",
-    "validFrom" : "2026-11-17",
-    "validUntil" : "2026-11-17",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
-    "items" : [ {
-      "name" : "Linseneintopf mit Debreziner",
-      "category" : "Hauptgerichte",
-      "price" : 11.80,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "ganze gekochte Bio-Artischocke mit 2erlei Dips und Salatgarnitur",
-      "category" : "Hauptgerichte",
-      "price" : 11.80,
-      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "pomeranz",
@@ -63,23 +46,6 @@
       "dietary" : [ "POULTRY" ]
     } ]
   }, {
-    "restaurantId" : "goldenes-schiff",
-    "validFrom" : "2026-11-18",
-    "validUntil" : "2026-11-18",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
-    "items" : [ {
-      "name" : "Geschnetzeltes \"Züricher Art\" mit hausgemachten Spätzle",
-      "category" : "Hauptgerichte",
-      "price" : 11.80,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Kaspressknödel mit Parmesan und Salatgarnitur",
-      "category" : "Hauptgerichte",
-      "price" : 11.80,
-      "dietary" : [ "VEGETARIAN" ]
-    } ]
-  }, {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-11-19",
     "validUntil" : "2026-11-19",
@@ -100,64 +66,6 @@
       "price" : 12.8,
       "description" : "Gemüse / Kartoffeln / Brot",
       "dietary" : [ "BEEF" ]
-    } ]
-  }, {
-    "restaurantId" : "goldenes-schiff",
-    "validFrom" : "2026-11-19",
-    "validUntil" : "2026-11-19",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
-    "items" : [ {
-      "name" : "Geschnetzeltes \"Züricher Art\" mit hausgemachten Spätzle",
-      "category" : "Hauptgerichte",
-      "price" : 11.80,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Kaspressknödel mit Parmesan und Salatgarnitur",
-      "category" : "Hauptgerichte",
-      "price" : 11.80,
-      "dietary" : [ "VEGETARIAN" ]
-    } ]
-  }, {
-    "restaurantId" : "isapori",
-    "validFrom" : "2026-11-20",
-    "validUntil" : "2026-11-20",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://sapori-toscana.com/",
-    "items" : [ {
-      "name" : "Pizza Nduja",
-      "category" : "Hauptgerichte",
-      "price" : 14.0,
-      "description" : "Nduja, Oliven, Peperoni, kapern",
-      "dietary" : [ "PORK" ]
-    }, {
-      "name" : "Pollo al forno in sugo di pomodoro",
-      "category" : "Hauptgerichte",
-      "price" : 13.7,
-      "description" : "",
-      "dietary" : [ "POULTRY" ]
-    } ]
-  }, {
-    "restaurantId" : "wilma-wunder",
-    "validFrom" : "2026-11-20",
-    "validUntil" : "2026-11-20",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
-    "items" : [ {
-      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "MEAT" ]
-    }, {
-      "name" : "Hähnchengeschnetzeltes mit Spätzle",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "POULTRY" ]
-    }, {
-      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "FISH" ]
     } ]
   }, {
     "restaurantId" : "pomeranz",
@@ -181,30 +89,6 @@
       "description" : "Fischfilet / Calamari / Tomaten",
       "dietary" : [ "FISH" ]
     } ]
-  }, {
-    "restaurantId" : "goldenes-schiff",
-    "validFrom" : "2026-11-20",
-    "validUntil" : "2026-11-20",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
-    "items" : [ {
-      "name" : "Gebackenes Seelachsfilet mit Kartoffelsalat",
-      "category" : "Hauptgerichte",
-      "price" : 11.80,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Rahmspinat mit Bio-Spiegelei und Röstkartoffeln",
-      "category" : "Hauptgerichte",
-      "price" : 11.80,
-      "dietary" : [ "VEGETARIAN" ]
-    } ]
-  }, {
-    "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-22",
-    "validUntil" : "2026-11-22",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
-    "items" : [ ]
   }, {
     "restaurantId" : "uni-passau-mensa",
     "validFrom" : "2026-11-23",
@@ -236,14 +120,6 @@
       "guestPrice" : 7.1,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Cannelloni Ricotta Spinat",
-      "category" : "Hauptgerichte",
-      "price" : 4.4,
-      "studentPrice" : 4.4,
-      "employeePrice" : 5.7,
-      "guestPrice" : 7.4,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
       "name" : "Puten-Döner mit Paprikaquark, Fladenbrot",
       "category" : "Hauptgerichte",
       "price" : 5.5,
@@ -251,6 +127,30 @@
       "employeePrice" : 6.7,
       "guestPrice" : 8.2,
       "dietary" : [ "MENSA_VITAL", "POULTRY" ]
+    }, {
+      "name" : "Pizza Magherita",
+      "category" : "Hauptgerichte",
+      "price" : 6.7,
+      "studentPrice" : 6.7,
+      "employeePrice" : 7.1,
+      "guestPrice" : 7.1,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Pizza Vegan",
+      "category" : "Hauptgerichte",
+      "price" : 8.1,
+      "studentPrice" : 8.1,
+      "employeePrice" : 8.6,
+      "guestPrice" : 8.6,
+      "dietary" : [ "VEGAN" ]
+    }, {
+      "name" : "Pizza Diavola",
+      "category" : "Hauptgerichte",
+      "price" : 9.0,
+      "studentPrice" : 9.0,
+      "employeePrice" : 9.5,
+      "guestPrice" : 9.5,
+      "dietary" : [ "PORK" ]
     }, {
       "name" : "Risoleekartoffeln",
       "category" : "Beilagen",
@@ -268,14 +168,6 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Pommes frites",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
-    }, {
       "name" : "Bohnengemüse italienische Art",
       "category" : "Beilagen",
       "price" : 1.4,
@@ -284,7 +176,23 @@
       "guestPrice" : 2.0,
       "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Pudding Pistazie",
+      "name" : "Pommes frites",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Salat Buffet",
+      "category" : "Beilagen",
+      "price" : 3.4,
+      "studentPrice" : 3.4,
+      "employeePrice" : 3.9,
+      "guestPrice" : 4.6,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Mandarinenjoghurt",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -292,7 +200,7 @@
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Ananasjoghurt",
+      "name" : "Pudding Pistazie",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -307,6 +215,47 @@
       "employeePrice" : 1.5,
       "guestPrice" : 1.7,
       "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "isapori",
+    "validFrom" : "2026-11-23",
+    "validUntil" : "2026-11-23",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://sapori-toscana.com/",
+    "items" : [ {
+      "name" : "Spaghettoni Nduja",
+      "category" : "Hauptgerichte",
+      "price" : 13.0,
+      "description" : "Zwiebeln, Pomodoro, Nduja, Öl",
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Malfatti Ricotta – Spinat",
+      "category" : "Hauptgerichte",
+      "price" : 12.5,
+      "description" : "Spinat-Ricotta-Nocken",
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-11-23",
+    "validUntil" : "2026-11-23",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Hähnchengeschnetzeltes mit Spätzle",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "FISH" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -371,14 +320,6 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Reiberknödel",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "VEGAN" ]
-    }, {
       "name" : "Gemüsecocktail Cordial",
       "category" : "Beilagen",
       "price" : 1.4,
@@ -386,6 +327,14 @@
       "employeePrice" : 1.5,
       "guestPrice" : 2.0,
       "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Reiberknödel",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGAN" ]
     }, {
       "name" : "Bio-Vanillepudding",
       "category" : "Nachspeisen",
@@ -410,6 +359,64 @@
       "employeePrice" : 1.5,
       "guestPrice" : 1.7,
       "dietary" : [ "CONTAINS_ALCOHOL", "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-11-24",
+    "validUntil" : "2026-11-24",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Putencurry mit Basmatireis",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Spaghetti mit Gorgonzolasoße",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "isapori",
+    "validFrom" : "2026-11-24",
+    "validUntil" : "2026-11-24",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://sapori-toscana.com/",
+    "items" : [ {
+      "name" : "Farfale con panna e salmone",
+      "category" : "Hauptgerichte",
+      "price" : 15.0,
+      "description" : "Butter, Sahne, Lachsfilet",
+      "dietary" : [ "FISH" ]
+    }, {
+      "name" : "Fagioli con Salsicia Italiana",
+      "category" : "Hauptgerichte",
+      "price" : 14.0,
+      "description" : "Zwiebeln, Karotten, Pomodori, Salsicia, Sellerie, Canelini Bohenen",
+      "dietary" : [ "PORK" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-11-24",
+    "validUntil" : "2026-11-24",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Hähnchengeschnetzeltes mit Spätzle",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "FISH" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -515,6 +522,70 @@
       "dietary" : [ "VEGAN" ]
     } ]
   }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-11-25",
+    "validUntil" : "2026-11-25",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Putencurry mit Basmatireis",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Brokkoli-Kartoffelgratin mit Salatgarnitur",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "isapori",
+    "validFrom" : "2026-11-25",
+    "validUntil" : "2026-11-25",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://sapori-toscana.com/",
+    "items" : [ {
+      "name" : "Pizza Gurme",
+      "category" : "Hauptgerichte",
+      "price" : 15.7,
+      "description" : "Speck al crudo, Mascarpone, Nduja",
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Fussili al Pesto",
+      "category" : "Hauptgerichte",
+      "price" : 13.0,
+      "description" : "Öl, Parmesan, Knoblauch, Basilikum",
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Fussili con Tonno Limone",
+      "category" : "Hauptgerichte",
+      "price" : 13.8,
+      "description" : "Öl, Butter, Kapern, Tonno, Zitronen",
+      "dietary" : [ "FISH" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-11-25",
+    "validUntil" : "2026-11-25",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Hähnchengeschnetzeltes mit Spätzle",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "FISH" ]
+    } ]
+  }, {
     "restaurantId" : "uni-passau-mensa",
     "validFrom" : "2026-11-26",
     "validUntil" : "2026-11-26",
@@ -537,7 +608,7 @@
       "guestPrice" : 6.1,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Bunte Falafel mit veganer Sour Creme",
+      "name" : "Tofu-Frikasse mit Bio-Reis",
       "category" : "Hauptgerichte",
       "price" : 3.8,
       "studentPrice" : 3.8,
@@ -545,7 +616,7 @@
       "guestPrice" : 7.1,
       "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Tofu-Frikasse mit Bio-Reis",
+      "name" : "Bunte Falafel mit veganer Sour Creme",
       "category" : "Hauptgerichte",
       "price" : 3.8,
       "studentPrice" : 3.8,
@@ -577,7 +648,7 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Frühlingsgemüse",
+      "name" : "Pommes frites",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
@@ -585,7 +656,7 @@
       "guestPrice" : 2.0,
       "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Pommes frites",
+      "name" : "Frühlingsgemüse",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
@@ -616,6 +687,64 @@
       "employeePrice" : 1.5,
       "guestPrice" : 1.7,
       "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-11-26",
+    "validUntil" : "2026-11-26",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Lasagne al Forno mit Salatgarnitur",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Omelette mit Austernpilze und Salatgarnitur",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "isapori",
+    "validFrom" : "2026-11-26",
+    "validUntil" : "2026-11-26",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://sapori-toscana.com/",
+    "items" : [ {
+      "name" : "Tortelini Di carne in brodo Vegetale von Facaccia",
+      "category" : "Hauptgerichte",
+      "price" : 12.0,
+      "description" : "",
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Penne al Ragu oder Tomatensauce",
+      "category" : "Hauptgerichte",
+      "price" : 13.0,
+      "description" : "",
+      "dietary" : [ "MEAT" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-11-26",
+    "validUntil" : "2026-11-26",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Hähnchengeschnetzeltes mit Spätzle",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "FISH" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
@@ -696,7 +825,7 @@
       "guestPrice" : 2.0,
       "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Aprikosenquark",
+      "name" : "Schokopudding",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -704,7 +833,7 @@
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Schokopudding",
+      "name" : "Aprikosenquark",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -713,9 +842,74 @@
       "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
+    "restaurantId" : "goldenes-schiff",
+    "validFrom" : "2026-11-27",
+    "validUntil" : "2026-11-27",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://goldenesschiff.de/sonstiges/mittagsangebote",
+    "items" : [ {
+      "name" : "Gebackenes Seelachsfilet mit Remouladensoße und Salzkartoffeln",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Omelette mit Austernpilze und Salatgarnitur",
+      "category" : "Hauptgerichte",
+      "price" : 11.8,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "isapori",
+    "validFrom" : "2026-11-27",
+    "validUntil" : "2026-11-27",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://sapori-toscana.com/",
+    "items" : [ {
+      "name" : "Pizza Nduja",
+      "category" : "Hauptgerichte",
+      "price" : 14.0,
+      "description" : "Nduja, Oliven, Peperoni, kapern",
+      "dietary" : [ "PORK" ]
+    }, {
+      "name" : "Pollo al forno in sugo di pomodoro",
+      "category" : "Hauptgerichte",
+      "price" : 13.7,
+      "description" : "",
+      "dietary" : [ "POULTRY" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-11-27",
+    "validUntil" : "2026-11-27",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Hähnchengeschnetzeltes mit Spätzle",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "FISH" ]
+    } ]
+  }, {
     "restaurantId" : "uni-passau-mensa",
     "validFrom" : "2026-11-28",
     "validUntil" : "2026-11-28",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-11-29",
+    "validUntil" : "2026-11-29",
     "status" : "CURRENT",
     "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
     "items" : [ ]
