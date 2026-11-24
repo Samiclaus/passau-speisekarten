@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-11-23T21:44:41.088402240+01:00",
+  "generatedAt" : "2026-11-24T18:11:22.984126883+01:00",
   "menus" : [ {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-11-17",
@@ -91,174 +91,6 @@
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
-    "validFrom" : "2026-11-23",
-    "validUntil" : "2026-11-23",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
-    "items" : [ {
-      "name" : "Tomaten-Basilikum-Suppe",
-      "category" : "Suppen",
-      "price" : 0.8,
-      "studentPrice" : 0.8,
-      "employeePrice" : 1.0,
-      "guestPrice" : 1.5,
-      "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
-    }, {
-      "name" : "Gemüsecouscous \"orientalisch\"",
-      "category" : "Hauptgerichte",
-      "price" : 2.3,
-      "studentPrice" : 2.3,
-      "employeePrice" : 3.3,
-      "guestPrice" : 6.1,
-      "dietary" : [ "VEGAN" ]
-    }, {
-      "name" : "Ebly mit Zucchini, Paprika, Karotten und frischem Rosmarin",
-      "category" : "Hauptgerichte",
-      "price" : 3.8,
-      "studentPrice" : 3.8,
-      "employeePrice" : 4.7,
-      "guestPrice" : 7.1,
-      "dietary" : [ "VEGAN" ]
-    }, {
-      "name" : "Puten-Döner mit Paprikaquark, Fladenbrot",
-      "category" : "Hauptgerichte",
-      "price" : 5.5,
-      "studentPrice" : 5.5,
-      "employeePrice" : 6.7,
-      "guestPrice" : 8.2,
-      "dietary" : [ "MENSA_VITAL", "POULTRY" ]
-    }, {
-      "name" : "Pizza Magherita",
-      "category" : "Hauptgerichte",
-      "price" : 6.7,
-      "studentPrice" : 6.7,
-      "employeePrice" : 7.1,
-      "guestPrice" : 7.1,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Pizza Vegan",
-      "category" : "Hauptgerichte",
-      "price" : 8.1,
-      "studentPrice" : 8.1,
-      "employeePrice" : 8.6,
-      "guestPrice" : 8.6,
-      "dietary" : [ "VEGAN" ]
-    }, {
-      "name" : "Pizza Diavola",
-      "category" : "Hauptgerichte",
-      "price" : 9.0,
-      "studentPrice" : 9.0,
-      "employeePrice" : 9.5,
-      "guestPrice" : 9.5,
-      "dietary" : [ "PORK" ]
-    }, {
-      "name" : "Risoleekartoffeln",
-      "category" : "Beilagen",
-      "price" : 1.2,
-      "studentPrice" : 1.2,
-      "employeePrice" : 1.4,
-      "guestPrice" : 1.9,
-      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
-    }, {
-      "name" : "Gemischter Salat",
-      "category" : "Beilagen",
-      "price" : 1.3,
-      "studentPrice" : 1.3,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Bohnengemüse italienische Art",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
-    }, {
-      "name" : "Pommes frites",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
-    }, {
-      "name" : "Salat Buffet",
-      "category" : "Beilagen",
-      "price" : 3.4,
-      "studentPrice" : 3.4,
-      "employeePrice" : 3.9,
-      "guestPrice" : 4.6,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Mandarinenjoghurt",
-      "category" : "Nachspeisen",
-      "price" : 0.9,
-      "studentPrice" : 0.9,
-      "employeePrice" : 1.1,
-      "guestPrice" : 1.6,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Pudding Pistazie",
-      "category" : "Nachspeisen",
-      "price" : 0.9,
-      "studentPrice" : 0.9,
-      "employeePrice" : 1.1,
-      "guestPrice" : 1.6,
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Erdnuss-Aprikosen Creme",
-      "category" : "Nachspeisen",
-      "price" : 1.2,
-      "studentPrice" : 1.2,
-      "employeePrice" : 1.5,
-      "guestPrice" : 1.7,
-      "dietary" : [ "VEGETARIAN" ]
-    } ]
-  }, {
-    "restaurantId" : "isapori",
-    "validFrom" : "2026-11-23",
-    "validUntil" : "2026-11-23",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://sapori-toscana.com/",
-    "items" : [ {
-      "name" : "Spaghettoni Nduja",
-      "category" : "Hauptgerichte",
-      "price" : 13.0,
-      "description" : "Zwiebeln, Pomodoro, Nduja, Öl",
-      "dietary" : [ "PORK" ]
-    }, {
-      "name" : "Malfatti Ricotta – Spinat",
-      "category" : "Hauptgerichte",
-      "price" : 12.5,
-      "description" : "Spinat-Ricotta-Nocken",
-      "dietary" : [ "VEGETARIAN" ]
-    } ]
-  }, {
-    "restaurantId" : "wilma-wunder",
-    "validFrom" : "2026-11-23",
-    "validUntil" : "2026-11-23",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
-    "items" : [ {
-      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "MEAT" ]
-    }, {
-      "name" : "Hähnchengeschnetzeltes mit Spätzle",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "POULTRY" ]
-    }, {
-      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "FISH" ]
-    } ]
-  }, {
-    "restaurantId" : "uni-passau-mensa",
     "validFrom" : "2026-11-24",
     "validUntil" : "2026-11-24",
     "status" : "CURRENT",
@@ -288,13 +120,13 @@
       "guestPrice" : 6.7,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Tintenfisch Tapas auf Paprikareis",
+      "name" : "Ebly mit Zucchini, Paprika, Karotten und frischem Rosmarin",
       "category" : "Hauptgerichte",
-      "price" : 5.5,
-      "studentPrice" : 5.5,
-      "employeePrice" : 6.7,
-      "guestPrice" : 8.2,
-      "dietary" : [ "FISH" ]
+      "price" : 3.8,
+      "studentPrice" : 3.8,
+      "employeePrice" : 4.7,
+      "guestPrice" : 7.1,
+      "dietary" : [ "VEGAN" ]
     }, {
       "name" : "Krustenbraten vom Schwein mit Reiberknödel",
       "category" : "Hauptgerichte",
@@ -303,6 +135,38 @@
       "employeePrice" : 6.7,
       "guestPrice" : 8.2,
       "dietary" : [ "CONTAINS_ALCOHOL", "PORK" ]
+    }, {
+      "name" : "Tintenfisch Tapas auf Paprikareis",
+      "category" : "Hauptgerichte",
+      "price" : 5.5,
+      "studentPrice" : 5.5,
+      "employeePrice" : 6.7,
+      "guestPrice" : 8.2,
+      "dietary" : [ "FISH" ]
+    }, {
+      "name" : "Pizza Magherita",
+      "category" : "Hauptgerichte",
+      "price" : 6.7,
+      "studentPrice" : 6.7,
+      "employeePrice" : 7.1,
+      "guestPrice" : 7.1,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Pizza Vegan",
+      "category" : "Hauptgerichte",
+      "price" : 8.1,
+      "studentPrice" : 8.1,
+      "employeePrice" : 8.6,
+      "guestPrice" : 8.6,
+      "dietary" : [ "VEGAN" ]
+    }, {
+      "name" : "Pizza Salami mit Championgs*S",
+      "category" : "Hauptgerichte",
+      "price" : 8.9,
+      "studentPrice" : 8.9,
+      "employeePrice" : 9.4,
+      "guestPrice" : 9.4,
+      "dietary" : [ ]
     }, {
       "name" : "Bio-Paprikareis",
       "category" : "Beilagen",
@@ -320,14 +184,6 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Gemüsecocktail Cordial",
-      "category" : "Beilagen",
-      "price" : 1.4,
-      "studentPrice" : 1.4,
-      "employeePrice" : 1.5,
-      "guestPrice" : 2.0,
-      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
-    }, {
       "name" : "Reiberknödel",
       "category" : "Beilagen",
       "price" : 1.4,
@@ -336,21 +192,53 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Bio-Vanillepudding",
-      "category" : "Nachspeisen",
-      "price" : 1.0,
-      "studentPrice" : 1.0,
-      "employeePrice" : 1.2,
-      "guestPrice" : 1.6,
-      "dietary" : [ "ORGANIC", "VEGETARIAN" ]
+      "name" : "Gemüsecocktail Cordial",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Heidelbeerjoghurt - vegan",
+      "name" : "Bohnengemüse italienische Art",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Salat Buffet",
+      "category" : "Beilagen",
+      "price" : 3.4,
+      "studentPrice" : 3.4,
+      "employeePrice" : 3.9,
+      "guestPrice" : 4.6,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Mandarienjoghurt",
       "category" : "Nachspeisen",
-      "price" : 1.0,
-      "studentPrice" : 1.0,
-      "employeePrice" : 1.2,
+      "price" : 0.9,
+      "studentPrice" : 0.9,
+      "employeePrice" : 1.1,
       "guestPrice" : 1.6,
-      "dietary" : [ "VEGAN" ]
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Pudding Pistazie",
+      "category" : "Nachspeisen",
+      "price" : 0.9,
+      "studentPrice" : 0.9,
+      "employeePrice" : 1.1,
+      "guestPrice" : 1.6,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Erdnuss-Aprikosen Creme",
+      "category" : "Nachspeisen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.5,
+      "guestPrice" : 1.7,
+      "dietary" : [ "VEGETARIAN" ]
     }, {
       "name" : "Kirsch-Tiramisu",
       "category" : "Nachspeisen",
@@ -481,7 +369,7 @@
       "guestPrice" : 2.0,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Romanobohnen Mix",
+      "name" : "Ziggy Fries",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
@@ -489,7 +377,7 @@
       "guestPrice" : 2.0,
       "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Ziggy Fries",
+      "name" : "Romanobohnen Mix",
       "category" : "Beilagen",
       "price" : 1.4,
       "studentPrice" : 1.4,
@@ -608,7 +496,7 @@
       "guestPrice" : 6.1,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Tofu-Frikasse mit Bio-Reis",
+      "name" : "Bunte Falafel mit veganer Sour Creme",
       "category" : "Hauptgerichte",
       "price" : 3.8,
       "studentPrice" : 3.8,
@@ -616,7 +504,7 @@
       "guestPrice" : 7.1,
       "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Bunte Falafel mit veganer Sour Creme",
+      "name" : "Tofu-Frikasse mit Bio-Reis",
       "category" : "Hauptgerichte",
       "price" : 3.8,
       "studentPrice" : 3.8,
@@ -672,14 +560,6 @@
       "guestPrice" : 1.6,
       "dietary" : [ "VEGAN" ]
     }, {
-      "name" : "Gelbe Grütze mit veganem Mousse Chocolate",
-      "category" : "Nachspeisen",
-      "price" : 1.2,
-      "studentPrice" : 1.2,
-      "employeePrice" : 1.5,
-      "guestPrice" : 1.7,
-      "dietary" : [ "VEGAN" ]
-    }, {
       "name" : "Milchreis mit Erdbeeren",
       "category" : "Nachspeisen",
       "price" : 1.2,
@@ -687,6 +567,14 @@
       "employeePrice" : 1.5,
       "guestPrice" : 1.7,
       "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Gelbe Grütze mit veganem Mousse Chocolate",
+      "category" : "Nachspeisen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.5,
+      "guestPrice" : 1.7,
+      "dietary" : [ "VEGAN" ]
     } ]
   }, {
     "restaurantId" : "goldenes-schiff",
@@ -825,7 +713,7 @@
       "guestPrice" : 2.0,
       "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
     }, {
-      "name" : "Schokopudding",
+      "name" : "Aprikosenquark",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -833,7 +721,7 @@
       "guestPrice" : 1.6,
       "dietary" : [ "VEGETARIAN" ]
     }, {
-      "name" : "Aprikosenquark",
+      "name" : "Schokopudding",
       "category" : "Nachspeisen",
       "price" : 0.9,
       "studentPrice" : 0.9,
@@ -913,5 +801,100 @@
     "status" : "CURRENT",
     "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
     "items" : [ ]
+  }, {
+    "restaurantId" : "uni-passau-mensa",
+    "validFrom" : "2026-11-30",
+    "validUntil" : "2026-11-30",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P",
+    "items" : [ {
+      "name" : "Zucchinirahmsuppe",
+      "category" : "Suppen",
+      "price" : 0.8,
+      "studentPrice" : 0.8,
+      "employeePrice" : 1.0,
+      "guestPrice" : 1.5,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Bio-Penne Rigate mit Bio-Käse-Sahnesauce",
+      "category" : "Hauptgerichte",
+      "price" : 2.3,
+      "studentPrice" : 2.3,
+      "employeePrice" : 3.3,
+      "guestPrice" : 6.1,
+      "dietary" : [ "ORGANIC", "VEGETARIAN" ]
+    }, {
+      "name" : "Kartoffelrösti mit Frischkäsefüllung auf Marktgemüse",
+      "category" : "Hauptgerichte",
+      "price" : 3.8,
+      "studentPrice" : 3.8,
+      "employeePrice" : 4.7,
+      "guestPrice" : 7.1,
+      "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
+    }, {
+      "name" : "Hacksteak, Zwiebelsauce und Kartoffelpüree",
+      "category" : "Hauptgerichte",
+      "price" : 4.4,
+      "studentPrice" : 4.4,
+      "employeePrice" : 5.7,
+      "guestPrice" : 7.4,
+      "dietary" : [ "BEEF", "PORK" ]
+    }, {
+      "name" : "Kartoffelpüree",
+      "category" : "Beilagen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.4,
+      "guestPrice" : 1.9,
+      "dietary" : [ "GLUTEN_FREE", "VEGETARIAN" ]
+    }, {
+      "name" : "Gemischter Salat",
+      "category" : "Beilagen",
+      "price" : 1.3,
+      "studentPrice" : 1.3,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Röstkartoffeln",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "GLUTEN_FREE", "VEGAN" ]
+    }, {
+      "name" : "Karotten-Rahmgemüse",
+      "category" : "Beilagen",
+      "price" : 1.4,
+      "studentPrice" : 1.4,
+      "employeePrice" : 1.5,
+      "guestPrice" : 2.0,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Haselnussnougatquark",
+      "category" : "Nachspeisen",
+      "price" : 0.9,
+      "studentPrice" : 0.9,
+      "employeePrice" : 1.1,
+      "guestPrice" : 1.6,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Pudding mit Vanillegeschmack und Johannisbeeren",
+      "category" : "Nachspeisen",
+      "price" : 0.9,
+      "studentPrice" : 0.9,
+      "employeePrice" : 1.1,
+      "guestPrice" : 1.6,
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Veganer Apfelpudding",
+      "category" : "Nachspeisen",
+      "price" : 1.2,
+      "studentPrice" : 1.2,
+      "employeePrice" : 1.5,
+      "guestPrice" : 1.7,
+      "dietary" : [ "VEGAN" ]
+    } ]
   } ]
 }
