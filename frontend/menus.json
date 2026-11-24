@@ -1,95 +1,7 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-11-24T18:11:22.984126883+01:00",
+  "generatedAt" : "2026-11-24T20:50:38.610545195+01:00",
   "menus" : [ {
-    "restaurantId" : "pomeranz",
-    "validFrom" : "2026-11-17",
-    "validUntil" : "2026-11-17",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150",
-    "serviceStart" : "11:30",
-    "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kartoffelsuppe mit Speck; Vorspeise: Tomaten-Käse-Aufstrich mit Brot und Pesto; Dessert: Duett vom Schoko-Parfait mit Beerensoße. Nur in Verbindung mit mindestens einem Getränk.",
-    "items" : [ {
-      "name" : "Pilz-Risotto",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Tomaten / Lauchzwiebeln / Grana Padano",
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Putengeschnetzeltem",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Pilze / Langkornreis / Rahmsoße",
-      "dietary" : [ "POULTRY" ]
-    } ]
-  }, {
-    "restaurantId" : "pomeranz",
-    "validFrom" : "2026-11-18",
-    "validUntil" : "2026-11-18",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150",
-    "serviceStart" : "11:30",
-    "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kartoffelsuppe mit Speck; Vorspeise: Tomaten-Käse-Aufstrich mit Brot und Pesto; Dessert: Duett vom Schoko-Parfait mit Beerensoße. Nur in Verbindung mit mindestens einem Getränk.",
-    "items" : [ {
-      "name" : "Pilz-Risotto",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Tomaten / Lauchzwiebeln / Grana Padano",
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Gebratenem Hähnchenbrustfilet",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Erbsen / Graupen / Jus",
-      "dietary" : [ "POULTRY" ]
-    } ]
-  }, {
-    "restaurantId" : "pomeranz",
-    "validFrom" : "2026-11-19",
-    "validUntil" : "2026-11-19",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150",
-    "serviceStart" : "11:30",
-    "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kartoffelsuppe mit Speck; Vorspeise: Tomaten-Käse-Aufstrich mit Brot und Pesto; Dessert: Duett vom Schoko-Parfait mit Beerensoße. Nur in Verbindung mit mindestens einem Getränk.",
-    "items" : [ {
-      "name" : "Pilz-Risotto",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Tomaten / Lauchzwiebeln / Grana Padano",
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Polpette di Manzo",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Gemüse / Kartoffeln / Brot",
-      "dietary" : [ "BEEF" ]
-    } ]
-  }, {
-    "restaurantId" : "pomeranz",
-    "validFrom" : "2026-11-20",
-    "validUntil" : "2026-11-20",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-17-Mittagskarte.pdf?cdp=a&_=1a1e6507150",
-    "serviceStart" : "11:30",
-    "serviceEnd" : "14:00",
-    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Kartoffelsuppe mit Speck; Vorspeise: Tomaten-Käse-Aufstrich mit Brot und Pesto; Dessert: Duett vom Schoko-Parfait mit Beerensoße. Nur in Verbindung mit mindestens einem Getränk.",
-    "items" : [ {
-      "name" : "Pilz-Risotto",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Tomaten / Lauchzwiebeln / Grana Padano",
-      "dietary" : [ "VEGETARIAN" ]
-    }, {
-      "name" : "Spaghetti Pescatore",
-      "category" : "Hauptgerichte",
-      "price" : 12.8,
-      "description" : "Fischfilet / Calamari / Tomaten",
-      "dietary" : [ "FISH" ]
-    } ]
-  }, {
     "restaurantId" : "uni-passau-mensa",
     "validFrom" : "2026-11-24",
     "validUntil" : "2026-11-24",
@@ -247,6 +159,28 @@
       "employeePrice" : 1.5,
       "guestPrice" : 1.7,
       "dietary" : [ "CONTAINS_ALCOHOL", "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "pomeranz",
+    "validFrom" : "2026-11-24",
+    "validUntil" : "2026-11-24",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-24-Mittagskarte.pdf?cdp=a&_=1a20b3a2268",
+    "serviceStart" : "11:30",
+    "serviceEnd" : "14:00",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Erbsen-Minz-Suppe mit geröstetem Sesam; Vorspeise: Crostini mit Tomaten-Mozzarella; Dessert: Profiterole mit Mangoragout. Nur in Verbindung mit mindestens einem Getränk.",
+    "items" : [ {
+      "name" : "Couscous",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Kürbis / Zucchini / Tomatenragout",
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Tagliatelle mit Serrano",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Serranoschinken / Pilze / Erbsen / Grana Padano",
+      "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
     "restaurantId" : "goldenes-schiff",
@@ -408,6 +342,28 @@
       "employeePrice" : 1.8,
       "guestPrice" : 2.0,
       "dietary" : [ "VEGAN" ]
+    } ]
+  }, {
+    "restaurantId" : "pomeranz",
+    "validFrom" : "2026-11-25",
+    "validUntil" : "2026-11-25",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-24-Mittagskarte.pdf?cdp=a&_=1a20b3a2268",
+    "serviceStart" : "11:30",
+    "serviceEnd" : "14:00",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Erbsen-Minz-Suppe mit geröstetem Sesam; Vorspeise: Crostini mit Tomaten-Mozzarella; Dessert: Profiterole mit Mangoragout. Nur in Verbindung mit mindestens einem Getränk.",
+    "items" : [ {
+      "name" : "Couscous",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Kürbis / Zucchini / Tomatenragout",
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Gebratenem Hähnchenbrustfilet",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Glasierte Karotten / Polenta / Tomatenjus",
+      "dietary" : [ "POULTRY" ]
     } ]
   }, {
     "restaurantId" : "goldenes-schiff",
@@ -577,6 +533,28 @@
       "dietary" : [ "VEGAN" ]
     } ]
   }, {
+    "restaurantId" : "pomeranz",
+    "validFrom" : "2026-11-26",
+    "validUntil" : "2026-11-26",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-24-Mittagskarte.pdf?cdp=a&_=1a20b3a2268",
+    "serviceStart" : "11:30",
+    "serviceEnd" : "14:00",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Erbsen-Minz-Suppe mit geröstetem Sesam; Vorspeise: Crostini mit Tomaten-Mozzarella; Dessert: Profiterole mit Mangoragout. Nur in Verbindung mit mindestens einem Getränk.",
+    "items" : [ {
+      "name" : "Couscous",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Kürbis / Zucchini / Tomatenragout",
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Piccata von der Pute (Käsemantel)",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Zucchini / Langkornreis / Tomatensoße",
+      "dietary" : [ "POULTRY" ]
+    } ]
+  }, {
     "restaurantId" : "goldenes-schiff",
     "validFrom" : "2026-11-26",
     "validUntil" : "2026-11-26",
@@ -727,6 +705,28 @@
       "studentPrice" : 0.9,
       "employeePrice" : 1.1,
       "guestPrice" : 1.6,
+      "dietary" : [ "VEGETARIAN" ]
+    } ]
+  }, {
+    "restaurantId" : "pomeranz",
+    "validFrom" : "2026-11-27",
+    "validUntil" : "2026-11-27",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-24-Mittagskarte.pdf?cdp=a&_=1a20b3a2268",
+    "serviceStart" : "11:30",
+    "serviceEnd" : "14:00",
+    "offerNote" : "Kombiangebot: 12,80 € für die Kombination der beiden Hauptgerichte. Wahlweise dazu: Suppe: Erbsen-Minz-Suppe mit geröstetem Sesam; Vorspeise: Crostini mit Tomaten-Mozzarella; Dessert: Profiterole mit Mangoragout. Nur in Verbindung mit mindestens einem Getränk.",
+    "items" : [ {
+      "name" : "Couscous",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Kürbis / Zucchini / Tomatenragout",
+      "dietary" : [ "VEGETARIAN" ]
+    }, {
+      "name" : "Seehechtfilet",
+      "category" : "Hauptgerichte",
+      "price" : 12.8,
+      "description" : "Gemüse / Linsen / Thymianschaum",
       "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
