@@ -1,11 +1,6 @@
 {
   "schemaVersion" : 1,
   "restaurants" : [ {
-    "id" : "uni-passau-mensa",
-    "name" : "Uni-Mensa Passau",
-    "address" : "Innstraße 27, 94032 Passau",
-    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P"
-  }, {
     "id" : "pomeranz",
     "name" : "Restaurant Pomeranz",
     "address" : "Bratfischwinkel 5, 94032 Passau",
@@ -79,6 +74,11 @@
       }
     },
     "menuPdfUrl" : "https://www.restaurant-pomeranz.de/.cm4all/uproc.php/0/2026-11-24-Mittagskarte.pdf?cdp=a&_=1a20b3a2268"
+  }, {
+    "id" : "uni-passau-mensa",
+    "name" : "Uni-Mensa Passau",
+    "address" : "Innstraße 27, 94032 Passau",
+    "sourceUrl" : "https://www.stwno.de/infomax/daten-extern/html/speiseplaene.php?einrichtung=UNI-P"
   }, {
     "id" : "goldenes-schiff",
     "name" : "Wirtshaus & Pension Goldenes Schiff",
