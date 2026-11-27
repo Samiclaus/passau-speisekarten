@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 1,
-  "generatedAt" : "2026-11-27T17:21:57.809372131+01:00",
+  "generatedAt" : "2026-11-27T19:36:31.638072931+01:00",
   "menus" : [ {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-11-24",
@@ -78,28 +78,6 @@
       "category" : "Hauptgerichte",
       "price" : 11.8,
       "dietary" : [ "VEGETARIAN" ]
-    } ]
-  }, {
-    "restaurantId" : "wilma-wunder",
-    "validFrom" : "2026-11-26",
-    "validUntil" : "2026-11-26",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
-    "items" : [ {
-      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "MEAT" ]
-    }, {
-      "name" : "Hähnchengeschnetzeltes mit Spätzle",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "POULTRY" ]
-    }, {
-      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "FISH" ]
     } ]
   }, {
     "restaurantId" : "pomeranz",
@@ -284,28 +262,6 @@
       "dietary" : [ "VEGETARIAN" ]
     } ]
   }, {
-    "restaurantId" : "wilma-wunder",
-    "validFrom" : "2026-11-27",
-    "validUntil" : "2026-11-27",
-    "status" : "CURRENT",
-    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
-    "items" : [ {
-      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "MEAT" ]
-    }, {
-      "name" : "Hähnchengeschnetzeltes mit Spätzle",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "POULTRY" ]
-    }, {
-      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
-      "category" : "Hauptgerichte",
-      "price" : 12.9,
-      "dietary" : [ "FISH" ]
-    } ]
-  }, {
     "restaurantId" : "pomeranz",
     "validFrom" : "2026-11-27",
     "validUntil" : "2026-11-27",
@@ -353,15 +309,37 @@
     "items" : [ {
       "name" : "Pizza Nduja",
       "category" : "Hauptgerichte",
-      "price" : 14.00,
+      "price" : 14.0,
       "description" : "Nduja, Oliven, Peperoni, kapern",
       "dietary" : [ "PORK" ]
     }, {
       "name" : "Pollo al forno in sugo di pomodoro",
       "category" : "Hauptgerichte",
-      "price" : 13.70,
+      "price" : 13.7,
       "description" : "",
       "dietary" : [ "POULTRY" ]
+    } ]
+  }, {
+    "restaurantId" : "wilma-wunder",
+    "validFrom" : "2026-11-27",
+    "validUntil" : "2026-11-27",
+    "status" : "CURRENT",
+    "sourceUrl" : "https://www.amadeusgo.de/selfordering/index/Ay7yoX/?table=aKstqjlQoGieF%2BygO0DbrVAqxTj2dSePdDHM%2FbwNRv3nngSZT4A%2BGPlXy3ghjVZP7B2hHaRD",
+    "items" : [ {
+      "name" : "Bandnudeln mit Tomaten-Hackfleischsoße und Hartkäse",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "MEAT" ]
+    }, {
+      "name" : "Hähnchengeschnetzeltes mit Spätzle",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "POULTRY" ]
+    }, {
+      "name" : "Flammkuchen mit Thunfisch, Kirschtomaten und Zwiebeln",
+      "category" : "Hauptgerichte",
+      "price" : 12.9,
+      "dietary" : [ "FISH" ]
     } ]
   }, {
     "restaurantId" : "uni-passau-mensa",
